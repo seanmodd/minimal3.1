@@ -7,7 +7,7 @@ import { Container, Typography, Stack } from '@mui/material';
 // redux
 import Layout from 'src/layouts';
 import { useDispatch, useSelector } from 'src/redux/store';
-import { getVehicles, filterVehicles } from 'src/redux/slices/vehicle';
+import { getVariants, filterVehicles } from 'src/redux/slices/vehicle';
 // routes
 import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
@@ -42,9 +42,13 @@ export default function EcommerceShop() {
 
   const [openFilter, setOpenFilter] = useState(false);
 
-  const { products, sortBy, filters } = useSelector((state) => state.product);
+  const { vehicles, sortBy, filters } = useSelector((state) => state.vehicle);
+  console.log(
+    'This is the useSelector: ',
+    useSelector((state) => state.vehicle)
+  );
 
-  const filteredProducts = applyFilter(products, sortBy, filters);
+  const filteredProducts = applyFilter(vehicles, sortBy, filters);
 
   const defaultValues = {
     gender: filters.gender,
@@ -70,7 +74,7 @@ export default function EcommerceShop() {
     values.category === 'All';
 
   useEffect(() => {
-    dispatch(getVehicles());
+    dispatch(getVariants());
   }, [dispatch]);
 
   useEffect(() => {
@@ -172,10 +176,10 @@ export default function EcommerceShop() {
           )}
         </Stack>
 
-        <ShopProductList
+        {/* <ShopProductList
           products={filteredProducts}
           loading={!products.length && isDefault}
-        />
+        /> */}
         <CartWidget />
       </Container>
     </Page>

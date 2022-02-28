@@ -10,7 +10,7 @@ export function getApolloClient(forceNew) {
   if (!CLIENT || forceNew) {
     CLIENT = new ApolloClient({
       ssrMode: isServer,
-      uri: 'https://api.shopcarx.com/graphql',
+      uri: 'https://carx.hasura.app/v1/graphql',
       cache: new InMemoryCache().restore(windowApolloState || {}),
 
       /**

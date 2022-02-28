@@ -78,12 +78,11 @@ MyApp.propTypes = {
   settings: PropTypes.object,
 };
 
+export const apolloClient = getApolloClient();
 export default function MyApp(props) {
   const { Component, pageProps, settings } = props;
 
   const getLayout = Component.getLayout ?? ((page) => page);
-
-  const client = getApolloClient();
 
   return (
     <>
@@ -97,7 +96,7 @@ export default function MyApp(props) {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <CollapseDrawerProvider>
                 <SettingsProvider defaultSettings={settings}>
-                  <ApolloProvider client={client}>
+                  <ApolloProvider client={apolloClient}>
                     <ThemeProvider>
                       <NotistackProvider>
                         <MotionLazyContainer>

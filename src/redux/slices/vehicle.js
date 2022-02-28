@@ -3,7 +3,10 @@ import sum from 'lodash/sum';
 import uniqBy from 'lodash/uniqBy';
 // utils
 import axios from 'src/utils/axios';
+import { print } from 'graphql';
 //
+import { ApolloClient, InMemoryCache, useQuery, gql } from '@apollo/client';
+import { apolloClient } from 'src/pages/_app';
 import { dispatch } from 'src/redux/store';
 
 // ----------------------------------------------------------------------
@@ -49,15 +52,9 @@ const slice = createSlice({
     },
 
     // GET PRODUCTS
-    getProductsSuccess(state, action) {
-      state.isLoading = false;
-      state.products = action.payload;
-    },
-
-    // GET PRODUCTS
     getVehiclesSuccess(state, action) {
       state.isLoading = false;
-      state.products = action.payload;
+      state.vehicles = action.payload;
     },
 
     // GET PRODUCT
@@ -221,14 +218,57 @@ export const {
 } = slice.actions;
 
 // ----------------------------------------------------------------------
-
+//* Below are the graphql queries:
+const ALLCARSQUERY = () => gql`
+  query {
+    variants {
+      id
+      car_currentcarurl
+      car_name
+      car_make_name
+      car_price
+      price
+      year
+      vehicle_status
+      car_vin
+      int_car_views
+      int_car_odometer
+      car_exteriorcolor
+      car_imgsrcurl_1
+      car_dealership
+      make
+      model
+      city_mileage
+      highway_mileage
+      manufacture_data_manufacture_mpg_city
+      manufacture_data_manufacture_mpg_highway
+    }
+  }
+`;
+//* Below is the client to query vehicles:
+const client = new ApolloClient({
+  uri: `https://carx.hasura.app/v1/graphql`,
+  cache: new InMemoryCache(),
+});
 //* Below are the action creators:
-export function getVehicles() {
-  return async () => {
+// ----------------------------------------------------------------------
+export function getVariants() {
+  return async (dispatch) => {
     dispatch(slice.actions.startLoading());
     try {
-      const response = await axios.get('/api/products');
-      dispatch(slice.actions.getVehiclesSuccess(response.data.products));
+      const q = ALLCARSQUERY();
+      const response = await client.query({
+        query: q,
+      });
+      console.log('This is the response: ', response);
+      console.log(
+        'product.js	491	response.data.variants',
+        print(q),
+        response.data.variants
+      );
+
+      dispatch(slice.actions.getVehiclesSuccess([...response.data.variants]));
+      console.log(') product.js	495	response.data.variants');
     } catch (error) {
       dispatch(slice.actions.hasError(error));
     }

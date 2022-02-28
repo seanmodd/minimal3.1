@@ -1,16 +1,23 @@
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Button, Stack, Container, Typography, InputAdornment } from '@mui/material';
+import {
+  Box,
+  Button,
+  Stack,
+  Container,
+  Typography,
+  InputAdornment,
+} from '@mui/material';
 // hooks
-import useCountdown from '../hooks/useCountdown';
+import useCountdown from 'src/hooks/useCountdown';
 // layouts
-import Layout from '../layouts';
+import Layout from 'src/layouts';
 // components
-import Page from '../components/Page';
-import InputStyle from '../components/InputStyle';
-import SocialsButton from '../components/SocialsButton';
+import Page from 'src/components/Page';
+import InputStyle from 'src/components/InputStyle';
+import SocialsButton from 'src/components/SocialsButton';
 // assets
-import { ComingSoonIllustration } from '../assets';
+import { ComingSoonIllustration } from 'src/assets';
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +50,7 @@ ComingSoon.getLayout = function getLayout(page) {
 // ----------------------------------------------------------------------
 
 export default function ComingSoon() {
-  const countdown = useCountdown(new Date('07/07/2022 21:30'));
+  const countdown = useCountdown(new Date('03/07/2022 21:30'));
 
   return (
     <Page title="Coming Soon" sx={{ height: 1 }}>
@@ -53,7 +60,9 @@ export default function ComingSoon() {
             <Typography variant="h3" paragraph>
               Coming Soon!
             </Typography>
-            <Typography sx={{ color: 'text.secondary' }}>We are currently working hard on this page!</Typography>
+            <Typography sx={{ color: 'text.secondary' }}>
+              We are currently working hard on this page!
+            </Typography>
 
             <ComingSoonIllustration sx={{ my: 10, height: 240 }} />
 
@@ -74,14 +83,18 @@ export default function ComingSoon() {
 
               <div>
                 <Typography variant="h2">{countdown.minutes}</Typography>
-                <Typography sx={{ color: 'text.secondary' }}>Minutes</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>
+                  Minutes
+                </Typography>
               </div>
 
               <SeparatorStyle variant="h2">:</SeparatorStyle>
 
               <div>
                 <Typography variant="h2">{countdown.seconds}</Typography>
-                <Typography sx={{ color: 'text.secondary' }}>Seconds</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>
+                  Seconds
+                </Typography>
               </div>
             </CountdownStyle>
 
