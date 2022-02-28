@@ -5,6 +5,7 @@ import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 import mailReducer from './slices/mail';
 import chatReducer from './slices/chat';
 import productReducer from './slices/product';
+import vehicleReducer from './slices/vehicle';
 import calendarReducer from './slices/calendar';
 import kanbanReducer from './slices/kanban';
 
@@ -22,7 +23,10 @@ const createNoopStorage = () => ({
   },
 });
 
-const storage = typeof window !== 'undefined' ? createWebStorage('local') : createNoopStorage();
+const storage =
+  typeof window !== 'undefined'
+    ? createWebStorage('local')
+    : createNoopStorage();
 
 const rootPersistConfig = {
   key: 'root',
@@ -37,6 +41,12 @@ const productPersistConfig = {
   keyPrefix: 'redux-',
   whitelist: ['sortBy', 'checkout'],
 };
+const vehiclePersistConfig = {
+  key: 'vehicle',
+  storage,
+  keyPrefix: 'redux-',
+  whitelist: ['sortBy', 'checkout'],
+};
 
 const rootReducer = combineReducers({
   mail: mailReducer,
@@ -44,6 +54,7 @@ const rootReducer = combineReducers({
   calendar: calendarReducer,
   kanban: kanbanReducer,
   product: persistReducer(productPersistConfig, productReducer),
+  vehicle: persistReducer(vehiclePersistConfig, vehicleReducer),
 });
 
 export { rootPersistConfig, rootReducer };

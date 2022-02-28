@@ -41,31 +41,31 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 // redux
-import { store, persistor } from '../redux/store';
+import { store, persistor } from 'src/redux/store';
 // utils
-import { getSettings } from '../utils/settings';
+import { getSettings } from 'src/utils/settings';
 // contexts
-import { SettingsProvider } from '../contexts/SettingsContext';
-import { CollapseDrawerProvider } from '../contexts/CollapseDrawerContext';
+import { SettingsProvider } from 'src/contexts/SettingsContext';
+import { CollapseDrawerProvider } from 'src/contexts/CollapseDrawerContext';
 // theme
-import ThemeProvider from '../theme';
+import ThemeProvider from 'src/theme';
 // components
-import Settings from '../components/settings';
-import { ChartStyle } from '../components/chart';
-import RtlLayout from '../components/RtlLayout';
-import ProgressBar from '../components/ProgressBar';
-import ThemeColorPresets from '../components/ThemeColorPresets';
-import NotistackProvider from '../components/NotistackProvider';
-import ThemeLocalization from '../components/ThemeLocalization';
-import MotionLazyContainer from '../components/animate/MotionLazyContainer';
+import Settings from 'src/components/settings';
+import { ChartStyle } from 'src/components/chart';
+import RtlLayout from 'src/components/RtlLayout';
+import ProgressBar from 'src/components/ProgressBar';
+import ThemeColorPresets from 'src/components/ThemeColorPresets';
+import NotistackProvider from 'src/components/NotistackProvider';
+import ThemeLocalization from 'src/components/ThemeLocalization';
+import MotionLazyContainer from 'src/components/animate/MotionLazyContainer';
 
 // Check our docs
 // https://docs-minimals.vercel.app/authentication/ts-version
 
-import { AuthProvider } from '../contexts/JWTContext';
-// import { AuthProvider } from '../contexts/Auth0Context';
-// import { AuthProvider } from '../contexts/FirebaseContext';
-// import { AuthProvider } from '../contexts/AwsCognitoContext';
+import { AuthProvider } from 'src/contexts/JWTContext';
+// import { AuthProvider } from 'src/contexts/Auth0Context';
+// import { AuthProvider } from 'src/contexts/FirebaseContext';
+// import { AuthProvider } from 'src/contexts/AwsCognitoContext';
 
 // ----------------------------------------------------------------------
 
@@ -123,7 +123,9 @@ export default function MyApp(props) {
 MyApp.getInitialProps = async (context) => {
   const appProps = await App.getInitialProps(context);
 
-  const cookies = cookie.parse(context.ctx.req ? context.ctx.req.headers.cookie || '' : document.cookie);
+  const cookies = cookie.parse(
+    context.ctx.req ? context.ctx.req.headers.cookie || '' : document.cookie
+  );
 
   const settings = getSettings(cookies);
 

@@ -7,7 +7,7 @@ import { Container, Typography, Stack } from '@mui/material';
 // redux
 import Layout from 'src/layouts';
 import { useDispatch, useSelector } from 'src/redux/store';
-import { getProducts, filterProducts } from 'src/redux/slices/product';
+import { getProducts, filterProducts } from 'src/redux/slices/vehicle';
 // routes
 import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
