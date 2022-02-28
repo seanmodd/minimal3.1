@@ -47,7 +47,7 @@ export default function EcommerceShop() {
     'This is the useSelector: ',
     useSelector((state) => state.vehicle)
   );
-
+  const products = vehicles;
   const filteredProducts = applyFilter(vehicles, sortBy, filters);
 
   const defaultValues = {
@@ -176,10 +176,10 @@ export default function EcommerceShop() {
           )}
         </Stack>
 
-        {/* <ShopProductList
+        <ShopProductList
           products={filteredProducts}
           loading={!products.length && isDefault}
-        /> */}
+        />
         <CartWidget />
       </Container>
     </Page>

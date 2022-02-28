@@ -20,9 +20,21 @@ ShopProductCard.propTypes = {
 };
 
 export default function ShopProductCard({ product }) {
-  const { name, cover, price, colors, status, priceSale } = product;
+  const {
+    car_make_name,
+    car_vin,
+    name,
+    car_imgsrcurl_1,
+    cover,
+    price,
+    colors,
+    status,
+    priceSale,
+  } = product;
 
-  const linkTo = `${PATH_DASHBOARD.eCommerce.root}/product/${paramCase(name)}`;
+  const linkTo = `${PATH_DASHBOARD.eCommerce.root}/vehicle/${paramCase(
+    car_make_name
+  )}/${paramCase(car_vin)}`;
 
   return (
     <Card>
@@ -30,7 +42,7 @@ export default function ShopProductCard({ product }) {
         {status && (
           <Label
             variant="filled"
-            color={(status === 'sale' && 'error') || 'info'}
+            // color={(status === 'sale' && 'error') || 'info'}
             sx={{
               top: 16,
               right: 16,
@@ -42,24 +54,31 @@ export default function ShopProductCard({ product }) {
             {status}
           </Label>
         )}
-        <Image alt={name} src={cover} ratio="1/1" />
+        <Image alt={name} src={car_imgsrcurl_1} ratio="1/1" />
       </Box>
 
       <Stack spacing={2} sx={{ p: 3 }}>
         <NextLink href={linkTo} passHref>
           <Link color="inherit">
             <Typography variant="subtitle2" noWrap>
-              {name}
+              {car_make_name}
             </Typography>
           </Link>
         </NextLink>
 
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <ColorPreview colors={colors} />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          {/* <ColorPreview colors={colors} /> */}
 
           <Stack direction="row" spacing={0.5}>
             {priceSale && (
-              <Typography component="span" sx={{ color: 'text.disabled', textDecoration: 'line-through' }}>
+              <Typography
+                component="span"
+                sx={{ color: 'text.disabled', textDecoration: 'line-through' }}
+              >
                 {fCurrency(priceSale)}
               </Typography>
             )}
