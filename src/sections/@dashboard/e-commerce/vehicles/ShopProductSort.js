@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, MenuItem, Typography } from '@mui/material';
 // redux
 import { useDispatch, useSelector } from '../../../../redux/store';
-import { sortByProducts } from '../../../../redux/slices/product';
+import { sortByVehicles } from '../../../../redux/slices/product';
 // components
 import Iconify from '../../../../components/Iconify';
 import MenuPopover from '../../../../components/MenuPopover';
@@ -49,7 +49,7 @@ export default function ShopProductSort() {
 
   const handleSortBy = (value) => {
     handleClose();
-    dispatch(sortByProducts(value));
+    dispatch(sortByVehicles(value));
   };
 
   return (
@@ -58,10 +58,18 @@ export default function ShopProductSort() {
         color="inherit"
         disableRipple
         onClick={(event) => handleOpen(event.currentTarget)}
-        endIcon={<Iconify icon={open ? 'eva:chevron-up-fill' : 'eva:chevron-down-fill'} />}
+        endIcon={
+          <Iconify
+            icon={open ? 'eva:chevron-up-fill' : 'eva:chevron-down-fill'}
+          />
+        }
       >
         Sort By:&nbsp;
-        <Typography component="span" variant="subtitle2" sx={{ color: 'text.secondary' }}>
+        <Typography
+          component="span"
+          variant="subtitle2"
+          sx={{ color: 'text.secondary' }}
+        >
           {renderLabel(sortBy)}
         </Typography>
       </Button>
@@ -76,7 +84,11 @@ export default function ShopProductSort() {
         }}
       >
         {SORT_BY_OPTIONS.map((option) => (
-          <MenuItem key={option.value} selected={option.value === sortBy} onClick={() => handleSortBy(option.value)}>
+          <MenuItem
+            key={option.value}
+            selected={option.value === sortBy}
+            onClick={() => handleSortBy(option.value)}
+          >
             {option.label}
           </MenuItem>
         ))}

@@ -66,7 +66,7 @@ const slice = createSlice({
     },
 
     //  SORT & FILTER PRODUCTS
-    sortByProducts(state, action) {
+    sortByVehicles(state, action) {
       state.sortBy = action.payload;
     },
 
@@ -215,7 +215,7 @@ export const {
   applyDiscount,
   increaseQuantity,
   decreaseQuantity,
-  sortByProducts,
+  sortByVehicles,
   filterVehicles,
 } = slice.actions;
 
