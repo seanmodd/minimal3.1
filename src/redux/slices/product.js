@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import sum from 'lodash/sum';
 import uniqBy from 'lodash/uniqBy';
 // utils
-import axios from '../../utils/axios';
+import axios from 'src/utils/axios';
 //
-import { dispatch } from '../store';
+import { dispatch } from 'src/redux/store';
 
 // ----------------------------------------------------------------------
 
@@ -76,7 +76,9 @@ const slice = createSlice({
     getCart(state, action) {
       const cart = action.payload;
 
-      const subtotal = sum(cart.map((cartItem) => cartItem.price * cartItem.quantity));
+      const subtotal = sum(
+        cart.map((cartItem) => cartItem.price * cartItem.quantity)
+      );
       const discount = cart.length === 0 ? 0 : state.checkout.discount;
       const shipping = cart.length === 0 ? 0 : state.checkout.shipping;
       const billing = cart.length === 0 ? null : state.checkout.billing;
@@ -111,7 +113,9 @@ const slice = createSlice({
     },
 
     deleteCart(state, action) {
-      const updateCart = state.checkout.cart.filter((item) => item.id !== action.payload);
+      const updateCart = state.checkout.cart.filter(
+        (item) => item.id !== action.payload
+      );
 
       state.checkout.cart = updateCart;
     },
@@ -182,7 +186,8 @@ const slice = createSlice({
     applyShipping(state, action) {
       const shipping = action.payload;
       state.checkout.shipping = shipping;
-      state.checkout.total = state.checkout.subtotal - state.checkout.discount + shipping;
+      state.checkout.total =
+        state.checkout.subtotal - state.checkout.discount + shipping;
     },
   },
 });

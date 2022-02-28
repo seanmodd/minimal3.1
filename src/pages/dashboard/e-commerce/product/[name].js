@@ -4,30 +4,38 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 // @mui
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Tab, Card, Grid, Divider, Container, Typography } from '@mui/material';
+import {
+  Box,
+  Tab,
+  Card,
+  Grid,
+  Divider,
+  Container,
+  Typography,
+} from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 // redux
-import { useDispatch, useSelector } from '../../../../redux/store';
-import { getProduct, addCart, onGotoStep } from '../../../../redux/slices/product';
+import { useDispatch, useSelector } from 'src/redux/store';
+import { getProduct, addCart, onGotoStep } from 'src/redux/slices/product';
 // routes
-import { PATH_DASHBOARD } from '../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
-import useSettings from '../../../../hooks/useSettings';
+import useSettings from 'src/hooks/useSettings';
 // layouts
-import Layout from '../../../../layouts';
 // components
-import Page from '../../../../components/Page';
-import Iconify from '../../../../components/Iconify';
-import Markdown from '../../../../components/Markdown';
-import { SkeletonProduct } from '../../../../components/skeleton';
-import HeaderBreadcrumbs from '../../../../components/HeaderBreadcrumbs';
+import Page from 'src/components/Page';
+import Iconify from 'src/components/Iconify';
+import Markdown from 'src/components/Markdown';
+import { SkeletonProduct } from 'src/components/skeleton';
+import HeaderBreadcrumbs from 'src/components/HeaderBreadcrumbs';
 // sections
 import {
   ProductDetailsSummary,
   ProductDetailsReview,
   ProductDetailsCarousel,
-} from '../../../../sections/@dashboard/e-commerce/product-details';
-import CartWidget from '../../../../sections/@dashboard/e-commerce/CartWidget';
+} from 'src/sections/@dashboard/e-commerce/product-details';
+import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
+import Layout from 'src/layouts';
 
 // ----------------------------------------------------------------------
 
@@ -137,14 +145,23 @@ export default function EcommerceProductDetails() {
             <Grid container sx={{ my: 8 }}>
               {PRODUCT_DESCRIPTION.map((item) => (
                 <Grid item xs={12} md={4} key={item.title}>
-                  <Box sx={{ my: 2, mx: 'auto', maxWidth: 280, textAlign: 'center' }}>
+                  <Box
+                    sx={{
+                      my: 2,
+                      mx: 'auto',
+                      maxWidth: 280,
+                      textAlign: 'center',
+                    }}
+                  >
                     <IconWrapperStyle>
                       <Iconify icon={item.icon} width={36} height={36} />
                     </IconWrapperStyle>
                     <Typography variant="subtitle1" gutterBottom>
                       {item.title}
                     </Typography>
-                    <Typography sx={{ color: 'text.secondary' }}>{item.description}</Typography>
+                    <Typography sx={{ color: 'text.secondary' }}>
+                      {item.description}
+                    </Typography>
                   </Box>
                 </Grid>
               ))}
