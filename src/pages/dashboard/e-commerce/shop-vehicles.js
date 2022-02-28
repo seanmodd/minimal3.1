@@ -7,7 +7,7 @@ import { Container, Typography, Stack } from '@mui/material';
 // redux
 import Layout from 'src/layouts';
 import { useDispatch, useSelector } from 'src/redux/store';
-import { getProducts, filterProducts } from 'src/redux/slices/vehicle';
+import { getVehicles, filterVehicles } from 'src/redux/slices/vehicle';
 // routes
 import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
@@ -70,11 +70,11 @@ export default function EcommerceShop() {
     values.category === 'All';
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getVehicles());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(filterProducts(values));
+    dispatch(filterVehicles(values));
   }, [dispatch, values]);
 
   const handleOpenFilter = () => {

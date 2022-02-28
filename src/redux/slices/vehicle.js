@@ -11,8 +11,8 @@ import { dispatch } from 'src/redux/store';
 const initialState = {
   isLoading: false,
   error: null,
-  products: [],
-  product: null,
+  vehicles: [],
+  vehicle: null,
   sortBy: null,
   filters: {
     gender: [],
@@ -53,6 +53,12 @@ const slice = createSlice({
       state.products = action.payload;
     },
 
+    // GET PRODUCTS
+    getVehiclesSuccess(state, action) {
+      state.isLoading = false;
+      state.products = action.payload;
+    },
+
     // GET PRODUCT
     getProductSuccess(state, action) {
       state.isLoading = false;
@@ -64,7 +70,7 @@ const slice = createSlice({
       state.sortBy = action.payload;
     },
 
-    filterProducts(state, action) {
+    filterVehicles(state, action) {
       state.filters.gender = action.payload.gender;
       state.filters.category = action.payload.category;
       state.filters.colors = action.payload.colors;
@@ -210,12 +216,12 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   sortByProducts,
-  filterProducts,
+  filterVehicles,
 } = slice.actions;
 
 // ----------------------------------------------------------------------
 
-export function getProducts() {
+export function getVehicles() {
   return async () => {
     dispatch(slice.actions.startLoading());
     try {
