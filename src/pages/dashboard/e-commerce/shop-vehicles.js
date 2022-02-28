@@ -62,45 +62,9 @@ export default function EcommerceShop() {
     if (sortBy === 'priceAsc') {
       products = orderBy(products, ['price'], ['asc']);
     }
-
     const newData = products?.map((item) => ({ ...item, isFavourite: false }));
-    getFavouritesData(newData);
+    // getFavouritesData(newData);
   }
-  const getFavouritesData = (favouriteData) => {
-    if (isAuthenticated) {
-      if (userData) {
-        favouriteData?.forEach((product, fIndex) => {
-          userData.forEach((favorite, vIndex) => {
-            if (product.id === favorite.variant) {
-              (product.favoriteId = favorite.id), (product.isFavourite = true);
-            }
-          });
-          return product;
-        });
-
-        const newData = JSON.parse(JSON.stringify(favouriteData));
-
-        setFavouriteData(newData);
-      } else {
-        setFavouriteData(favouriteData);
-      }
-    } else {
-      const localFavData = getFavoriteList();
-
-      favouriteData?.forEach((product, fIndex) => {
-        localFavData.forEach((favorite, vIndex) => {
-          if (product.id === favorite) {
-            (product.favoriteId = favorite), (product.isFavourite = true);
-          }
-        });
-        return product;
-      });
-
-      const newData = JSON.parse(JSON.stringify(favouriteData));
-
-      setFavouriteData(newData);
-    }
-  };
 
   const { vehicles, sortBy, filters } = useSelector((state) => state.vehicle);
   console.log(
@@ -108,7 +72,7 @@ export default function EcommerceShop() {
     useSelector((state) => state.vehicle)
   );
   const products = vehicles;
-  const filteredProducts = applyCustomFilter(vehicles, sortBy, filters);
+  const filteredProducts = applyFilter(products, sortBy, filters);
 
   const defaultValues = {
     gender: filters.gender,
