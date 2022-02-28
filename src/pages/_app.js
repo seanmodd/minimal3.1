@@ -67,6 +67,9 @@ import { AuthProvider } from 'src/contexts/JWTContext';
 // import { AuthProvider } from 'src/contexts/FirebaseContext';
 // import { AuthProvider } from 'src/contexts/AwsCognitoContext';
 
+// graphql provider and client
+import { ApolloProvider } from '@apollo/client';
+import { getApolloClient } from 'src/graphql/apollo';
 // ----------------------------------------------------------------------
 
 MyApp.propTypes = {
@@ -80,6 +83,8 @@ export default function MyApp(props) {
 
   const getLayout = Component.getLayout ?? ((page) => page);
 
+  const client = getApolloClient();
+
   return (
     <>
       <Head>
@@ -92,22 +97,24 @@ export default function MyApp(props) {
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <CollapseDrawerProvider>
                 <SettingsProvider defaultSettings={settings}>
-                  <ThemeProvider>
-                    <NotistackProvider>
-                      <MotionLazyContainer>
-                        <ThemeColorPresets>
-                          <ThemeLocalization>
-                            <RtlLayout>
-                              <ChartStyle />
-                              <Settings />
-                              <ProgressBar />
-                              {getLayout(<Component {...pageProps} />)}
-                            </RtlLayout>
-                          </ThemeLocalization>
-                        </ThemeColorPresets>
-                      </MotionLazyContainer>
-                    </NotistackProvider>
-                  </ThemeProvider>
+                  <ApolloProvider client={client}>
+                    <ThemeProvider>
+                      <NotistackProvider>
+                        <MotionLazyContainer>
+                          <ThemeColorPresets>
+                            <ThemeLocalization>
+                              <RtlLayout>
+                                <ChartStyle />
+                                <Settings />
+                                <ProgressBar />
+                                {getLayout(<Component {...pageProps} />)}
+                              </RtlLayout>
+                            </ThemeLocalization>
+                          </ThemeColorPresets>
+                        </MotionLazyContainer>
+                      </NotistackProvider>
+                    </ThemeProvider>
+                  </ApolloProvider>
                 </SettingsProvider>
               </CollapseDrawerProvider>
             </LocalizationProvider>

@@ -32,6 +32,7 @@ const initialState = {
   },
 };
 
+// Slices
 const slice = createSlice({
   name: 'vehicle',
   initialState,
@@ -221,6 +222,7 @@ export const {
 
 // ----------------------------------------------------------------------
 
+//* Below are the action creators:
 export function getVehicles() {
   return async () => {
     dispatch(slice.actions.startLoading());
@@ -232,10 +234,8 @@ export function getVehicles() {
     }
   };
 }
-
 // ----------------------------------------------------------------------
-
-export function getProduct(name) {
+export function getVehicle(name) {
   return async () => {
     dispatch(slice.actions.startLoading());
     try {
