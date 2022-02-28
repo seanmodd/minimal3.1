@@ -1,20 +1,5 @@
 {
-  "name": "@minimal/material-kit-nextjs",
   "author": "minimals.cc",
-  "version": "3.1.0",
-  "description": "Next.Js Javascript Version",
-  "private": true,
-  "scripts": {
-    "lint": "next lint",
-    "lint:es": "eslint --ext .js,.jsx .",
-    "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "dev": "next dev -p 3031",
-    "build": "next build",
-    "start": "next start",
-    "clear-all": "rm -rf .next node_modules",
-    "re-start": "rm -rf .next node_modules && yarn install && yarn dev",
-    "re-build": "rm -rf .next node_modules && yarn install && yarn build"
-  },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.20.0",
     "@emotion/cache": "^11.7.1",
@@ -89,12 +74,42 @@
     "worker-loader": "^3.0.8",
     "yup": "^0.32.11"
   },
+  "description": "Next.Js Javascript Version",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-react": "^7.16.0",
     "@next/eslint-plugin-next": "^12.1.0",
-    "eslint": "^8.9.0",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-next": "^12.1.0",
-    "eslint-config-prettier": "^8.4.0",
-    "prettier": "2.5.1",
-    "typescript": "^4.5.5"
-  }
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-wesbos": "3.0.2",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.2"
+  },
+  "name": "@minimal/material-kit-nextjs",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "clear-all": "rm -rf .next node_modules",
+    "dev": "next dev",
+    "lint": "next lint",
+    "lint:es": "eslint --ext .js,.jsx .",
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "re-build": "rm -rf .next node_modules && yarn install && yarn build",
+    "re-start": "rm -rf .next node_modules && yarn install && yarn dev",
+    "start": "next start"
+  },
+  "version": "3.1.0"
 }
