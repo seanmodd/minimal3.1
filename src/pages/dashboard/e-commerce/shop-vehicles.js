@@ -15,6 +15,7 @@ import useSettings from 'src/hooks/useSettings';
 // layouts
 // components
 import Page from 'src/components/Page';
+import { USER_DATA, USER_FAVORITE_DATA } from 'src/customState/callbacks';
 import HeaderBreadcrumbs from 'src/components/HeaderBreadcrumbs';
 import { FormProvider } from 'src/components/hook-form';
 // sections
@@ -26,6 +27,7 @@ import {
   ShopProductSearch,
 } from 'src/sections/@dashboard/e-commerce/vehicles';
 import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
+import useAuth from 'src/hooks/useAuth';
 
 // ----------------------------------------------------------------------
 
@@ -37,10 +39,68 @@ EcommerceShop.getLayout = function getLayout(page) {
 
 export default function EcommerceShop() {
   const { themeStretch } = useSettings();
-
   const dispatch = useDispatch();
-
+  const { isAuthenticated } = useAuth();
   const [openFilter, setOpenFilter] = useState(false);
+  const [filtersData, setFiltersData] = useState();
+  const [favouriteData, setFavouriteData] = USER_FAVORITE_DATA.useSharedState();
+  const [userData] = USER_DATA.useSharedState();
+  function applyCustomFilter(products, sortBy, filters) {
+    // SORT BY
+    if (sortBy === 'popularity') {
+      products = orderBy(products, ['int_car_views'], ['desc']);
+    }
+    if (sortBy === 'miles') {
+      products = orderBy(products, ['int_car_odometer'], ['asc']);
+    }
+    if (sortBy === 'newest') {
+      products = orderBy(products, ['year'], ['desc']);
+    }
+    if (sortBy === 'priceDesc') {
+      products = orderBy(products, ['price'], ['desc']);
+    }
+    if (sortBy === 'priceAsc') {
+      products = orderBy(products, ['price'], ['asc']);
+    }
+
+    const newData = products?.map((item) => ({ ...item, isFavourite: false }));
+    getFavouritesData(newData);
+  }
+  const getFavouritesData = (favouriteData) => {
+    if (isAuthenticated) {
+      if (userData) {
+        favouriteData?.forEach((product, fIndex) => {
+          userData.forEach((favorite, vIndex) => {
+            if (product.id === favorite.variant) {
+              (product.favoriteId = favorite.id), (product.isFavourite = true);
+            }
+          });
+          return product;
+        });
+
+        const newData = JSON.parse(JSON.stringify(favouriteData));
+
+        setFavouriteData(newData);
+      } else {
+        setFavouriteData(favouriteData);
+      }
+    } else {
+      const localFavData = getFavoriteList();
+
+      favouriteData?.forEach((product, fIndex) => {
+        localFavData.forEach((favorite, vIndex) => {
+          if (product.id === favorite) {
+            (product.favoriteId = favorite), (product.isFavourite = true);
+          }
+        });
+        return product;
+      });
+
+      const newData = JSON.parse(JSON.stringify(favouriteData));
+
+      setFavouriteData(newData);
+    }
+  };
 
   const { vehicles, sortBy, filters } = useSelector((state) => state.vehicle);
   console.log(
@@ -48,7 +108,7 @@ export default function EcommerceShop() {
     useSelector((state) => state.vehicle)
   );
   const products = vehicles;
-  const filteredProducts = applyFilter(vehicles, sortBy, filters);
+  const filteredProducts = applyCustomFilter(vehicles, sortBy, filters);
 
   const defaultValues = {
     gender: filters.gender,
@@ -185,6 +245,8 @@ export default function EcommerceShop() {
     </Page>
   );
 }
+
+// ----------------------------------------------------------------------
 
 // ----------------------------------------------------------------------
 
