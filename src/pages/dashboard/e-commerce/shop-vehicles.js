@@ -28,6 +28,8 @@ import {
 } from 'src/sections/@dashboard/e-commerce/vehicles';
 import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
 import useAuth from 'src/hooks/useAuth';
+import { useRouter } from 'next/router';
+import { getFavoriteList } from 'src/utils/localstorage';
 
 // ----------------------------------------------------------------------
 
@@ -45,32 +47,8 @@ export default function EcommerceShop() {
   const [filtersData, setFiltersData] = useState();
   const [favouriteData, setFavouriteData] = USER_FAVORITE_DATA.useSharedState();
   const [userData] = USER_DATA.useSharedState();
-  function applyCustomFilter(products, sortBy, filters) {
-    // SORT BY
-    if (sortBy === 'popularity') {
-      products = orderBy(products, ['int_car_views'], ['desc']);
-    }
-    if (sortBy === 'miles') {
-      products = orderBy(products, ['int_car_odometer'], ['asc']);
-    }
-    if (sortBy === 'newest') {
-      products = orderBy(products, ['year'], ['desc']);
-    }
-    if (sortBy === 'priceDesc') {
-      products = orderBy(products, ['price'], ['desc']);
-    }
-    if (sortBy === 'priceAsc') {
-      products = orderBy(products, ['price'], ['asc']);
-    }
-    const newData = products?.map((item) => ({ ...item, isFavourite: false }));
-    // getFavouritesData(newData);
-  }
 
   const { vehicles, sortBy, filters } = useSelector((state) => state.vehicle);
-  console.log(
-    'This is the useSelector: ',
-    useSelector((state) => state.vehicle)
-  );
   const products = vehicles;
   const filteredProducts = applyFilter(products, sortBy, filters);
 
@@ -179,25 +157,25 @@ export default function EcommerceShop() {
         </Stack>
 
         <Stack sx={{ mb: 3 }}>
-          {!isDefault && (
-            <>
-              <Typography variant="body2" gutterBottom>
-                <strong>{filteredProducts.length}</strong>
-                &nbsp;Products found
-              </Typography>
+          {/* {isDefault &&  */}
+          <>
+            <Typography variant="body2" gutterBottom>
+              <strong>{filteredProducts.length}</strong>
+              &nbsp;Products found
+            </Typography>
 
-              <ShopTagFiltered
-                filters={filters}
-                isShowReset={!isDefault && !openFilter}
-                onRemoveGender={handleRemoveGender}
-                onRemoveCategory={handleRemoveCategory}
-                onRemoveColor={handleRemoveColor}
-                onRemovePrice={handleRemovePrice}
-                onRemoveRating={handleRemoveRating}
-                onResetAll={handleResetFilter}
-              />
-            </>
-          )}
+            <ShopTagFiltered
+              filters={filters}
+              isShowReset={!isDefault && !openFilter}
+              onRemoveGender={handleRemoveGender}
+              onRemoveCategory={handleRemoveCategory}
+              onRemoveColor={handleRemoveColor}
+              onRemovePrice={handleRemovePrice}
+              onRemoveRating={handleRemoveRating}
+              onResetAll={handleResetFilter}
+            />
+          </>
+          {/* } */}
         </Stack>
 
         <ShopProductList
@@ -211,13 +189,46 @@ export default function EcommerceShop() {
 }
 
 // ----------------------------------------------------------------------
-
+function applyCustomFilter(products, sortBy, filters) {
+  // SORT BY
+  if (sortBy === 'popularity') {
+    products = orderBy(products, ['int_car_views'], ['desc']);
+  }
+  if (sortBy === 'miles') {
+    products = orderBy(products, ['int_car_odometer'], ['asc']);
+  }
+  if (sortBy === 'newest') {
+    products = orderBy(products, ['year'], ['desc']);
+  }
+  if (sortBy === 'priceDesc') {
+    products = orderBy(products, ['price'], ['desc']);
+  }
+  if (sortBy === 'priceAsc') {
+    products = orderBy(products, ['price'], ['asc']);
+  }
+  const newData = products?.map((item) => ({ ...item, isFavourite: false }));
+  // getFavouritesData(newData);
+}
 // ----------------------------------------------------------------------
-
 function applyFilter(products, sortBy, filters) {
   // SORT BY
   if (sortBy === 'featured') {
     products = orderBy(products, ['sold'], ['desc']);
+  }
+  if (sortBy === 'popularity') {
+    products = orderBy(products, ['int_car_views'], ['desc']);
+  }
+  if (sortBy === 'miles') {
+    products = orderBy(products, ['int_car_odometer'], ['asc']);
+  }
+  if (sortBy === 'newest') {
+    products = orderBy(products, ['year'], ['desc']);
+  }
+  if (sortBy === 'priceDesc') {
+    products = orderBy(products, ['price'], ['desc']);
+  }
+  if (sortBy === 'priceAsc') {
+    products = orderBy(products, ['price'], ['asc']);
   }
   if (sortBy === 'newest') {
     products = orderBy(products, ['createdAt'], ['desc']);

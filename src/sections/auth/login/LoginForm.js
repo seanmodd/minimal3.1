@@ -15,7 +15,11 @@ import useAuth from '../../../hooks/useAuth';
 import useIsMountedRef from '../../../hooks/useIsMountedRef';
 // components
 import Iconify from '../../../components/Iconify';
-import { FormProvider, RHFTextField, RHFCheckbox } from '../../../components/hook-form';
+import {
+  FormProvider,
+  RHFTextField,
+  RHFCheckbox,
+} from '../../../components/hook-form';
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +31,9 @@ export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().email('Email must be a valid email address').required('Email is required'),
+    email: Yup.string()
+      .email('Email must be a valid email address')
+      .required('Email is required'),
     password: Yup.string().required('Password is required'),
   });
 
@@ -64,7 +70,9 @@ export default function LoginForm() {
   return (
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Stack spacing={3}>
-        {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
+        {!!errors.afterSubmit && (
+          <Alert severity="error">{errors.afterSubmit.message}</Alert>
+        )}
 
         <RHFTextField name="email" label="Email address" />
 
@@ -75,8 +83,13 @@ export default function LoginForm() {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                  <Iconify icon={showPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'} />
+                <IconButton
+                  onClick={() => setShowPassword(!showPassword)}
+                  edge="end"
+                >
+                  <Iconify
+                    icon={showPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'}
+                  />
                 </IconButton>
               </InputAdornment>
             ),
@@ -84,14 +97,25 @@ export default function LoginForm() {
         />
       </Stack>
 
-      <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ my: 2 }}
+      >
         <RHFCheckbox name="remember" label="Remember me" />
         <NextLink href={PATH_AUTH.resetPassword} passHref>
           <Link variant="subtitle2">Forgot password?</Link>
         </NextLink>
       </Stack>
 
-      <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
+      <LoadingButton
+        fullWidth
+        size="large"
+        type="submit"
+        variant="contained"
+        loading={isSubmitting}
+      >
         Login
       </LoadingButton>
     </FormProvider>

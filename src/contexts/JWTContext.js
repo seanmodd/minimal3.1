@@ -76,6 +76,7 @@ function AuthProvider({ children }) {
           setSession(accessToken);
 
           const response = await axios.get('/api/account/my-account');
+          // const response = await axios.get('/api/getUser');
           const { user } = response.data;
 
           dispatch({

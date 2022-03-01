@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 // next
 import { useRouter } from 'next/router';
 // hooks
+import { useUser, Auth } from '@supabase/supabase-auth-helpers/react';
 import useAuth from '../hooks/useAuth';
 import Login from '../pages/auth/login';
+import Index from '../pages/index';
 // components
 import LoadingScreen from '../components/LoadingScreen';
 
@@ -15,7 +17,8 @@ AuthGuard.propTypes = {
 };
 
 export default function AuthGuard({ children }) {
-  const { isAuthenticated, isInitialized } = useAuth();
+  // const { isAuthenticated, isInitialized } = useAuth();
+  const { user } = useUser();
 
   const { pathname, push } = useRouter();
 
@@ -28,15 +31,16 @@ export default function AuthGuard({ children }) {
     }
   }, [pathname, push, requestedLocation]);
 
-  if (!isInitialized) {
-    return <LoadingScreen />;
-  }
+  // if (!isInitialized) {
+  //   return <LoadingScreen />;
+  // }
 
-  if (!isAuthenticated) {
+  if (!user) {
     if (pathname !== requestedLocation) {
       setRequestedLocation(pathname);
     }
-    return <Login />;
+    // return <Login />;
+    return <Index />;
   }
 
   return <>{children}</>;
