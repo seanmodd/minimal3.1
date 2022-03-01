@@ -29,6 +29,7 @@
     "@turf/bbox": "^6.5.0",
     "amazon-cognito-identity-js": "^5.2.6",
     "apexcharts": "^3.33.1",
+    "assert": "^2.0.0",
     "autosuggest-highlight": "^3.2.1",
     "axios": "^0.26.0",
     "change-case": "^4.1.2",

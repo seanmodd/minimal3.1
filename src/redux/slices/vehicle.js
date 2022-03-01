@@ -245,6 +245,86 @@ const ALLCARSQUERY = () => gql`
     }
   }
 `;
+
+const MYCARQUERY = gql`
+  query Variant($id: ID!) {
+    variant(id: $id) {
+      id
+      car_carfax_status
+      car_currentcarurl
+      car_name
+      car_make_name
+      car_price
+      price
+      active
+      car_year
+      year
+      vehicle_status
+      car_vin
+      car_stock
+      int_car_views
+      int_car_odometer
+      int_car_samplepayment
+      int_car_samplepaymentdetails_months
+      int_car_samplepaymentdetails_apr
+      int_car_samplepaymentdetails_downpayment
+      car_exteriorcolor
+      car_carfaxurl
+      car_imgsrcrl_1
+      car_imgsrcurl_2
+      car_imgsrcurl_3
+      car_imgsrcurl_4
+      car_imgsrcurl_5
+      car_imgsrcurl_6
+      car_dealership
+      car_carFax_details_status
+      car_carFax_details_status2
+      carfax_previousownercount
+      make
+      model
+      trim
+      style
+      type
+      doors
+      fuel_type
+      fuel_capacity
+      city_mileage
+      highway_mileage
+      engine
+      engine_cylinders
+      transmission
+      transmission_short
+      transmission_type
+      transmission_speeds
+      drivetrain
+      anti_brake_system
+      steering_type
+      curb_weight
+      gross_vehicle_weight_rating
+      overall_height
+      overall_length
+      overall_width
+      standard_seating
+      invoice_price
+      delivery_charges
+      manufacturer_suggested_retail_price
+      production_seq_number
+      front_brake_type
+      rear_brake_type
+      turning_diameter
+      front_suspension
+      rear_suspension
+      front_spring_type
+      rear_spring_type
+      front_headroom
+      rear_headroom
+      front_legroom
+      rear_legroom
+      standard_towing
+      maximum_towing
+    }
+  }
+`;
 //* Below is the client to query vehicles:
 const client = new ApolloClient({
   uri: `https://carx.hasura.app/v1/graphql`,
@@ -283,6 +363,23 @@ export function getVehicle(name) {
         params: { name },
       });
       dispatch(slice.actions.getProductSuccess(response.data.product));
+    } catch (error) {
+      console.error(error);
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}
+
+export function getVariantGraphQl(id) {
+  return async (dispatch) => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await client.query({
+        // query: CARQUERY,
+        query: MYCARQUERY,
+        variables: { id },
+      });
+      dispatch(slice.actions.getProductSuccess(response.data));
     } catch (error) {
       console.error(error);
       dispatch(slice.actions.hasError(error));

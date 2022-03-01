@@ -16,7 +16,12 @@ import {
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 // redux
 import { useDispatch, useSelector } from 'src/redux/store';
-import { getProduct, addCart, onGotoStep } from 'src/redux/slices/product';
+import {
+  getProduct,
+  getVariantGraphQl,
+  addCart,
+  onGotoStep,
+} from 'src/redux/slices/vehicle';
 // routes
 import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
@@ -33,7 +38,7 @@ import {
   ProductDetailsSummary,
   ProductDetailsReview,
   ProductDetailsCarousel,
-} from 'src/sections/@dashboard/e-commerce/product-details';
+} from 'src/sections/@dashboard/e-commerce/vehicle-details';
 import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
 import Layout from 'src/layouts';
 
@@ -88,11 +93,14 @@ export default function EcommerceProductDetails() {
   const { query } = useRouter();
 
   const { name } = query;
+  console.log('This is name: ', name);
+  console.log('This is query: ', query);
 
   const { product, error, checkout } = useSelector((state) => state.product);
 
   useEffect(() => {
-    dispatch(getProduct(name));
+    // dispatch(getProduct(name));
+    dispatch(getVariantGraphQl(name));
   }, [dispatch, name]);
 
   const handleAddCart = (product) => {
@@ -198,7 +206,7 @@ export default function EcommerceProductDetails() {
 
         {!product && <SkeletonProduct />}
 
-        {error && <Typography variant="h6">404 Product not found</Typography>}
+        {error && <Typography variant="h6">404 Vehicle not found</Typography>}
       </Container>
     </Page>
   );
