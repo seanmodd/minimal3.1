@@ -247,8 +247,8 @@ const ALLCARSQUERY = () => gql`
 `;
 
 const MYCARQUERY = gql`
-  query Variant($id: ID!) {
-    variant(id: $id) {
+  query Variant($id: Int!) {
+    variants_by_pk(id: $id) {
       id
       car_carfax_status
       car_currentcarurl
@@ -270,15 +270,15 @@ const MYCARQUERY = gql`
       int_car_samplepaymentdetails_downpayment
       car_exteriorcolor
       car_carfaxurl
-      car_imgsrcrl_1
+      car_imgsrcurl_1
       car_imgsrcurl_2
       car_imgsrcurl_3
       car_imgsrcurl_4
       car_imgsrcurl_5
       car_imgsrcurl_6
       car_dealership
-      car_carFax_details_status
-      car_carFax_details_status2
+      car_carfax_details_status
+      car_carfax_details_status2
       carfax_previousownercount
       make
       model

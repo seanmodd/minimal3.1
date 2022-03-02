@@ -92,16 +92,16 @@ export default function EcommerceProductDetails() {
 
   const { query } = useRouter();
 
-  const { name } = query;
-  console.log('This is name: ', name);
+  const { id } = query;
+  console.log('This is id: ', id);
   console.log('This is query: ', query);
 
   const { product, error, checkout } = useSelector((state) => state.product);
 
   useEffect(() => {
-    // dispatch(getProduct(name));
-    dispatch(getVariantGraphQl(name));
-  }, [dispatch, name]);
+    // dispatch(getProduct(id));
+    dispatch(getVariantGraphQl(id));
+  }, [dispatch, id]);
 
   const handleAddCart = (product) => {
     dispatch(addCart(product));

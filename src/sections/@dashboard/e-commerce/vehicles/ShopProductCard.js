@@ -23,6 +23,7 @@ export default function ShopProductCard({ product }) {
   const {
     car_make_name,
     car_vin,
+    id,
     name,
     car_imgsrcurl_1,
     cover,
@@ -32,9 +33,10 @@ export default function ShopProductCard({ product }) {
     priceSale,
   } = product;
 
-  const linkTo = `${PATH_DASHBOARD.eCommerce.root}/vehicle/${paramCase(
-    car_make_name
-  )}/${paramCase(car_vin)}`;
+  // const linkTo = `${PATH_DASHBOARD.eCommerce.root}/vehicle/${paramCase(
+  //   car_make_name
+  // )}/${paramCase(car_vin)}`;
+  const linkTo = `${PATH_DASHBOARD.eCommerce.root}/vehicle-details/${id}`;
 
   return (
     <Card>
