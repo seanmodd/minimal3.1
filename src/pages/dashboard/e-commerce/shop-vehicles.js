@@ -44,6 +44,9 @@ export default function EcommerceShop() {
   const dispatch = useDispatch();
   const { isAuthenticated } = useAuth();
   const [openFilter, setOpenFilter] = useState(false);
+  const [dataPerPage, setdataPerPage] = useState(24);
+  const [pages, setPages] = useState(0);
+  const [activePageCount, setActivePageCount] = useState(1);
   const [filtersData, setFiltersData] = useState();
   const [favouriteData, setFavouriteData] = USER_FAVORITE_DATA.useSharedState();
   const [userData] = USER_DATA.useSharedState();
@@ -60,6 +63,50 @@ export default function EcommerceShop() {
     rating: filters.rating,
   };
 
+  useEffect(() => {
+    dispatch(getVariants());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(filterVehicles(values));
+  }, [dispatch, values]);
+
+  // ^ pagination:
+  const onPageChange = (page) => {
+    setActivePageCount(page);
+    router.query.page = page;
+    router.push(router);
+  };
+
+  const pageCountOnPagination = Math.ceil(pages / dataPerPage);
+  const renderPagination = () => (
+    <Pagination
+      count={pageCountOnPagination}
+      color="primary"
+      page={activePageCount}
+      onChange={(event, page) => onPageChange(page)}
+    />
+  );
+
+  // ^ filter:
+
+  // ^ sort:
+
+  // ^ favorite:
+  const updateFavoritesData = (variantId, id) => {
+    const favData = [...favouriteData];
+    favData.forEach((fItem, fIndex) => {
+      if (fItem.id === variantId) {
+        fItem.isFavourite = !fItem.isFavourite;
+      }
+      return fItem;
+    });
+    setFavouriteData(favData);
+  };
+  // ^ search:
+
+  // & old filter:
+  // & react-hook-form:
   const methods = useForm({
     defaultValues,
   });
@@ -74,14 +121,6 @@ export default function EcommerceShop() {
     values.gender.length === 0 &&
     values.colors.length === 0 &&
     values.category === 'All';
-
-  useEffect(() => {
-    dispatch(getVariants());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(filterVehicles(values));
-  }, [dispatch, values]);
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -258,12 +297,12 @@ function applyFilter(products, sortBy, filters) {
   if (filters.priceRange) {
     products = products.filter((product) => {
       if (filters.priceRange === 'below') {
-        return product.price < 25;
+        return product.price < 2;
       }
       if (filters.priceRange === 'between') {
-        return product.price >= 25 && product.price <= 75;
+        return product.price >= 25000000 && product.price <= 75;
       }
-      return product.price > 75;
+      return product.price > 75000;
     });
   }
   if (filters.rating) {
