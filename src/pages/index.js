@@ -1,59 +1,50 @@
-import { useUser, Auth } from '@supabase/supabase-auth-helpers/react';
-import { Card, Typography, Space, Button, Icon } from '@supabase/ui';
-import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
-import { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import Head from '../components/Head';
 
-const LoginPage = () => {
-  const { user, error } = useUser();
-  const [data, setData] = useState({});
+const Index = () => (
+  <>
+    <Head />
 
-  useEffect(() => {
-    async function loadData() {
-      const { data } = await supabaseClient.from('test').select('*');
-      setData(data);
-    }
-    // Only run query once user is logged in.
-    if (user) loadData();
-  }, [user]);
-  console.log('this is user: ', user);
-  console.log('this is error: ', error);
-  console.log('this is data: ', data);
-  if (!user)
-    return (
-      <div style={{ maxWidth: '420px', margin: '96px auto' }}>
-        <Card>
-          <Space direction="vertical" size={8}>
-            {error && error.p.message}
-            <div>
-              <img
-                src="https://app.supabase.io/img/supabase-dark.svg"
-                width="96"
-              />
-              <Typography.Title level={3}>Welcome to ShopCarX</Typography.Title>
+    <Header />
+    <div style={{ minHeight: '100vh', background: '#181818' }}>
+      <div
+        // style={{ background: '#ff1515' }}
+        className="px-4 pt-10 mx-auto sm:pt-12 sm:px-6 md:pt-16 lg:pt-20 lg:px-8 xl:pt-28"
+      >
+        <div className="sm:text-center lg:text-left">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <span className="block xl:inline">The Open Source</span>{' '}
+            <span className="block text-green-400 xl:inline">
+              Firebase Alternative
+            </span>
+          </h1>
+          <p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+            Create a backend in less than 2 minutes. Start your project with a
+            Postgres Database, Authentication, instant APIs, Realtime
+            subscriptions and Storage.
+          </p>
+          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <div className="rounded-md shadow">
+              <a
+                href="#"
+                className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-green-400 border border-transparent rounded-md hover:bg-green-600 md:py-4 md:text-lg md:px-10"
+              >
+                Get started
+              </a>
             </div>
-            <Auth
-              supabaseClient={supabaseClient}
-              // providers={['google', 'github']}
-              view="sign_in"
-              socialLayout="horizontal"
-              socialButtonSize="xlarge"
-            />
-          </Space>
-        </Card>
+            <div className="mt-3 sm:mt-0 sm:ml-3">
+              <a
+                href="#"
+                className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-green-400 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+              >
+                Live demo
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-    );
-
-  return (
-    <div style={{ maxWidth: '420px', margin: '96px auto' }}>
-      <Card>
-        <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
-        <p>user:</p>
-        <pre>{JSON.stringify(user, null, 2)}</pre>
-        <p>client-side data fetching with RLS</p>
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      </Card>
     </div>
-  );
-};
+  </>
+);
 
-export default LoginPage;
+export default Index;

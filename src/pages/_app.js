@@ -50,6 +50,8 @@ import { SettingsProvider } from 'src/contexts/SettingsContext';
 import { CollapseDrawerProvider } from 'src/contexts/CollapseDrawerContext';
 // theme
 import ThemeProvider from 'src/theme';
+import 'tailwindcss/tailwind.css';
+import '../styles/globals.css';
 // components
 import Settings from 'src/components/settings';
 import { ChartStyle } from 'src/components/chart';
@@ -76,6 +78,7 @@ import { getApolloClient } from 'src/graphql/apollo';
 // ----------------------------------------------------------------------
 import { UserProvider } from '@supabase/supabase-auth-helpers/react';
 import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
+import { UserContextProvider } from '../hooks/authUser';
 
 MyApp.propTypes = {
   Component: PropTypes.func,
@@ -115,34 +118,37 @@ export default function MyApp(props) {
       {/* <AuthProvider> */}
       {/* <Auth.UserContextProvider supabaseClient={supabase}> */}
       <UserProvider supabaseClient={supabaseClient}>
-        <ReduxProvider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <CollapseDrawerProvider>
-                <SettingsProvider defaultSettings={settings}>
-                  <ApolloProvider client={apolloClient}>
-                    <ThemeProvider>
-                      <NotistackProvider>
-                        <MotionLazyContainer>
-                          <ThemeColorPresets>
-                            <ThemeLocalization>
-                              <RtlLayout>
-                                <ChartStyle />
-                                <Settings />
-                                <ProgressBar />
-                                {getLayout(<Component {...pageProps} />)}
-                              </RtlLayout>
-                            </ThemeLocalization>
-                          </ThemeColorPresets>
-                        </MotionLazyContainer>
-                      </NotistackProvider>
-                    </ThemeProvider>
-                  </ApolloProvider>
-                </SettingsProvider>
-              </CollapseDrawerProvider>
-            </LocalizationProvider>
-          </PersistGate>
-        </ReduxProvider>
+        <UserContextProvider>
+          <ReduxProvider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <CollapseDrawerProvider>
+                  <SettingsProvider defaultSettings={settings}>
+                    <ApolloProvider client={apolloClient}>
+                      <ThemeProvider>
+                        <NotistackProvider>
+                          <MotionLazyContainer>
+                            <ThemeColorPresets>
+                              <ThemeLocalization>
+                                <RtlLayout>
+                                  <ChartStyle />
+                                  <Settings />
+                                  <ProgressBar />
+
+                                  {getLayout(<Component {...pageProps} />)}
+                                </RtlLayout>
+                              </ThemeLocalization>
+                            </ThemeColorPresets>
+                          </MotionLazyContainer>
+                        </NotistackProvider>
+                      </ThemeProvider>
+                    </ApolloProvider>
+                  </SettingsProvider>
+                </CollapseDrawerProvider>
+              </LocalizationProvider>
+            </PersistGate>
+          </ReduxProvider>
+        </UserContextProvider>
       </UserProvider>
       {/* </Auth.UserContextProvider> */}
       {/* </AuthProvider> */}
