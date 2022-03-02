@@ -1,20 +1,21 @@
-import React from 'react'
-import { useUser, RequireAuth } from '../hooks/authUser'
+import React from 'react';
+import { Card } from '@mui/material';
+import { Typography, Space } from '@supabase/ui';
+import { useUser, RequireAuth } from '../hooks/authUser';
 
-import { Card, Typography, Space } from '@supabase/ui'
-import Header from '../components/Header'
+import Header from '../components/Header';
 
 export default function Profile() {
-  RequireAuth()
+  RequireAuth();
 
-  const { user } = useUser()
+  const { user } = useUser();
 
   return (
-    <>
+    <div style={{ minHeight: '100vh', background: '#181818' }}>
       <Header />
       {user && (
         <div style={{ maxWidth: '620px', margin: '96px auto' }}>
-          <Card>
+          <Card sx={{ background: '#e9e9e9', p: 4 }}>
             <Space direction="vertical" size={6}>
               <Typography.Text>you're signed in</Typography.Text>
               <Typography.Text strong>Email: {user.email}</Typography.Text>
@@ -27,6 +28,6 @@ export default function Profile() {
           </Card>
         </div>
       )}
-    </>
-  )
+    </div>
+  );
 }
