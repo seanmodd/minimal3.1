@@ -5,7 +5,7 @@ import AuthUser from '../../hooks/authUser';
 import MenuLogado from './menuLogado';
 import MenuNotLogado from './menuNotLogado';
 import Navigation from './navigation';
-import classNames from '../../utils/classsesNames';
+import classNames from '../../../utils/classsesNames';
 
 export default function Header() {
   return (

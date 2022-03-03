@@ -78,7 +78,7 @@ import { getApolloClient } from 'src/graphql/apollo';
 // ----------------------------------------------------------------------
 import { UserProvider } from '@supabase/supabase-auth-helpers/react';
 import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
-import { UserContextProvider } from '../hooks/authUser';
+import { UserContextProvider } from '../supabase/hooks/authUser';
 
 MyApp.propTypes = {
   Component: PropTypes.func,

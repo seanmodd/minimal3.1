@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext, useContext } from 'react'
-import { supabase } from '../utils/initSupabase'
+import { supabase } from '../initSupabase'
 import { useRouter } from 'next/router'
 
 export const SignOut = async () => {

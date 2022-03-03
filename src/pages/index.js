@@ -1,5 +1,5 @@
-import Header from '../components/Header';
-import Head from '../components/Head';
+import Header from '../supabase/components/Header';
+import Head from '../supabase/components/Head';
 
 const Index = () => (
   <>

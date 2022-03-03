@@ -1,5 +1,5 @@
 import { Auth } from '@supabase/ui';
-import { supabase } from 'src/initSupabase';
+import { supabase } from 'src/supabase/initSupabase';
 
 // ----------------------------------------------------------------------
 
