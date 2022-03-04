@@ -31,7 +31,7 @@ function SignIn() {
   const handleSignOut = async (e) => {
     e.preventDefault();
 
-    const signOut = await auth.logout();
+    await auth.logout();
 
     setMessage('Thank you for successfully signing out!');
 
