@@ -15,7 +15,7 @@ function MyProtectedRoute({ children }) {
     </div>
   );
 
-  return auth.user ? protectedRoute : <div>You are not signed in</div>;
+  return auth.user ? protectedRoute : {router.push('/sign-in')};
 }
 
 export default MyProtectedRoute;

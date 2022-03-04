@@ -78,8 +78,7 @@ import { getApolloClient } from 'src/graphql/apollo';
 // ----------------------------------------------------------------------
 import { UserProvider } from '@supabase/supabase-auth-helpers/react';
 import { supabaseClient } from '@supabase/supabase-auth-helpers/nextjs';
-import { AuthProvider } from 'src/supabase/hooks/useAuth';
-import { UserContextProvider } from 'src/supabase/hooks/useAuth';
+import { AuthProvider, UserContextProvider } from 'src/supabase/hooks/useAuth';
 
 MyApp.propTypes = {
   Component: PropTypes.func,
@@ -116,11 +115,11 @@ export default function MyApp(props) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      {/* <AuthProvider> */}
-      {/* <Auth.UserContextProvider supabaseClient={supabase}> */}
-      {/* <UserProvider supabaseClient={supabaseClient}> */}
+      <AuthProvider>
+        {/* <Auth.UserContextProvider supabaseClient={supabase}> */}
+        {/* <UserProvider supabaseClient={supabaseClient}> */}
 
-      <UserContextProvider>
+        {/* <UserContextProvider> */}
         <ReduxProvider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -150,10 +149,10 @@ export default function MyApp(props) {
             </LocalizationProvider>
           </PersistGate>
         </ReduxProvider>
-      </UserContextProvider>
-      {/* </UserProvider> */}
-      {/* </Auth.UserContextProvider> */}
-      {/* </AuthProvider> */}
+        {/* </UserContextProvider> */}
+        {/* </UserProvider> */}
+        {/* </Auth.UserContextProvider> */}
+      </AuthProvider>
     </>
   );
 }

@@ -2,12 +2,12 @@ import { useEffect, useState, createContext, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { supabase } from '../initSupabase';
 
-export const SignOut = async () => {
-  await supabase.auth.signOut();
-};
+// export const SignOut = async () => {
+//   await supabase.auth.signOut();
+// };
 
 export const RequireAuth = () => {
-  const { user } = useUser();
+  const { user } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -17,48 +17,48 @@ export const RequireAuth = () => {
   }, [user, router]);
 };
 
-export const AuthRedirect = () => {
-  const { user } = useUser();
-  const router = useRouter();
+// export const AuthRedirect = () => {
+//   const { user } = useUser();
+//   const router = useRouter();
 
-  useEffect(() => {
-    if (user) {
-      router.push('/profile');
-    }
-  }, [user, router]);
-};
+//   useEffect(() => {
+//     if (user) {
+//       router.push('/profile');
+//     }
+//   }, [user, router]);
+// };
 
-export const UserContext = createContext();
+// export const UserContext = createContext();
 
-export const UserContextProvider = (props) => {
-  const [session, setSession] = useState(false);
-  const [user, setUser] = useState(false);
+// export const UserContextProvider = (props) => {
+//   const [session, setSession] = useState(false);
+//   const [user, setUser] = useState(false);
 
-  useEffect(() => {
-    const session = supabase.auth.session();
-    setSession(session);
-    setUser(session?.user ?? false);
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? false);
-      }
-    );
+//   useEffect(() => {
+//     const session = supabase.auth.session();
+//     setSession(session);
+//     setUser(session?.user ?? false);
+//     const { data: authListener } = supabase.auth.onAuthStateChange(
+//       async (event, session) => {
+//         setSession(session);
+//         setUser(session?.user ?? false);
+//       }
+//     );
 
-    return () => {
-      authListener.unsubscribe();
-    };
-  }, []);
+//     return () => {
+//       authListener.unsubscribe();
+//     };
+//   }, []);
 
-  const value = {
-    session,
-    user,
-  };
-  return <UserContext.Provider value={value} {...props} />;
-};
+//   const value = {
+//     session,
+//     user,
+//   };
+//   return <UserContext.Provider value={value} {...props} />;
+// };
 
 export const useUser = () => {
-  const context = useContext(UserContext);
+  const context = useContext(authContext);
   if (context === undefined) {
     throw new Error(`useUser must be used within a UserContextProvider.`);
   }
@@ -66,7 +66,7 @@ export const useUser = () => {
 };
 
 const AuthUser = () => {
-  const { user } = useUser();
+  const { user } = useAuth();
   return user;
 };
 
@@ -81,6 +81,7 @@ export const AuthProvider = ({ children }) => {
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 };
 
+// export const useAuth = () => useContext(authContext);
 export const useAuth = () => useContext(authContext);
 
 function useProvideAuth() {

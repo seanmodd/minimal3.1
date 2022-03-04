@@ -2,21 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Card, Button, Box } from '@mui/material';
 import { Space } from '@supabase/ui';
 import MyLayout from 'src/supabase/components/MyLayout';
-import { useUser } from 'src/supabase/hooks/useAuth';
+import {
+  // useUser,
+  // useMyAuth,
+  // UserContext,
+  useAuth,
+} from 'src/supabase/hooks/useAuth';
 import Header from '../supabase/components/Header';
 
 function SignIn() {
-  // const auth = useAuth();
+  const auth = useAuth();
 
   const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  // console.log('This is the user: ', user);
-  console.log('This is the useUser default export: ', useUser());
   const handleSignIn = async (e) => {
     e.preventDefault();
 
-    const signIn = await user.login(email);
+    const signIn = await auth.login(email);
 
     if (signIn.error) {
       setMessage(signIn.error.message);
@@ -26,7 +28,31 @@ function SignIn() {
 
     setEmail('');
   };
-  return (
+  const handleSignOut = async (e) => {
+    e.preventDefault();
+
+    const signOut = await auth.logout();
+
+    setMessage('Thank you for successfully signing out!');
+
+    setEmail('');
+  };
+  const LoggedIn = (
+    <MyLayout>
+      <Card sx={{ background: '#e9e9e9', p: 4 }}>
+        <Box sx={boxStyle} direction="vertical" size={6}>
+          <b>{message && message}</b>
+        </Box>
+        <Box sx={boxStyle} direction="vertical" size={6}>
+          <Typography variant="title">You're already logged in!</Typography>
+          <form style={formStyle}>
+            <Button onClick={handleSignOut}>Log out</Button>
+          </form>
+        </Box>
+      </Card>
+    </MyLayout>
+  );
+  const NotLoggedIn = (
     <MyLayout>
       <Card sx={{ background: '#e9e9e9', p: 4 }}>
         <Box sx={boxStyle} direction="vertical" size={6}>
@@ -42,18 +68,20 @@ function SignIn() {
               onChange={(e) => setEmail(e.target.value)}
             />
             {/* <input
-              style={inputStyle}
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            /> */}
+        style={inputStyle}
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      /> */}
 
-            <Button>Sign In</Button>
+            <Button>Log in</Button>
           </form>
         </Box>
       </Card>
     </MyLayout>
   );
+
+  return auth.user ? LoggedIn : NotLoggedIn;
 }
 
 export default SignIn;

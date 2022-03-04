@@ -20,7 +20,7 @@ export default function Profile() {
               <Typography.Text>you're signed in</Typography.Text>
               <Typography.Text strong>Email: {user.email}</Typography.Text>
               <Typography.Text type="success">User data:</Typography.Text>
-
+              <h1>This is my profile!</h1>
               <Typography.Text>
                 <pre>{JSON.stringify(user, null, 2)}</pre>
               </Typography.Text>
