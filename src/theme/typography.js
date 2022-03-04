@@ -2,8 +2,16 @@ import { pxToRem, responsiveFontSizes } from '../utils/getFontValue';
 
 // ----------------------------------------------------------------------
 
-const FONT_PRIMARY = 'Public Sans, sans-serif'; // Google Font
-// const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
+const FONT_PRIMARY = 'franklin-gothic-urw, Public Sans, sans-serif'; // Google Font
+// const FONT_PRIMARY = 'franklin-gothic-urw-cond, Public Sans, sans-serif'; // Google Font
+const FONT_SECONDARY = 'mono45-headline'; // Adobe
+const FONT_THIRD = 'neue-haas-grotesk-display'; // Adobe
+const FONT_FOURTH = 'neue-haas-grotesk-text'; // Adobe
+const FONT_FIFTH = 'forma-djr-text'; // Adobe
+const FONT_SIXTH = 'franklin-gothic-urw-cond'; // Adobe
+const FONT_SEVENTH = 'franklin-gothic-urw'; // Adobe
+const FONT_EIGHTH = 'aktiv-grotesk'; // Adobe
+const FONT_NINTH = 'aktiv-grotesk-thin'; // Adobe
 
 const typography = {
   fontFamily: FONT_PRIMARY,
@@ -54,8 +62,9 @@ const typography = {
   },
   subtitle2: {
     fontWeight: 600,
+    fontFamily: FONT_SIXTH,
     lineHeight: 22 / 14,
-    fontSize: pxToRem(14),
+    fontSize: pxToRem(18),
   },
   body1: {
     lineHeight: 1.5,
@@ -75,11 +84,48 @@ const typography = {
     fontSize: pxToRem(12),
     textTransform: 'uppercase',
   },
+  title: {
+    fontWeight: 500,
+    lineHeight: 22 / 14,
+    fontFamily: FONT_SIXTH,
+    transition: 'all 0.2s ease-in-out',
+    fontSize: pxToRem(20),
+    // grow on hover:
+    '&:hover': {
+      // fontSize: pxToRem(18),
+      transition: 'all 0.2s ease-in-out',
+      fontSize: pxToRem(22),
+      curosor: 'pointer',
+    },
+    // grow on hover out:
+    '&:hover:after': {
+      // content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      curosor: 'pointer',
+      transition: 'all 0.2s ease-in-out',
+    },
+  },
+  details: {
+    fontWeight: 600,
+    lineHeight: 22 / 14,
+    fontFamily: FONT_SIXTH,
+    fontSize: pxToRem(16),
+  },
   button: {
     fontWeight: 700,
+    fontFamily: FONT_SEVENTH,
     lineHeight: 24 / 14,
+    textTransform: 'uppercase',
     fontSize: pxToRem(14),
-    textTransform: 'capitalize',
+    transition: 'all 0.2s ease-in-out',
+    fontSize: pxToRem(20),
+    background: '#8b5cf6',
+    color: '#fff',
+    // grow on hover:
   },
 };
 

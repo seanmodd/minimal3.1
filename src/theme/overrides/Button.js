@@ -5,8 +5,11 @@ export default function Button(theme) {
     MuiButton: {
       styleOverrides: {
         root: {
+          color: '#fff',
           '&:hover': {
-            boxShadow: 'none',
+            color: '#8c46b9',
+            backgroundColor: '#fff',
+            boxShadow: '0px 0px 0px 2px #8c46b9',
           },
         },
         sizeLarge: {

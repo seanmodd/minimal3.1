@@ -3,7 +3,7 @@ import { Menu, Transition } from '@headlessui/react';
 import { UserCircleIcon } from '@heroicons/react/outline';
 import classNames from '../../../utils/classsesNames';
 
-import { SignOut } from '../../hooks/authUser';
+import { SignOut } from '../../hooks/useAuth';
 
 const MenuLogado = () => (
   <Menu as="div" className="relative ml-3">

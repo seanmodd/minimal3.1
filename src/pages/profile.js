@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '@mui/material';
 import { Typography, Space } from '@supabase/ui';
-import { useUser, RequireAuth } from '../supabase/hooks/authUser';
+import { useUser, RequireAuth } from '../supabase/hooks/useAuth';
 
 import Header from '../supabase/components/Header';
 

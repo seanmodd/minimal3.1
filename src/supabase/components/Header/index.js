@@ -1,7 +1,7 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import AuthUser from '../../hooks/authUser';
+import AuthUser from '../../hooks/useAuth';
 import MenuLogado from './menuLogado';
 import MenuNotLogado from './menuNotLogado';
 import Navigation from './navigation';

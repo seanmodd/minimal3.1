@@ -1,7 +1,7 @@
 import React from 'react';
 import { Auth, Typography, Space } from '@supabase/ui';
 import { Card } from '@mui/material';
-import { AuthRedirect } from '../supabase/hooks/authUser';
+import { AuthRedirect } from '../supabase/hooks/useAuth';
 import { supabase } from '../supabase/initSupabase';
 
 import Head from '../supabase/components/Head';
