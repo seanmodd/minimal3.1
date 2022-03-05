@@ -1,3 +1,11 @@
+
+   
+:root {
+  --brand-color: #DA1F50;
+  --dark-color: #171435;
+  --mid-color: #8F8AC0;
+  --light-color: #FFFFFF;
+}
 body {
   background: #181818;
 }
@@ -35,4 +43,76 @@ body {
 .authcontainer .sbui-typography-text-danger {
   top: 3px !important;
   position: absolute !important;
+}
+
+
+   
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+}
+
+.header ul li {
+  padding: 5px;
+}
+
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.movie-wrapper {
+  position: relative;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movie {
+  width: 300px;
+  border-radius: 25px;
+  background-color: var(--brand-color);
+}
+
+.movie.swipe {
+  position: absolute;
+  border-radius: 25px;
+}
+
+.grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.moviecard {
+  background-color: red;
+  background-color: "red";
+  background-color: var(--brand-color);
+}
+
+
+.button {
+  background-color: var(--brand-color);
+  color: var(--light-color);
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  margin-top: 15px;
+  border-radius: 3px;
+  width: 100%;
+  cursor: pointer;
 }
