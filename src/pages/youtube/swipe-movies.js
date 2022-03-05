@@ -3,12 +3,13 @@ import axios from 'axios';
 import TinderCard from 'react-tinder-card';
 import MovieCard from 'src/supabase/components/MovieCard';
 import { supabase } from 'src/supabase/initSupabase';
-import { useAuth } from 'src/supabase/hooks/useAuth';
+import { useAuth, useUser, RequireAuth } from 'src/supabase/hooks/useAuth';
 import MyLayout from 'src/supabase/components/MyLayout';
 import { Card, Button, Stack } from '@mui/material';
 import { useRouter } from 'next/router';
 
 const Home = () => {
+  RequireAuth();
   const router = useRouter();
   const auth = useAuth();
   const [movies, setMovies] = useState([]);

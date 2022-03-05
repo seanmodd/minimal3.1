@@ -22,12 +22,10 @@ export const useUser = () => {
   return context;
 };
 
-const AuthUser = () => {
+export const AuthUser = () => {
   const { user } = useAuth();
   return user;
 };
-
-export default AuthUser;
 
 //* below is from youtube tutorial: https://github.com/dom-the-dev/movie-tinder-YouTube/blob/bucket-storage/src/auth.js
 

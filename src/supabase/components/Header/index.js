@@ -1,13 +1,23 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import AuthUser from '../../hooks/useAuth';
+import { AuthUser } from 'src/supabase/hooks/useAuth';
 import MenuLogado from './menuLogado';
 import MenuNotLogado from './menuNotLogado';
-import Navigation from './navigation';
+
 import classNames from '../../../utils/classsesNames';
 
+const Navigation = [
+  { name: 'Home', href: '/', current: true },
+  { name: 'Login', href: '/sign-in', current: false },
+  { name: 'Profile', href: '/profile', current: false },
+  { name: 'Account', href: '/youtube', current: false },
+  { name: 'Swipe Movies', href: '/youtube/swipe-movies', current: false },
+  { name: 'Movie Watchlist', href: '/youtube/watchlist', current: false },
+];
 export default function Header() {
+  console.log('This is AuthUser()', AuthUser());
+
   return (
     <Disclosure
       as="nav"
@@ -39,6 +49,7 @@ export default function Header() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
+                    IDK
                     {Navigation.map((item) => (
                       <a
                         key={item.name}
@@ -60,13 +71,14 @@ export default function Header() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/** notifications */}
 
-                {AuthUser() ? <MenuLogado /> : <MenuNotLogado />}
+                {AuthUser() == null ? <MenuNotLogado /> : <MenuLogado />}
               </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
+              IDK
               {Navigation.map((item) => (
                 <a
                   key={item.name}

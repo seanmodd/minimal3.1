@@ -1,7 +1,30 @@
+import EmailIcon from '@mui/icons-material/Email';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import DirectionsIcon from '@mui/icons-material/Directions';
+import {
+  IconButton,
+  InputAdornment,
+  TextField,
+  Typography,
+  Input,
+  Card,
+  Button,
+  Box,
+} from '@mui/material';
+import greenApple from '@iconify/icons-noto/green-apple';
+import { Icon, InlineIcon } from '@iconify/react';
 import React, { useState, useEffect } from 'react';
-import { Typography, Card, Button, Box } from '@mui/material';
-import { Space } from '@supabase/ui';
+import {
+  Space,
+  Card as SupabaseCard,
+  Typography as SupabaseTypography,
+} from '@supabase/ui';
 import MyLayout from 'src/supabase/components/MyLayout';
+
 import {
   // useUser,
   // useMyAuth,
@@ -15,6 +38,7 @@ function SignIn() {
 
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
   const handleSignIn = async (e) => {
     e.preventDefault();
 
@@ -61,23 +85,70 @@ function SignIn() {
         <Box sx={boxStyle} direction="vertical" size={6}>
           <Typography variant="title">Login Form</Typography>
           <form style={formStyle} onSubmit={handleSignIn}>
-            <input
+            <Input
               style={inputStyle}
+              icon={<Icon icon={greenApple} />}
               type="text"
               value={email}
+              label="With Input"
               onChange={(e) => setEmail(e.target.value)}
             />
+
             {/* <input
         style={inputStyle}
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       /> */}
-
             <Button>Log in</Button>
           </form>
         </Box>
       </Card>
+      <div className="authcontainer">
+        {/* <Card> */}
+        <div className="authbox">
+          <Space className="authlogin" direction="vertical" size={8}>
+            {/* <Space direction="vertical" size={8}> */}
+            <div className="authlogin">
+              <SupabaseTypography.Title className="header" level={3}>
+                <div
+                  style={{
+                    color: '#fff',
+                  }}
+                  className="authlogin"
+                >
+                  Welcome
+                </div>
+              </SupabaseTypography.Title>
+              Enter email
+              <Paper
+                component="form"
+                onSubmit={handleSignIn}
+                sx={{
+                  p: '2px 4px',
+                  height: '30px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  background: '#e8f0fe',
+                  borderRadius: '5px',
+                  // width: 400,
+                }}
+              >
+                <IconButton sx={{ p: '10px' }} aria-label="menu">
+                  <EmailIcon />
+                </IconButton>
+                <InputBase
+                  sx={{ ml: 1, flex: 1 }}
+                  placeholder=""
+                  inputProps={{ 'aria-label': 'search google maps' }}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Paper>
+            </div>
+            <Button type="submit">Log in</Button>
+          </Space>
+        </div>
+      </div>
     </MyLayout>
   );
 
@@ -100,7 +171,11 @@ const inputStyle = {
   width: '100%',
   maxWidth: '200px',
   margin: '5px auto',
-  padding: '5px',
+  background: '#e8f0fe',
+  fontSize: '1.0rem',
+  color: '#8b5cf6',
+  padding: '5px 5px 5px 10px',
+  height: '30px',
   border: '1px solid #ccc',
   borderRadius: '5px',
 };

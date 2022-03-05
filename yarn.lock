@@ -983,6 +983,13 @@
   dependencies:
     "@iconify/types" "^1.0.12"
 
+"@iconify/icons-noto@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@iconify/icons-noto/-/icons-noto-1.2.2.tgz#49864e9ce2fab84fa4468ba82115dce70a7309f5"
+  integrity sha512-8wT0hhzj3ZNSMU0Pc8LIxalqzmoM9WOYd1hI/M8NExTwvt1UjhSxO9P2bLVdGYrUgtWlJGuT/7r+yLq1SZ2ZOQ==
+  dependencies:
+    "@iconify/types" "^1.0.12"
+
 "@iconify/icons-simple-icons@^1.2.3":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@iconify/icons-simple-icons/-/icons-simple-icons-1.2.3.tgz#cad679654018aa5f9dd1abbc13235a2acfdede12"
@@ -1342,6 +1349,13 @@
     clsx "^1.1.1"
     prop-types "^15.7.2"
     react-is "^17.0.2"
+
+"@mui/icons-material@^5.4.4":
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.4.4.tgz#0dc7b4e68cbbdfc675f09f0763be1100aad910af"
+  integrity sha512-7zoRpjO8vsd+bPvXq6rtXu0V8Saj70X09dtTQogZmxQKabrYW3g7+Yym7SCRA7IYVF3ysz2AvdQrGD1P/sGepg==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
 
 "@mui/lab@^5.0.0-alpha.70":
   version "5.0.0-alpha.71"

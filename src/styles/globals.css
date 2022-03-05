@@ -23,6 +23,14 @@ body {
   background: #181818;
   color: #fff;
 }
+.authbox {
+  border-radius: 5px;
+  background: #181818;
+  color: #fff;
+  padding: 20px;
+  border-color: #181818;
+  box-shadow: 0 0 10px rgba(104, 104, 104, 0.6);
+} 
 .authbackground {
   background: #181818;
   min-height: 100vh;
@@ -31,7 +39,23 @@ body {
 .authcontainer a {
   color: #8b5cf6 !important;
 }
+.authform {
+  color: #fff;
+  background: #181818;
+  padding: 20px;
 
+}
+.authbutton {
+background: #8b5cf6 !important;
+  color: var(--light-color);
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  margin-top: 15px;
+  border-radius: 3px;
+  width: 100%;
+  cursor: pointer;
+}
 .authcontainer button[type='submit'] {
   background: #8b5cf6 !important;
 }

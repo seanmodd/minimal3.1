@@ -3,7 +3,7 @@ import { Typography, Card, Button, Stack } from '@mui/material';
 import MyProtectedRoute from 'src/supabase/components/MyProtectedRoute';
 import MyLayout from 'src/supabase/components/MyLayout';
 import { useRouter } from 'next/router';
-import { useUser, RequireAuth } from '../../supabase/hooks/useAuth';
+import { useUser, RequireAuth } from 'src/supabase/hooks/useAuth';
 import Header from '../../supabase/components/Header';
 
 export default function Profile() {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from 'src/supabase/hooks/useAuth';
+import { useAuth, useUser, RequireAuth } from 'src/supabase/hooks/useAuth';
 import { Stack, Typography, Card, Button } from '@mui/material';
 import { supabase } from 'src/supabase/initSupabase';
 import axios from 'axios';
@@ -8,6 +8,7 @@ import MovieCard from 'src/supabase/components/MovieCard';
 import Layout from 'src/supabase/components/MyLayout';
 
 const Watchlist = () => {
+  RequireAuth();
   const router = useRouter();
   const auth = useAuth();
   const [movies, setMovies] = useState([]);
