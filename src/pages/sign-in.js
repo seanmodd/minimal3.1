@@ -1,7 +1,13 @@
 import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { useSpring, animated } from 'react-spring';
 import Divider from '@mui/material/Divider';
+import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
@@ -11,6 +17,9 @@ import {
   TextField,
   Typography,
   Input,
+  Stack,
+  Modal,
+  Backdrop,
   Card,
   Button,
   Box,
@@ -34,8 +43,11 @@ import {
 import Header from '../supabase/components/Header';
 
 function SignIn() {
+  const router = useRouter();
   const auth = useAuth();
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -48,6 +60,7 @@ function SignIn() {
       setMessage(signIn.error.message);
     } else {
       setMessage('Login link has beent sent.');
+      router.push('/youtube');
     }
 
     setEmail('');
@@ -56,103 +69,233 @@ function SignIn() {
     e.preventDefault();
 
     const signOut = await auth.logout();
-
+    router.push('/');
     setMessage('Thank you for successfully signing out!');
 
     setEmail('');
   };
-  const LoggedIn = (
-    <MyLayout>
-      <Card sx={{ background: '#e9e9e9', p: 4 }}>
-        <Box sx={boxStyle} direction="vertical" size={6}>
-          <b>{message && message}</b>
-        </Box>
-        <Box sx={boxStyle} direction="vertical" size={6}>
-          <Typography variant="title">You're already logged in!</Typography>
-          <form style={formStyle}>
-            <Button onClick={handleSignOut}>Log out</Button>
-          </form>
-        </Box>
-      </Card>
-    </MyLayout>
-  );
-  const NotLoggedIn = (
-    <MyLayout>
-      <Card sx={{ background: '#e9e9e9', p: 4 }}>
-        <Box sx={boxStyle} direction="vertical" size={6}>
-          <b>{message && message}</b>
-        </Box>
-        <Box sx={boxStyle} direction="vertical" size={6}>
-          <Typography variant="title">Login Form</Typography>
-          <form style={formStyle} onSubmit={handleSignIn}>
-            <Input
-              style={inputStyle}
-              icon={<Icon icon={greenApple} />}
-              type="text"
-              value={email}
-              label="With Input"
-              onChange={(e) => setEmail(e.target.value)}
-            />
 
-            {/* <input
-        style={inputStyle}
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      /> */}
-            <Button>Log in</Button>
-          </form>
-        </Box>
-      </Card>
-      <div className="authcontainer">
-        {/* <Card> */}
-        <div className="authbox">
-          <Space className="authlogin" direction="vertical" size={8}>
-            {/* <Space direction="vertical" size={8}> */}
-            <div className="authlogin">
-              <SupabaseTypography.Title className="header" level={3}>
-                <div
-                  style={{
-                    color: '#fff',
-                  }}
-                  className="authlogin"
-                >
-                  Welcome
+  const MyModalToLogIn = (
+    <>
+      <button
+        style={{
+          width: '100%',
+          maxWidth: '150px',
+          margin: '5px auto',
+          padding: '5px',
+          border: '1px solid #ccc',
+          borderRadius: '5px',
+          backgroundColor: '#e8f0fe',
+          color: '#8c46b9',
+          transition: 'all 0.5s ease-in-out',
+        }}
+        onClick={handleOpen}
+      >
+        Login
+      </button>
+      <Modal
+        aria-labelledby="spring-modal-title"
+        aria-describedby="spring-modal-description"
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <Box sx={style}>
+            {/* <Card> */}
+            <div className="authbox">
+              <Space className="authlogin" direction="vertical" size={8}>
+                {/* <Space direction="vertical" size={8}> */}
+                <div className="authlogin">
+                  <SupabaseTypography.Title className="header" level={3}>
+                    <div
+                      style={{
+                        color: '#fff',
+                      }}
+                      className="authlogin"
+                    >
+                      Log Into Your CarX Account
+                    </div>
+                  </SupabaseTypography.Title>
+                  <Stack sx={{ pt: 5, pb: 2 }}>
+                    <Typography variant="subtitle3">Email address</Typography>
+                    <Typography variant="subtitle4">
+                      {message && message}
+                    </Typography>
+                  </Stack>
+                  <Paper
+                    component="form"
+                    onSubmit={handleSignIn}
+                    sx={{
+                      p: '2px 4px',
+                      height: '30px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      background: '#e8f0fe',
+                      borderRadius: '5px',
+                      // width: 400,
+                    }}
+                  >
+                    <IconButton sx={{ p: '10px' }} aria-label="menu">
+                      <EmailIcon />
+                    </IconButton>
+                    <InputBase
+                      sx={{ ml: 1, flex: 1 }}
+                      placeholder=""
+                      inputProps={{ 'aria-label': 'search google maps' }}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </Paper>
                 </div>
-              </SupabaseTypography.Title>
-              Enter email
-              <Paper
-                component="form"
-                onSubmit={handleSignIn}
-                sx={{
-                  p: '2px 4px',
-                  height: '30px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  background: '#e8f0fe',
-                  borderRadius: '5px',
-                  // width: 400,
-                }}
-              >
-                <IconButton sx={{ p: '10px' }} aria-label="menu">
-                  <EmailIcon />
-                </IconButton>
-                <InputBase
-                  sx={{ ml: 1, flex: 1 }}
-                  placeholder=""
-                  inputProps={{ 'aria-label': 'search google maps' }}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Paper>
+                <Stack
+                  direction="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  spacing={2}
+                >
+                  <Button
+                    sx={{
+                      width: '100%',
+                      borderRadius: '4px',
+                      height: '40px',
+                    }}
+                    type="submit"
+                  >
+                    {' '}
+                    <IconButton
+                      sx={{ px: '9px', color: 'white' }}
+                      aria-label="login"
+                    >
+                      <LockOpenIcon sx={{ width: '20px' }} />
+                    </IconButton>{' '}
+                    <Typography
+                      sx={{
+                        color: 'white',
+                        fontWeight: '500',
+                        fontSize: '16px',
+                      }}
+                      variant="subtitle3"
+                    >
+                      Sign in
+                    </Typography>
+                  </Button>
+                  <Stack
+                    direction="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    spacing={0}
+                  >
+                    <Typography sx={{ color: '#8b5cf6' }} variant="subtitle3">
+                      Don't have an account?
+                    </Typography>
+                    <Typography sx={{ color: '#8b5cf6' }} variant="subtitle3">
+                      Just enter your email, no password needed!
+                    </Typography>
+                  </Stack>
+                </Stack>
+              </Space>
             </div>
-            <Button type="submit">Log in</Button>
-          </Space>
-        </div>
-      </div>
-    </MyLayout>
+          </Box>
+        </Fade>
+      </Modal>
+    </>
+  );
+  const MyModalToLogOut = (
+    <>
+      <button
+        style={{
+          width: '100%',
+          maxWidth: '150px',
+          margin: '5px auto',
+          padding: '5px',
+          border: '1px solid #ccc',
+          borderRadius: '5px',
+          backgroundColor: '#e8f0fe',
+          color: '#8c46b9',
+          transition: 'all 0.5s ease-in-out',
+        }}
+        onClick={handleOpen}
+      >
+        Login
+      </button>
+      <Modal
+        aria-labelledby="spring-modal-title"
+        aria-describedby="spring-modal-description"
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <Box sx={style}>
+            {/* <Card> */}
+            <div className="authbox">
+              <Space className="authlogin" direction="vertical" size={8}>
+                {/* <Space direction="vertical" size={8}> */}
+                <div className="authlogin">
+                  <SupabaseTypography.Title className="header" level={3}>
+                    <div
+                      style={{
+                        color: '#fff',
+                      }}
+                      className="authlogin"
+                    >
+                      Sure you want to log out?
+                    </div>
+                  </SupabaseTypography.Title>
+                  <Stack sx={{ pt: 5, pb: 2 }}>
+                    <Stack
+                      direction="column"
+                      justifyContent="center"
+                      alignItems="center"
+                      spacing={2}
+                    >
+                      <Button
+                        sx={{
+                          width: '100%',
+                          borderRadius: '4px',
+                          height: '40px',
+                        }}
+                        type="submit"
+                        onClick={handleSignOut}
+                      >
+                        {' '}
+                        <IconButton
+                          sx={{ px: '9px', color: 'white' }}
+                          aria-label="login"
+                        >
+                          <ExitToAppIcon sx={{ width: '20px' }} />
+                        </IconButton>{' '}
+                        <Typography
+                          sx={{
+                            color: 'white',
+                            fontWeight: '500',
+                            fontSize: '16px',
+                          }}
+                          variant="subtitle3"
+                        >
+                          Log out
+                        </Typography>
+                      </Button>
+                    </Stack>
+                  </Stack>
+                </div>
+              </Space>
+            </div>
+          </Box>
+        </Fade>
+      </Modal>
+    </>
   );
 
-  return auth.user ? LoggedIn : NotLoggedIn;
+  return auth.user ? MyModalToLogOut : MyModalToLogIn;
 }
 
 export default SignIn;
@@ -180,22 +323,65 @@ const inputStyle = {
   borderRadius: '5px',
 };
 const buttonStyle = {
-  // width: '100%',
-  // maxWidth: '150px',
-  // margin: '5px auto',
-  // padding: '5px',
-  // border: '1px solid #ccc',
-  // borderRadius: '5px',
-  // color: '#8c46b9',
-  // '&:hover': {
-  //   transition: 'all 0.5s ease-in-out',
-  //   background: '#fff',
-  //   color: '#000',
-  // },
+  width: '100%',
+  maxWidth: '150px',
+  margin: '5px auto',
+  padding: '5px',
+  border: '1px solid #ccc',
+  borderRadius: '5px',
+  color: '#8c46b9',
+  '&:hover': {
+    transition: 'all 0.5s ease-in-out',
+    background: '#fff',
+    color: '#000',
+  },
 };
 const boxStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   textAlign: 'center',
+};
+// styling for fade:
+const Fade = React.forwardRef((props, ref) => {
+  const { in: open, children, onEnter, onExited, ...other } = props;
+  const style = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: open ? 1 : 0 },
+    onStart: () => {
+      if (open && onEnter) {
+        onEnter();
+      }
+    },
+    onRest: () => {
+      if (!open && onExited) {
+        onExited();
+      }
+    },
+  });
+
+  return (
+    <animated.div ref={ref} style={style} {...other}>
+      {children}
+    </animated.div>
+  );
+});
+
+Fade.propTypes = {
+  children: PropTypes.element,
+  in: PropTypes.bool.isRequired,
+  onEnter: PropTypes.func,
+  onExited: PropTypes.func,
+};
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  // bgcolor: '#181818',
+  // border: '2px solid #000',
+  // boxShadow: '0 0 10px rgba(104, 104, 104, 0.6)',
+  p: 4,
 };

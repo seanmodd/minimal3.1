@@ -66,6 +66,20 @@ const typography = {
     lineHeight: 22 / 14,
     fontSize: pxToRem(18),
   },
+  subtitle3: {
+    fontWeight: 400,
+    fontFamily: FONT_SEVENTH,
+    color: '#48525f',
+    lineHeight: 22 / 14,
+    fontSize: pxToRem(14),
+  },
+  subtitle4: {
+    fontWeight: 600,
+    fontFamily: FONT_SEVENTH,
+    color: '#8b5cf6',
+    lineHeight: 22 / 14,
+    fontSize: pxToRem(18),
+  },
   body1: {
     lineHeight: 1.5,
     fontSize: pxToRem(16),
@@ -116,10 +130,10 @@ const typography = {
     fontSize: pxToRem(16),
   },
   button: {
-    fontWeight: 700,
+    fontWeight: 500,
     fontFamily: FONT_SEVENTH,
     lineHeight: 24 / 14,
-    textTransform: 'uppercase',
+    textTransform: '',
     fontSize: pxToRem(14),
     transition: 'all 0.2s ease-in-out',
     fontSize: pxToRem(20),

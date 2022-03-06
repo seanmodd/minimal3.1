@@ -24,8 +24,8 @@ import {
   ShopProductList,
   ShopFilterSidebar,
   ShopProductSearch,
-} from 'src/sections/@dashboard/e-commerce/shop';
-import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
+} from 'src/supabase/components/sections/@dashboard/e-commerce/shop';
+import CartWidget from 'src/supabase/components/sections/@dashboard/e-commerce/CartWidget';
 
 // ----------------------------------------------------------------------
 

@@ -11,7 +11,7 @@ import Layout from '../../layouts';
 // components
 import Page from '../../components/Page';
 // sections
-import { ResetPasswordForm } from '../../sections/auth/reset-password';
+import { ResetPasswordForm } from '../../supabase/components/sections/auth/reset-password';
 // assets
 import { SentIcon } from '../../assets';
 

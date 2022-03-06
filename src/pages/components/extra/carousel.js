@@ -18,7 +18,7 @@ import {
   CarouselAnimation,
   CarouselThumbnail,
   CarouselCenterMode,
-} from '../../../sections/overview/extra/carousel';
+} from '../../../supabase/components/sections/overview/extra/carousel';
 
 // ----------------------------------------------------------------------
 

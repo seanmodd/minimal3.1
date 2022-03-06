@@ -25,8 +25,8 @@ import {
   ShopProductList,
   ShopFilterSidebar,
   ShopProductSearch,
-} from 'src/sections/@dashboard/e-commerce/vehicles';
-import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
+} from 'src/supabase/components/sections/@dashboard/e-commerce/vehicles';
+import CartWidget from 'src/supabase/components/sections/@dashboard/e-commerce/CartWidget';
 import useAuth from 'src/hooks/useAuth';
 import { useRouter } from 'next/router';
 import { getFavoriteList } from 'src/utils/localstorage';

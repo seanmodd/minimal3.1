@@ -34,7 +34,7 @@ import Scrollbar from '../../../components/Scrollbar';
 import SearchNotFound from '../../../components/SearchNotFound';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { UserListHead, UserListToolbar, UserMoreMenu } from '../../../sections/@dashboard/user/list';
+import { UserListHead, UserListToolbar, UserMoreMenu } from '../../../supabase/components/sections/@dashboard/user/list';
 
 // ----------------------------------------------------------------------
 

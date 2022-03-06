@@ -43,7 +43,7 @@ import {
   ProductMoreMenu,
   ProductListHead,
   ProductListToolbar,
-} from '../../../sections/@dashboard/e-commerce/product-list';
+} from '../../../supabase/components/sections/@dashboard/e-commerce/product-list';
 
 // ----------------------------------------------------------------------
 

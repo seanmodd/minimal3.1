@@ -6,7 +6,7 @@ import Layout from '../../layouts';
 // components
 import Page from '../../components/Page';
 // sections
-import { ComponentMUI, ComponentHero, ComponentExtra, ComponentFoundation } from '../../sections/overview';
+import { ComponentMUI, ComponentHero, ComponentExtra, ComponentFoundation } from '../../supabase/components/sections/overview';
 
 // ----------------------------------------------------------------------
 

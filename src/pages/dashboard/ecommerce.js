@@ -18,7 +18,7 @@ import {
   EcommerceSalesOverview,
   EcommerceLatestProducts,
   EcommerceCurrentBalance,
-} from '../../sections/@dashboard/general/e-commerce';
+} from '../../supabase/components/sections/@dashboard/general/e-commerce';
 
 // ----------------------------------------------------------------------
 

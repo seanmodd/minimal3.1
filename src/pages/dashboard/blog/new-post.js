@@ -10,7 +10,7 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { BlogNewPostForm } from '../../../sections/@dashboard/blog';
+import { BlogNewPostForm } from '../../../supabase/components/sections/@dashboard/blog';
 
 // ----------------------------------------------------------------------
 

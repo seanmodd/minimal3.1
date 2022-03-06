@@ -10,7 +10,7 @@ import Layout from '../../../../layouts';
 import Page from '../../../../components/Page';
 import HeaderBreadcrumbs from '../../../../components/HeaderBreadcrumbs';
 // sections
-import ProductNewForm from '../../../../sections/@dashboard/e-commerce/ProductNewForm';
+import ProductNewForm from '../../../../supabase/components/sections/@dashboard/e-commerce/ProductNewForm';
 
 // ----------------------------------------------------------------------
 

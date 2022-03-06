@@ -10,14 +10,14 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import FormDialogs from '../../../sections/overview/mui/dialog/FormDialogs';
-import AlertDialog from '../../../sections/overview/mui/dialog/AlertDialog';
-import ScrollDialog from '../../../sections/overview/mui/dialog/ScrollDialog';
-import SimpleDialogs from '../../../sections/overview/mui/dialog/SimpleDialogs';
-import MaxWidthDialog from '../../../sections/overview/mui/dialog/MaxWidthDialog';
-import FullScreenDialogs from '../../../sections/overview/mui/dialog/FullScreenDialogs';
-import TransitionsDialogs from '../../../sections/overview/mui/dialog/TransitionsDialogs';
-import { Block } from '../../../sections/overview/Block';
+import FormDialogs from '../../../supabase/components/sections/overview/mui/dialog/FormDialogs';
+import AlertDialog from '../../../supabase/components/sections/overview/mui/dialog/AlertDialog';
+import ScrollDialog from '../../../supabase/components/sections/overview/mui/dialog/ScrollDialog';
+import SimpleDialogs from '../../../supabase/components/sections/overview/mui/dialog/SimpleDialogs';
+import MaxWidthDialog from '../../../supabase/components/sections/overview/mui/dialog/MaxWidthDialog';
+import FullScreenDialogs from '../../../supabase/components/sections/overview/mui/dialog/FullScreenDialogs';
+import TransitionsDialogs from '../../../supabase/components/sections/overview/mui/dialog/TransitionsDialogs';
+import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 

@@ -32,7 +32,7 @@ import Image from '../../../components/Image';
 import Scrollbar from '../../../components/Scrollbar';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { InvoiceToolbar } from '../../../sections/@dashboard/e-commerce/invoice';
+import { InvoiceToolbar } from '../../../supabase/components/sections/@dashboard/e-commerce/invoice';
 
 // ----------------------------------------------------------------------
 

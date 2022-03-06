@@ -17,7 +17,7 @@ import {
   AnalyticsWidgetSummary,
   AnalyticsCurrentSubject,
   AnalyticsConversionRates,
-} from '../../sections/@dashboard/general/analytics';
+} from '../../supabase/components/sections/@dashboard/general/analytics';
 
 // ----------------------------------------------------------------------
 

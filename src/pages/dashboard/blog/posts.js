@@ -19,7 +19,7 @@ import Iconify from '../../../components/Iconify';
 import { SkeletonPostItem } from '../../../components/skeleton';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../../../sections/@dashboard/blog';
+import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../../../supabase/components/sections/@dashboard/blog';
 
 // ----------------------------------------------------------------------
 

@@ -11,10 +11,10 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import PickerDate from '../../../sections/overview/mui/pickers/PickerDate';
-import PickerTime from '../../../sections/overview/mui/pickers/PickerTime';
-import PickerDateTime from '../../../sections/overview/mui/pickers/PickerDateTime';
-import PickerDateRange from '../../../sections/overview/mui/pickers/PickerDateRange';
+import PickerDate from '../../../supabase/components/sections/overview/mui/pickers/PickerDate';
+import PickerTime from '../../../supabase/components/sections/overview/mui/pickers/PickerTime';
+import PickerDateTime from '../../../supabase/components/sections/overview/mui/pickers/PickerDateTime';
+import PickerDateRange from '../../../supabase/components/sections/overview/mui/pickers/PickerDateRange';
 
 // ----------------------------------------------------------------------
 

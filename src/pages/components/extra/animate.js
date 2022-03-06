@@ -11,7 +11,7 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Inview, OtherView, ScrollView, DialogView, BackgroundView } from '../../../sections/overview/extra/animate';
+import { Inview, OtherView, ScrollView, DialogView, BackgroundView } from '../../../supabase/components/sections/overview/extra/animate';
 
 // ----------------------------------------------------------------------
 

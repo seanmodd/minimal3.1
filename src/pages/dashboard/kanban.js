@@ -14,7 +14,7 @@ import Page from '../../components/Page';
 import HeaderBreadcrumbs from '../../components/HeaderBreadcrumbs';
 import { SkeletonKanbanColumn } from '../../components/skeleton';
 // sections
-import { KanbanColumn, KanbanColumnAdd } from '../../sections/@dashboard/kanban';
+import { KanbanColumn, KanbanColumnAdd } from '../../supabase/components/sections/@dashboard/kanban';
 
 // ----------------------------------------------------------------------
 

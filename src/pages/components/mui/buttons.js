@@ -11,13 +11,13 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import TextButtons from '../../../sections/overview/mui/buttons/TextButtons';
-import IconButtons from '../../../sections/overview/mui/buttons/IconButtons';
-import ButtonGroups from '../../../sections/overview/mui/buttons/ButtonGroups';
-import ToggleButtons from '../../../sections/overview/mui/buttons/ToggleButtons';
-import OutlinedButtons from '../../../sections/overview/mui/buttons/OutlinedButtons';
-import ContainedButtons from '../../../sections/overview/mui/buttons/ContainedButtons';
-import FloatingActionButton from '../../../sections/overview/mui/buttons/FloatingActionButton';
+import TextButtons from '../../../supabase/components/sections/overview/mui/buttons/TextButtons';
+import IconButtons from '../../../supabase/components/sections/overview/mui/buttons/IconButtons';
+import ButtonGroups from '../../../supabase/components/sections/overview/mui/buttons/ButtonGroups';
+import ToggleButtons from '../../../supabase/components/sections/overview/mui/buttons/ToggleButtons';
+import OutlinedButtons from '../../../supabase/components/sections/overview/mui/buttons/OutlinedButtons';
+import ContainedButtons from '../../../supabase/components/sections/overview/mui/buttons/ContainedButtons';
+import FloatingActionButton from '../../../supabase/components/sections/overview/mui/buttons/FloatingActionButton';
 
 // ----------------------------------------------------------------------
 

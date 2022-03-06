@@ -10,7 +10,7 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import UserNewForm from '../../../sections/@dashboard/user/UserNewForm';
+import UserNewForm from '../../../supabase/components/sections/@dashboard/user/UserNewForm';
 
 // ----------------------------------------------------------------------
 

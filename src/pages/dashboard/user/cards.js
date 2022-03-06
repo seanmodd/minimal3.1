@@ -12,7 +12,7 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { UserCard } from '../../../sections/@dashboard/user/cards';
+import { UserCard } from '../../../supabase/components/sections/@dashboard/user/cards';
 
 // ----------------------------------------------------------------------
 

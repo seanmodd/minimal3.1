@@ -9,7 +9,7 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { ReactHookForm } from '../../../sections/overview/extra/form';
+import { ReactHookForm } from '../../../supabase/components/sections/overview/extra/form';
 
 // ----------------------------------------------------------------------
 

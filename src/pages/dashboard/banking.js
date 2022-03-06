@@ -16,7 +16,7 @@ import {
   BankingBalanceStatistics,
   BankingRecentTransitions,
   BankingExpensesCategories,
-} from '../../sections/@dashboard/general/banking';
+} from '../../supabase/components/sections/@dashboard/general/banking';
 
 // ----------------------------------------------------------------------
 

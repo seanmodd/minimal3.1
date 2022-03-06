@@ -9,10 +9,10 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import BasicTable from '../../../sections/overview/mui/table/BasicTable';
-import CollapsibleTable from '../../../sections/overview/mui/table/collapsible-table';
-import SortingSelecting from '../../../sections/overview/mui/table/sorting-selecting';
-import GroupingFixedHeader from '../../../sections/overview/mui/table/GroupingFixedHeader';
+import BasicTable from '../../../supabase/components/sections/overview/mui/table/BasicTable';
+import CollapsibleTable from '../../../supabase/components/sections/overview/mui/table/collapsible-table';
+import SortingSelecting from '../../../supabase/components/sections/overview/mui/table/sorting-selecting';
+import GroupingFixedHeader from '../../../supabase/components/sections/overview/mui/table/GroupingFixedHeader';
 
 // ----------------------------------------------------------------------
 

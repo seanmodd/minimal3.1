@@ -16,7 +16,7 @@ import Page from '../../components/Page';
 import Logo from '../../components/Logo';
 import Image from '../../components/Image';
 // sections
-import { LoginForm } from '../../sections/auth/login';
+import { LoginForm } from '../../supabase/components/sections/auth/login';
 
 // ----------------------------------------------------------------------
 

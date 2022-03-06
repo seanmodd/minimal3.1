@@ -9,8 +9,8 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import ChipFilled from '../../../sections/overview/mui/chips/ChipFilled';
-import ChipOutlined from '../../../sections/overview/mui/chips/ChipOutlined';
+import ChipFilled from '../../../supabase/components/sections/overview/mui/chips/ChipFilled';
+import ChipOutlined from '../../../supabase/components/sections/overview/mui/chips/ChipOutlined';
 
 // ----------------------------------------------------------------------
 

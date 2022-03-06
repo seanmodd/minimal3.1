@@ -23,7 +23,7 @@ import {
   ProfileFriends,
   ProfileGallery,
   ProfileFollowers,
-} from '../../../sections/@dashboard/user/profile';
+} from '../../../supabase/components/sections/@dashboard/user/profile';
 
 // ----------------------------------------------------------------------
 

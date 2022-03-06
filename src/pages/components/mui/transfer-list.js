@@ -9,9 +9,9 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../sections/overview/Block';
-import SimpleTransferList from '../../../sections/overview/mui/transfer-list/SimpleTransferList';
-import EnhancedTransferList from '../../../sections/overview/mui/transfer-list/EnhancedTransferList';
+import { Block } from '../../../supabase/components/sections/overview/Block';
+import SimpleTransferList from '../../../supabase/components/sections/overview/mui/transfer-list/SimpleTransferList';
+import EnhancedTransferList from '../../../supabase/components/sections/overview/mui/transfer-list/EnhancedTransferList';
 
 // ----------------------------------------------------------------------
 

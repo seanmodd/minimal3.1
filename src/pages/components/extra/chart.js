@@ -22,7 +22,7 @@ import {
   ChartColumnStacked,
   ChartColumnNegative,
   ChartColumnMultiple,
-} from '../../../sections/overview/extra/chart';
+} from '../../../supabase/components/sections/overview/extra/chart';
 
 // ----------------------------------------------------------------------
 

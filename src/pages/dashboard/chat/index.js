@@ -14,7 +14,7 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { ChatSidebar, ChatWindow } from '../../../sections/@dashboard/chat';
+import { ChatSidebar, ChatWindow } from '../../../supabase/components/sections/@dashboard/chat';
 
 // ----------------------------------------------------------------------
 

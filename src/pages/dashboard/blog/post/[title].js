@@ -25,7 +25,7 @@ import {
   BlogPostRecent,
   BlogPostCommentList,
   BlogPostCommentForm,
-} from '../../../../sections/@dashboard/blog';
+} from '../../../../supabase/components/sections/@dashboard/blog';
 
 // ----------------------------------------------------------------------
 

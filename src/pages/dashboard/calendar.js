@@ -24,7 +24,7 @@ import Iconify from '../../components/Iconify';
 import { DialogAnimate } from '../../components/animate';
 import HeaderBreadcrumbs from '../../components/HeaderBreadcrumbs';
 // sections
-import { CalendarForm, CalendarStyle, CalendarToolbar } from '../../sections/@dashboard/calendar';
+import { CalendarForm, CalendarStyle, CalendarToolbar } from '../../supabase/components/sections/@dashboard/calendar';
 
 // ----------------------------------------------------------------------
 

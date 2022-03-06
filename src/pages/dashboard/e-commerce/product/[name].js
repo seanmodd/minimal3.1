@@ -33,8 +33,8 @@ import {
   ProductDetailsSummary,
   ProductDetailsReview,
   ProductDetailsCarousel,
-} from 'src/sections/@dashboard/e-commerce/product-details';
-import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
+} from 'src/supabase/components/sections/@dashboard/e-commerce/product-details';
+import CartWidget from 'src/supabase/components/sections/@dashboard/e-commerce/CartWidget';
 import Layout from 'src/layouts';
 
 // ----------------------------------------------------------------------

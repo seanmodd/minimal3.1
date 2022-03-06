@@ -9,11 +9,11 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../sections/overview/Block';
-import CustomizedStepper from '../../../sections/overview/mui/stepper/CustomizedStepper';
-import VerticalLinearStepper from '../../../sections/overview/mui/stepper/VerticalLinearStepper';
-import LinearAlternativeLabel from '../../../sections/overview/mui/stepper/LinearAlternativeLabel';
-import HorizontalLinearStepper from '../../../sections/overview/mui/stepper/HorizontalLinearStepper';
+import { Block } from '../../../supabase/components/sections/overview/Block';
+import CustomizedStepper from '../../../supabase/components/sections/overview/mui/stepper/CustomizedStepper';
+import VerticalLinearStepper from '../../../supabase/components/sections/overview/mui/stepper/VerticalLinearStepper';
+import LinearAlternativeLabel from '../../../supabase/components/sections/overview/mui/stepper/LinearAlternativeLabel';
+import HorizontalLinearStepper from '../../../supabase/components/sections/overview/mui/stepper/HorizontalLinearStepper';
 
 // ----------------------------------------------------------------------
 

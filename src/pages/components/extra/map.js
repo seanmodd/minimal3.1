@@ -16,19 +16,19 @@ import Page from '../../../components/Page';
 import { SkeletonMap } from '../../../components/skeleton';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-const MapHeatmap = lazy(() => import('../../../sections/overview/extra/map/heatmap'));
-const MapGeojson = lazy(() => import('../../../sections/overview/extra/map/geojson'));
-const MapClusters = lazy(() => import('../../../sections/overview/extra/map/MapClusters'));
-const MapInteraction = lazy(() => import('../../../sections/overview/extra/map/interaction'));
-const MapChangeTheme = lazy(() => import('../../../sections/overview/extra/map/change-theme'));
-const MapZoomToBounds = lazy(() => import('../../../sections/overview/extra/map/MapZoomToBounds'));
-const MapMarkersPopups = lazy(() => import('../../../sections/overview/extra/map/MapMarkersPopups'));
-const MapDeckglOverlay = lazy(() => import('../../../sections/overview/extra/map/MapDeckglOverlay'));
-const MapDynamicStyling = lazy(() => import('../../../sections/overview/extra/map/dynamic-styling'));
-const MapDraggableMarkers = lazy(() => import('../../../sections/overview/extra/map/draggable-markers'));
-const MapGeoJSONAnimation = lazy(() => import('../../../sections/overview/extra/map/MapGeoJSONAnimation'));
-const MapViewportAnimation = lazy(() => import('../../../sections/overview/extra/map/viewport-animation'));
-const MapHighlightByFilter = lazy(() => import('../../../sections/overview/extra/map/MapHighlightByFilter'));
+const MapHeatmap = lazy(() => import('../../../supabase/components/sections/overview/extra/map/heatmap'));
+const MapGeojson = lazy(() => import('../../../supabase/components/sections/overview/extra/map/geojson'));
+const MapClusters = lazy(() => import('../../../supabase/components/sections/overview/extra/map/MapClusters'));
+const MapInteraction = lazy(() => import('../../../supabase/components/sections/overview/extra/map/interaction'));
+const MapChangeTheme = lazy(() => import('../../../supabase/components/sections/overview/extra/map/change-theme'));
+const MapZoomToBounds = lazy(() => import('../../../supabase/components/sections/overview/extra/map/MapZoomToBounds'));
+const MapMarkersPopups = lazy(() => import('../../../supabase/components/sections/overview/extra/map/MapMarkersPopups'));
+const MapDeckglOverlay = lazy(() => import('../../../supabase/components/sections/overview/extra/map/MapDeckglOverlay'));
+const MapDynamicStyling = lazy(() => import('../../../supabase/components/sections/overview/extra/map/dynamic-styling'));
+const MapDraggableMarkers = lazy(() => import('../../../supabase/components/sections/overview/extra/map/draggable-markers'));
+const MapGeoJSONAnimation = lazy(() => import('../../../supabase/components/sections/overview/extra/map/MapGeoJSONAnimation'));
+const MapViewportAnimation = lazy(() => import('../../../supabase/components/sections/overview/extra/map/viewport-animation'));
+const MapHighlightByFilter = lazy(() => import('../../../supabase/components/sections/overview/extra/map/MapHighlightByFilter'));
 
 // ----------------------------------------------------------------------
 

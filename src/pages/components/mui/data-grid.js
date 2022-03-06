@@ -9,8 +9,8 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import DataGridBasic from '../../../sections/overview/mui/data-grid/DataGridBasic';
-import DataGridCustom from '../../../sections/overview/mui/data-grid/DataGridCustom';
+import DataGridBasic from '../../../supabase/components/sections/overview/mui/data-grid/DataGridBasic';
+import DataGridCustom from '../../../supabase/components/sections/overview/mui/data-grid/DataGridCustom';
 
 // ----------------------------------------------------------------------
 

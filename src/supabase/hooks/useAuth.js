@@ -9,7 +9,7 @@ export const RequireAuth = () => {
 
   useEffect(() => {
     if (!user) {
-      router.push('/sign-in');
+      router.push('/');
     }
   }, [user, router]);
 };

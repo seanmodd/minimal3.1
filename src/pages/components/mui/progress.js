@@ -10,9 +10,9 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import ProgressLinear from '../../../sections/overview/mui/progress/ProgressLinear';
-import ProgressCircular from '../../../sections/overview/mui/progress/ProgressCircular';
-import { Block } from '../../../sections/overview/Block';
+import ProgressLinear from '../../../supabase/components/sections/overview/mui/progress/ProgressLinear';
+import ProgressCircular from '../../../supabase/components/sections/overview/mui/progress/ProgressCircular';
+import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 

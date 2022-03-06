@@ -11,9 +11,9 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import Filled from '../../../sections/overview/mui/textfield/Filled';
-import Standard from '../../../sections/overview/mui/textfield/Standard';
-import Outlined from '../../../sections/overview/mui/textfield/Outlined';
+import Filled from '../../../supabase/components/sections/overview/mui/textfield/Filled';
+import Standard from '../../../supabase/components/sections/overview/mui/textfield/Standard';
+import Outlined from '../../../supabase/components/sections/overview/mui/textfield/Outlined';
 
 // ----------------------------------------------------------------------
 

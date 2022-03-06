@@ -11,7 +11,7 @@ import Layout from '../../layouts';
 import Page from '../../components/Page';
 import Iconify from '../../components/Iconify';
 // sections
-import { VerifyCodeForm } from '../../sections/auth/verify-code';
+import { VerifyCodeForm } from '../../supabase/components/sections/auth/verify-code';
 
 // ----------------------------------------------------------------------
 

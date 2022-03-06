@@ -20,7 +20,7 @@ import {
   AppWidgetSummary,
   AppCurrentDownload,
   AppTopInstalledCountries,
-} from '../../sections/@dashboard/general/app';
+} from '../../supabase/components/sections/@dashboard/general/app';
 
 // ----------------------------------------------------------------------
 

@@ -12,7 +12,7 @@ import Iconify from '../../../components/Iconify';
 import { PATH_PAGE } from '../../../routes/paths';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../sections/overview/Block';
+import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 

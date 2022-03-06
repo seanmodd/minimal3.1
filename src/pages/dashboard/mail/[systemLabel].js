@@ -16,7 +16,7 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { MailList, MailDetails, MailSidebar, MailCompose } from '../../../sections/@dashboard/mail';
+import { MailList, MailDetails, MailSidebar, MailCompose } from '../../../supabase/components/sections/@dashboard/mail';
 
 // ----------------------------------------------------------------------
 

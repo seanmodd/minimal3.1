@@ -12,7 +12,7 @@ import Iconify from '../../../components/Iconify';
 import { FabButtonAnimate } from '../../../components/animate';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../sections/overview/Block';
+import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 

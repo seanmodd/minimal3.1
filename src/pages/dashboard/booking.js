@@ -17,7 +17,7 @@ import {
   BookingCheckInWidgets,
   BookingCustomerReviews,
   BookingReservationStats,
-} from '../../sections/@dashboard/general/booking';
+} from '../../supabase/components/sections/@dashboard/general/booking';
 // assets
 import { BookingIllustration, CheckInIllustration, CheckOutIllustration } from '../../assets';
 

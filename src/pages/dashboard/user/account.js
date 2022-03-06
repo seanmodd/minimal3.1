@@ -21,7 +21,7 @@ import {
   AccountSocialLinks,
   AccountNotifications,
   AccountChangePassword,
-} from '../../../sections/@dashboard/user/account';
+} from '../../../supabase/components/sections/@dashboard/user/account';
 
 // ----------------------------------------------------------------------
 

@@ -23,7 +23,7 @@ import {
   CheckoutPayment,
   CheckoutOrderComplete,
   CheckoutBillingAddress,
-} from '../../../sections/@dashboard/e-commerce/checkout';
+} from '../../../supabase/components/sections/@dashboard/e-commerce/checkout';
 
 // ----------------------------------------------------------------------
 
