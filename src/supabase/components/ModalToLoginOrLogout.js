@@ -42,7 +42,7 @@ import {
 } from 'src/supabase/hooks/useAuth';
 import Header from './Header';
 
-function SignIn() {
+function ModalToLoginOrLogout() {
   const router = useRouter();
   const auth = useAuth();
   const [open, setOpen] = useState(false);
@@ -220,7 +220,7 @@ function SignIn() {
         }}
         onClick={handleOpen}
       >
-        Login
+        Logout
       </button>
       <Modal
         aria-labelledby="spring-modal-title"
@@ -298,7 +298,7 @@ function SignIn() {
   return auth.user ? MyModalToLogOut : MyModalToLogIn;
 }
 
-export default SignIn;
+export default ModalToLoginOrLogout;
 
 // styling:
 const formStyle = {
