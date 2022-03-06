@@ -193,7 +193,7 @@ function SignIn() {
                       Don't have an account?
                     </Typography>
                     <Typography sx={{ color: '#8b5cf6' }} variant="subtitle3">
-                      Just enter your email, no password needed!
+                      Just enter your email! No password needed 😅
                     </Typography>
                   </Stack>
                 </Stack>
