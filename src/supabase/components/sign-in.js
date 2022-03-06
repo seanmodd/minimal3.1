@@ -40,7 +40,7 @@ import {
   // UserContext,
   useAuth,
 } from 'src/supabase/hooks/useAuth';
-import Header from 'src/supabase/components/Header';
+import Header from './Header';
 
 function SignIn() {
   const router = useRouter();
