@@ -3,9 +3,9 @@ import merge from 'lodash/merge';
 import { useTheme, styled } from '@mui/material/styles';
 import { Box, Card, Stack, Divider, CardHeader, Typography } from '@mui/material';
 // hooks
-import useResponsive from '../../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // components
-import ReactApexChart, { BaseOptionChart } from '../../../../../../components/chart';
+import ReactApexChart, { BaseOptionChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 

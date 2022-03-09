@@ -2,8 +2,8 @@
 import { Fab } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import { FabButtonAnimate } from '../../../../../../components/animate';
+import Iconify from 'src/components/Iconify';
+import { FabButtonAnimate } from 'src/components/animate';
 //
 import { Block } from '../../Block';
 

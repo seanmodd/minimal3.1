@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { alpha } from '@mui/material/styles';
 import { Box, Grid, Card, CardContent, IconButton, Paper, CardHeader } from '@mui/material';
 // components
-import Iconify from '../../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 //
 import Logo from './Logo';
 import Button from './Button';

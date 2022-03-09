@@ -4,10 +4,10 @@ import merge from 'lodash/merge';
 import { useTheme, styled } from '@mui/material/styles';
 import { Card, Typography, Box } from '@mui/material';
 // utils
-import { fNumber } from '../../../../../../utils/formatNumber';
+import { fNumber } from 'src/utils/formatNumber';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import ReactApexChart, { BaseOptionChart } from '../../../../../../components/chart';
+import Iconify from 'src/components/Iconify';
+import ReactApexChart, { BaseOptionChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 

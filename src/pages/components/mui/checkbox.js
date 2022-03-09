@@ -1,9 +1,17 @@
 import { useState } from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Checkbox, FormGroup, Container, FormControl, FormControlLabel } from '@mui/material';
+import {
+  Box,
+  Checkbox,
+  FormGroup,
+  Container,
+  FormControl,
+  FormControlLabel,
+} from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -12,7 +20,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -60,13 +67,17 @@ export default function MUICheckbox() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Checkboxes"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Checkboxes' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Checkboxes' },
+              ]}
               moreLink="https://mui.com/components/checkboxes"
             />
           </Container>
@@ -84,8 +95,14 @@ export default function MUICheckbox() {
             </Block>
 
             <Block title="Size & Custom Icon" sx={style}>
-              <FormControlLabel label="Normal" control={<Checkbox defaultChecked />} />
-              <FormControlLabel label="Small" control={<Checkbox defaultChecked size="small" />} />
+              <FormControlLabel
+                label="Normal"
+                control={<Checkbox defaultChecked />}
+              />
+              <FormControlLabel
+                label="Small"
+                control={<Checkbox defaultChecked size="small" />}
+              />
               <FormControlLabel
                 control={
                   <Checkbox
@@ -101,8 +118,8 @@ export default function MUICheckbox() {
                   <Checkbox
                     size="small"
                     color="error"
-                    icon={<Iconify icon={'eva:award-fill'} />}
-                    checkedIcon={<Iconify icon={'eva:award-fill'} />}
+                    icon={<Iconify icon="eva:award-fill" />}
+                    checkedIcon={<Iconify icon="eva:award-fill" />}
                   />
                 }
                 label="Custom icon"
@@ -112,50 +129,122 @@ export default function MUICheckbox() {
             <Block title="Placement" sx={style}>
               <FormControl component="fieldset">
                 <FormGroup aria-label="position" row>
-                  <FormControlLabel value="top" label="Top" labelPlacement="top" control={<Checkbox />} />
-                  <FormControlLabel value="start" label="Start" labelPlacement="start" control={<Checkbox />} />
-                  <FormControlLabel value="bottom" label="Bottom" labelPlacement="bottom" control={<Checkbox />} />
-                  <FormControlLabel value="end" label="End" labelPlacement="end" control={<Checkbox />} />
+                  <FormControlLabel
+                    value="top"
+                    label="Top"
+                    labelPlacement="top"
+                    control={<Checkbox />}
+                  />
+                  <FormControlLabel
+                    value="start"
+                    label="Start"
+                    labelPlacement="start"
+                    control={<Checkbox />}
+                  />
+                  <FormControlLabel
+                    value="bottom"
+                    label="Bottom"
+                    labelPlacement="bottom"
+                    control={<Checkbox />}
+                  />
+                  <FormControlLabel
+                    value="end"
+                    label="End"
+                    labelPlacement="end"
+                    control={<Checkbox />}
+                  />
                 </FormGroup>
               </FormControl>
             </Block>
 
             <Block title="Adding Colors">
               <FormGroup>
-                <FormControlLabel control={<Checkbox defaultChecked color="default" />} label="Default" />
-                <FormControlLabel control={<Checkbox defaultChecked />} label="Primary" />
-                <FormControlLabel control={<Checkbox defaultChecked color="secondary" />} label="Secondary" />
-                <FormControlLabel control={<Checkbox defaultChecked color="info" />} label="Info" />
-                <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Success" />
-                <FormControlLabel control={<Checkbox defaultChecked color="warning" />} label="Warning" />
-                <FormControlLabel control={<Checkbox defaultChecked color="error" />} label="Error" />
-                <FormControlLabel disabled control={<Checkbox defaultChecked color="error" />} label="Disabled" />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked color="default" />}
+                  label="Default"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="Primary"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked color="secondary" />}
+                  label="Secondary"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked color="info" />}
+                  label="Info"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked color="success" />}
+                  label="Success"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked color="warning" />}
+                  label="Warning"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked color="error" />}
+                  label="Error"
+                />
+                <FormControlLabel
+                  disabled
+                  control={<Checkbox defaultChecked color="error" />}
+                  label="Disabled"
+                />
               </FormGroup>
 
               <FormControl component="fieldset">
                 <FormGroup>
                   <FormControlLabel
-                    control={<Checkbox defaultChecked indeterminate color="default" />}
+                    control={
+                      <Checkbox defaultChecked indeterminate color="default" />
+                    }
                     label="Default"
                   />
-                  <FormControlLabel control={<Checkbox defaultChecked indeterminate />} label="Primary" />
                   <FormControlLabel
-                    control={<Checkbox defaultChecked indeterminate color="secondary" />}
+                    control={<Checkbox defaultChecked indeterminate />}
+                    label="Primary"
+                  />
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        defaultChecked
+                        indeterminate
+                        color="secondary"
+                      />
+                    }
                     label="Secondary"
                   />
-                  <FormControlLabel control={<Checkbox defaultChecked indeterminate color="info" />} label="Info" />
                   <FormControlLabel
-                    control={<Checkbox defaultChecked indeterminate color="success" />}
+                    control={
+                      <Checkbox defaultChecked indeterminate color="info" />
+                    }
+                    label="Info"
+                  />
+                  <FormControlLabel
+                    control={
+                      <Checkbox defaultChecked indeterminate color="success" />
+                    }
                     label="Success"
                   />
                   <FormControlLabel
-                    control={<Checkbox defaultChecked indeterminate color="warning" />}
+                    control={
+                      <Checkbox defaultChecked indeterminate color="warning" />
+                    }
                     label="Warning"
                   />
-                  <FormControlLabel control={<Checkbox defaultChecked indeterminate color="error" />} label="Error" />
+                  <FormControlLabel
+                    control={
+                      <Checkbox defaultChecked indeterminate color="error" />
+                    }
+                    label="Error"
+                  />
                   <FormControlLabel
                     disabled
-                    control={<Checkbox defaultChecked indeterminate color="error" />}
+                    control={
+                      <Checkbox defaultChecked indeterminate color="error" />
+                    }
                     label="Disabled"
                   />
                 </FormGroup>
@@ -177,11 +266,15 @@ export default function MUICheckbox() {
                 <div>
                   <FormControlLabel
                     label="Child 1"
-                    control={<Checkbox checked={checked[0]} onChange={handleChange2} />}
+                    control={
+                      <Checkbox checked={checked[0]} onChange={handleChange2} />
+                    }
                   />
                   <FormControlLabel
                     label="Child 2"
-                    control={<Checkbox checked={checked[1]} onChange={handleChange3} />}
+                    control={
+                      <Checkbox checked={checked[1]} onChange={handleChange3} />
+                    }
                   />
                 </div>
               </div>

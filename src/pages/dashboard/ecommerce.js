@@ -2,12 +2,6 @@
 import { useTheme } from '@mui/material/styles';
 import { Container, Grid } from '@mui/material';
 // hooks
-import useSettings from '../../hooks/useSettings';
-// layouts
-import Layout from '../../layouts';
-// components
-import Page from '../../components/Page';
-// sections
 import {
   EcommerceWelcome,
   EcommerceNewProducts,
@@ -18,7 +12,13 @@ import {
   EcommerceSalesOverview,
   EcommerceLatestProducts,
   EcommerceCurrentBalance,
-} from '../../supabase/components/sections/@dashboard/general/e-commerce';
+} from 'src/sections/@dashboard/general/e-commerce';
+import useSettings from '../../hooks/useSettings';
+// layouts
+import Layout from '../../layouts';
+// components
+import Page from '../../components/Page';
+// sections
 
 // ----------------------------------------------------------------------
 

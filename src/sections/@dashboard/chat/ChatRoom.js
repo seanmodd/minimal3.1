@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { useTheme, styled } from '@mui/material/styles';
 import { Box, Drawer, Divider, IconButton } from '@mui/material';
 // hooks
-import useResponsive from '../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // components
-import Iconify from '../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 //
 import ChatRoomAttachment from './ChatRoomAttachment';
 import ChatRoomOneParticipant from './ChatRoomOneParticipant';

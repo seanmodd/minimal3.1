@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 // @mui
 import { Box, Divider } from '@mui/material';
 // redux
-import { useDispatch, useSelector } from '../../../../../redux/store';
+import { useDispatch, useSelector } from 'src/redux/store';
 import {
   addRecipients,
   onSendMessage,
@@ -13,9 +13,9 @@ import {
   getParticipants,
   markConversationAsRead,
   resetActiveConversation,
-} from '../../../../../redux/slices/chat';
+} from 'src/redux/slices/chat';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 //
 import ChatRoom from './ChatRoom';
 import ChatMessageList from './ChatMessageList';

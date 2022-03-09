@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 // components
-import ReactApexChart, { BaseOptionChart } from '../../../../../../components/chart';
+import ReactApexChart, { BaseOptionChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 

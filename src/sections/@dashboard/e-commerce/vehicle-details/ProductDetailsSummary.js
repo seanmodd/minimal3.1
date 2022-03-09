@@ -8,15 +8,15 @@ import { Controller, useForm } from 'react-hook-form';
 import { useTheme, styled } from '@mui/material/styles';
 import { Box, Link, Stack, Button, Rating, Divider, IconButton, Typography } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // utils
-import { fShortenNumber, fCurrency } from '../../../../../../utils/formatNumber';
+import { fShortenNumber, fCurrency } from 'src/utils/formatNumber';
 // components
-import Label from '../../../../../../components/Label';
-import Iconify from '../../../../../../components/Iconify';
-import SocialsButton from '../../../../../../components/SocialsButton';
-import { ColorSinglePicker } from '../../../../../../components/color-utils';
-import { FormProvider, RHFSelect } from '../../../../../../components/hook-form';
+import Label from 'src/components/Label';
+import Iconify from 'src/components/Iconify';
+import SocialsButton from 'src/components/SocialsButton';
+import { ColorSinglePicker } from 'src/components/color-utils';
+import { FormProvider, RHFSelect } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

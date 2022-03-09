@@ -5,6 +5,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Rating, Container } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -13,7 +14,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -96,13 +96,17 @@ export default function MUIRating() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Rating"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Rating' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Rating' },
+              ]}
               moreLink="https://mui.com/components/rating"
             />
           </Container>
@@ -133,14 +137,20 @@ export default function MUIRating() {
             </Block>
 
             <Block title="Custom empty icon" sx={style}>
-              <Rating name="customized-empty" defaultValue={2} precision={0.5} />
+              <Rating
+                name="customized-empty"
+                defaultValue={2}
+                precision={0.5}
+              />
             </Block>
 
             <Block title="Custom icon and color" sx={style}>
               <Rating
                 name="customized-color"
                 defaultValue={2}
-                getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                getLabelText={(value) =>
+                  `${value} Heart${value !== 1 ? 's' : ''}`
+                }
                 precision={0.5}
                 icon={<Iconify icon="eva:heart-fill" />}
                 emptyIcon={<Iconify icon="eva:heart-fill" />}
@@ -174,13 +184,20 @@ export default function MUIRating() {
                   setHover(newHover);
                 }}
               />
-              {value !== null && <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>}
+              {value !== null && (
+                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+              )}
             </Block>
 
             <Block title="Half ratings" sx={style}>
               <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
               <br />
-              <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
+              <Rating
+                name="half-rating-read"
+                defaultValue={2.5}
+                precision={0.5}
+                readOnly
+              />
             </Block>
 
             <Block title="Sizes" sx={style}>

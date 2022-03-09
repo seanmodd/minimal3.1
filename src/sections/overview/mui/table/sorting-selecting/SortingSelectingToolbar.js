@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useTheme, styled } from '@mui/material/styles';
 import { Toolbar, Tooltip, Typography, IconButton } from '@mui/material';
 // components
-import Iconify from '../../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { alpha, styled } from '@mui/material/styles';
 import { Box, Typography, IconButton } from '@mui/material';
 // utils
-import cssStyles from '../../../../../utils/cssStyles';
-import { getFileType, getFileName, getFileThumb } from '../../../../../utils/getFileFormat';
+import cssStyles from 'src/utils/cssStyles';
+import { getFileType, getFileName, getFileThumb } from 'src/utils/getFileFormat';
 // components
-import Iconify from '../../../../../components/Iconify';
-import Scrollbar from '../../../../../components/Scrollbar';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
 
 // ----------------------------------------------------------------------
 

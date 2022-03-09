@@ -7,11 +7,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Stack, IconButton, InputAdornment, Alert } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // hooks
-import useAuth from '../../../../../hooks/useAuth';
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import useAuth from 'src/hooks/useAuth';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 // components
-import Iconify from '../../../../../components/Iconify';
-import { FormProvider, RHFTextField } from '../../../../../components/hook-form';
+import Iconify from 'src/components/Iconify';
+import { FormProvider, RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

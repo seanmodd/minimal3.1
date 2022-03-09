@@ -1,8 +1,19 @@
 import { useState } from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, List, Menu, Button, MenuItem, Container, IconButton, ListItemText, ListItemButton } from '@mui/material';
+import {
+  Box,
+  List,
+  Menu,
+  Button,
+  MenuItem,
+  Container,
+  IconButton,
+  ListItemText,
+  ListItemButton,
+} from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,7 +22,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -100,13 +110,17 @@ export default function MUIMenu() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Menu"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Menu' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Menu' },
+              ]}
               moreLink="https://mui.com/components/menus"
             />
           </Container>
@@ -116,14 +130,23 @@ export default function MUIMenu() {
             sx={{
               display: 'grid',
               gap: 3,
-              gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' },
+              gridTemplateColumns: {
+                xs: 'repeat(1, 1fr)',
+                md: 'repeat(3, 1fr)',
+              },
             }}
           >
             <Block title="Simple" sx={style}>
               <Button variant="outlined" onClick={handleOpen}>
                 Open Menu
               </Button>
-              <Menu keepMounted id="simple-menu" anchorEl={isOpen} onClose={handleClose} open={Boolean(isOpen)}>
+              <Menu
+                keepMounted
+                id="simple-menu"
+                anchorEl={isOpen}
+                onClose={handleClose}
+                open={Boolean(isOpen)}
+              >
                 {['Profile', 'My account', 'Logout'].map((option) => (
                   <MenuItem key={option} onClick={handleClose}>
                     {option}
@@ -140,10 +163,19 @@ export default function MUIMenu() {
                   aria-label="when device is locked"
                   onClick={handleClickListItem}
                 >
-                  <ListItemText primary="When device is locked" secondary={OPTIONS[selectedIndex]} />
+                  <ListItemText
+                    primary="When device is locked"
+                    secondary={OPTIONS[selectedIndex]}
+                  />
                 </ListItemButton>
               </List>
-              <Menu keepMounted id="lock-menu" anchorEl={isOpenList} onClose={handleClose} open={Boolean(isOpenList)}>
+              <Menu
+                keepMounted
+                id="lock-menu"
+                anchorEl={isOpenList}
+                onClose={handleClose}
+                open={Boolean(isOpenList)}
+              >
                 {OPTIONS.map((option, index) => (
                   <MenuItem
                     key={option}
@@ -158,7 +190,12 @@ export default function MUIMenu() {
             </Block>
 
             <Block title="Max height" sx={style}>
-              <IconButton aria-label="more" aria-controls="long-menu" aria-haspopup="true" onClick={handleClick}>
+              <IconButton
+                aria-label="more"
+                aria-controls="long-menu"
+                aria-haspopup="true"
+                onClick={handleClick}
+              >
                 <Iconify icon="eva:more-vertical-fill" />
               </IconButton>
               <Menu
@@ -175,7 +212,11 @@ export default function MUIMenu() {
                 }}
               >
                 {OPTIONS_MAXHEIGHT.map((option) => (
-                  <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleMaxHeightClose}>
+                  <MenuItem
+                    key={option}
+                    selected={option === 'Pyxis'}
+                    onClick={handleMaxHeightClose}
+                  >
                     {option}
                   </MenuItem>
                 ))}

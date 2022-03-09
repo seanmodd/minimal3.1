@@ -6,18 +6,18 @@ import { useRouter } from 'next/router';
 import { styled } from '@mui/material/styles';
 import { Box, Link, Tooltip, Typography, Checkbox } from '@mui/material';
 // redux
-import { useSelector } from '../../../../../redux/store';
+import { useSelector } from 'src/redux/store';
 // hooks
-import useResponsive from '../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // utils
-import { fDate } from '../../../../../utils/formatTime';
-import createAvatar from '../../../../../utils/createAvatar';
+import { fDate } from 'src/utils/formatTime';
+import createAvatar from 'src/utils/createAvatar';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import Label from '../../../../../components/Label';
-import Avatar from '../../../../../components/Avatar';
-import Iconify from '../../../../../components/Iconify';
+import Label from 'src/components/Label';
+import Avatar from 'src/components/Avatar';
+import Iconify from 'src/components/Iconify';
 //
 import MailItemAction from './MailItemAction';
 

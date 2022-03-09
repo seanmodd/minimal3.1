@@ -4,12 +4,25 @@ import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Tab, Box, Card, Tabs, Container } from '@mui/material';
 // routes
+import {
+  Profile,
+  ProfileCover,
+  ProfileFriends,
+  ProfileGallery,
+  ProfileFollowers,
+} from 'src/sections/@dashboard/user/profile';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // hooks
 import useAuth from '../../../hooks/useAuth';
 import useSettings from '../../../hooks/useSettings';
 // _mock_
-import { _userAbout, _userFeeds, _userFriends, _userGallery, _userFollowers } from '../../../_mock';
+import {
+  _userAbout,
+  _userFeeds,
+  _userFriends,
+  _userGallery,
+  _userFollowers,
+} from '../../../_mock';
 // layouts
 import Layout from '../../../layouts';
 // components
@@ -17,13 +30,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import {
-  Profile,
-  ProfileCover,
-  ProfileFriends,
-  ProfileGallery,
-  ProfileFollowers,
-} from '../../../supabase/components/sections/@dashboard/user/profile';
 
 // ----------------------------------------------------------------------
 
@@ -69,22 +75,28 @@ export default function UserProfile() {
   const PROFILE_TABS = [
     {
       value: 'profile',
-      icon: <Iconify icon={'ic:round-account-box'} width={20} height={20} />,
+      icon: <Iconify icon="ic:round-account-box" width={20} height={20} />,
       component: <Profile myProfile={_userAbout} posts={_userFeeds} />,
     },
     {
       value: 'followers',
-      icon: <Iconify icon={'eva:heart-fill'} width={20} height={20} />,
+      icon: <Iconify icon="eva:heart-fill" width={20} height={20} />,
       component: <ProfileFollowers followers={_userFollowers} />,
     },
     {
       value: 'friends',
-      icon: <Iconify icon={'eva:people-fill'} width={20} height={20} />,
-      component: <ProfileFriends friends={_userFriends} findFriends={findFriends} onFindFriends={handleFindFriends} />,
+      icon: <Iconify icon="eva:people-fill" width={20} height={20} />,
+      component: (
+        <ProfileFriends
+          friends={_userFriends}
+          findFriends={findFriends}
+          onFindFriends={handleFindFriends}
+        />
+      ),
     },
     {
       value: 'gallery',
-      icon: <Iconify icon={'ic:round-perm-media'} width={20} height={20} />,
+      icon: <Iconify icon="ic:round-perm-media" width={20} height={20} />,
       component: <ProfileGallery gallery={_userGallery} />,
     },
   ];
@@ -118,7 +130,13 @@ export default function UserProfile() {
               onChange={(e, value) => handleChangeTab(value)}
             >
               {PROFILE_TABS.map((tab) => (
-                <Tab disableRipple key={tab.value} value={tab.value} icon={tab.icon} label={capitalCase(tab.value)} />
+                <Tab
+                  disableRipple
+                  key={tab.value}
+                  value={tab.value}
+                  icon={tab.icon}
+                  label={capitalCase(tab.value)}
+                />
               ))}
             </Tabs>
           </TabsWrapperStyle>

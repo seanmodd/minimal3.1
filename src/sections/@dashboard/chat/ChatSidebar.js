@@ -6,16 +6,16 @@ import { useRouter } from 'next/router';
 import { useTheme, styled } from '@mui/material/styles';
 import { Box, Stack, Drawer, IconButton } from '@mui/material';
 // redux
-import { useSelector } from '../../../../../redux/store';
+import { useSelector } from 'src/redux/store';
 // hooks
-import useResponsive from '../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // utils
-import axios from '../../../../../utils/axios';
+import axios from 'src/utils/axios';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import Iconify from '../../../../../components/Iconify';
-import Scrollbar from '../../../../../components/Scrollbar';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
 //
 import ChatAccount from './ChatAccount';
 import ChatSearchResults from './ChatSearchResults';

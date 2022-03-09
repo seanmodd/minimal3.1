@@ -10,7 +10,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { OutlinedInput, Stack } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 
 // ----------------------------------------------------------------------
 

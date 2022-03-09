@@ -1,9 +1,9 @@
 // @mui
 import { Card, CardHeader, Typography, Stack, LinearProgress, Box } from '@mui/material';
 // utils
-import { fShortenNumber } from '../../../../../../utils/formatNumber';
+import { fShortenNumber } from 'src/utils/formatNumber';
 // _mock_
-import { _bookingsOverview } from '../../../../../../_mock';
+import { _bookingsOverview } from 'src/_mock';
 
 // ----------------------------------------------------------------------
 

@@ -5,11 +5,11 @@ import NextLink from 'next/link';
 import { styled } from '@mui/material/styles';
 import { Badge } from '@mui/material';
 // redux
-import { useSelector } from '../../../../../redux/store';
+import { useSelector } from 'src/redux/store';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import Iconify from '../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

@@ -3,11 +3,11 @@ import merge from 'lodash/merge';
 import { useTheme } from '@mui/material/styles';
 import { Card, Typography, Stack, Divider } from '@mui/material';
 // hooks
-import useResponsive from '../../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // utils
-import { fNumber } from '../../../../../../utils/formatNumber';
+import { fNumber } from 'src/utils/formatNumber';
 // components
-import ReactApexChart, { BaseOptionChart } from '../../../../../../components/chart';
+import ReactApexChart, { BaseOptionChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 

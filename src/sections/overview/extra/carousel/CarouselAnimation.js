@@ -6,11 +6,11 @@ import { useState, useRef } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import { Box, Card, Paper, Button, Typography, CardContent } from '@mui/material';
 // _mock_
-import { _carouselsExample } from '../../../../../../_mock';
+import { _carouselsExample } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import { MotionContainer, varFade } from '../../../../../../components/animate';
-import { CarouselArrowIndex } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import { MotionContainer, varFade } from 'src/components/animate';
+import { CarouselArrowIndex } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

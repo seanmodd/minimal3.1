@@ -2,18 +2,18 @@
 import { styled } from '@mui/material/styles';
 import { Box, Paper, Container, Stack } from '@mui/material';
 // routes
-import { PATH_PAGE } from '../../../routes/paths';
 // layouts
-import Layout from '../../../layouts';
 // components
-import Page from '../../../components/Page';
-import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
-import CustomizedStepper from '../../../supabase/components/sections/overview/mui/stepper/CustomizedStepper';
-import VerticalLinearStepper from '../../../supabase/components/sections/overview/mui/stepper/VerticalLinearStepper';
-import LinearAlternativeLabel from '../../../supabase/components/sections/overview/mui/stepper/LinearAlternativeLabel';
-import HorizontalLinearStepper from '../../../supabase/components/sections/overview/mui/stepper/HorizontalLinearStepper';
+import { Block } from 'src/sections/overview/Block';
+import CustomizedStepper from 'src/sections/overview/mui/stepper/CustomizedStepper';
+import VerticalLinearStepper from 'src/sections/overview/mui/stepper/VerticalLinearStepper';
+import LinearAlternativeLabel from 'src/sections/overview/mui/stepper/LinearAlternativeLabel';
+import HorizontalLinearStepper from 'src/sections/overview/mui/stepper/HorizontalLinearStepper';
+import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
+import Page from '../../../components/Page';
+import Layout from '../../../layouts';
+import { PATH_PAGE } from '../../../routes/paths';
 
 // ----------------------------------------------------------------------
 
@@ -39,13 +39,17 @@ export default function MUIStepper() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Stepper"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Stepper' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Stepper' },
+              ]}
               moreLink="https://mui.com/components/steppers"
             />
           </Container>

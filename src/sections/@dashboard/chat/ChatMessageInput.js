@@ -4,10 +4,10 @@ import { useRef, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Stack, Input, Divider, IconButton, InputAdornment } from '@mui/material';
 // utils
-import uuidv4 from '../../../../../utils/uuidv4';
+import uuidv4 from 'src/utils/uuidv4';
 // components
-import Iconify from '../../../../../components/Iconify';
-import EmojiPicker from '../../../../../components/EmojiPicker';
+import Iconify from 'src/components/Iconify';
+import EmojiPicker from 'src/components/EmojiPicker';
 
 // ----------------------------------------------------------------------
 

@@ -4,6 +4,12 @@ import { useRouter } from 'next/router';
 // @mui
 import { Container, Card } from '@mui/material';
 // redux
+import {
+  MailList,
+  MailDetails,
+  MailSidebar,
+  MailCompose,
+} from 'src/sections/@dashboard/mail';
 import { useDispatch } from '../../../redux/store';
 import { getLabels } from '../../../redux/slices/mail';
 // routes
@@ -16,7 +22,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { MailList, MailDetails, MailSidebar, MailCompose } from '../../../supabase/components/sections/@dashboard/mail';
 
 // ----------------------------------------------------------------------
 
@@ -68,8 +73,15 @@ export default function Mail() {
             onCloseSidebar={() => setOpenSidebar(false)}
             onOpenCompose={() => setOpenCompose(true)}
           />
-          {mailId ? <MailDetails /> : <MailList onOpenSidebar={() => setOpenSidebar(true)} />}
-          <MailCompose isOpenCompose={openCompose} onCloseCompose={() => setOpenCompose(false)} />
+          {mailId ? (
+            <MailDetails />
+          ) : (
+            <MailList onOpenSidebar={() => setOpenSidebar(true)} />
+          )}
+          <MailCompose
+            isOpenCompose={openCompose}
+            onCloseCompose={() => setOpenCompose(false)}
+          />
         </Card>
       </Container>
     </Page>

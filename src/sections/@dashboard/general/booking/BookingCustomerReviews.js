@@ -5,12 +5,12 @@ import { useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Card, Chip, Stack, Avatar, Rating, Button, CardHeader, Typography } from '@mui/material';
 // utils
-import { fDateTime } from '../../../../../../utils/formatTime';
+import { fDateTime } from 'src/utils/formatTime';
 // _mock_
-import { _bookingReview } from '../../../../../../_mock';
+import { _bookingReview } from 'src/_mock';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import { CarouselArrows } from '../../../../../../components/carousel';
+import Iconify from 'src/components/Iconify';
+import { CarouselArrows } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

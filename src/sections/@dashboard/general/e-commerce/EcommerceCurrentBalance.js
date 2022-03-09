@@ -2,7 +2,7 @@
 import { styled } from '@mui/material/styles';
 import { Button, Card, Typography, Stack } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 
 // ----------------------------------------------------------------------
 

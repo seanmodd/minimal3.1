@@ -12,6 +12,7 @@ import {
   TimelineOppositeContent,
 } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -20,7 +21,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -108,13 +108,17 @@ export default function MUITimeline() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Timeline"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Timeline' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Timeline' },
+              ]}
               moreLink="https://mui.com/components/timeline"
             />
           </Container>
@@ -197,7 +201,9 @@ export default function MUITimeline() {
                 {TIMELINES.map((item) => (
                   <TimelineItem key={item.key}>
                     <TimelineOppositeContent>
-                      <Typography sx={{ color: 'text.secondary' }}>{item.time}</Typography>
+                      <Typography sx={{ color: 'text.secondary' }}>
+                        {item.time}
+                      </Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                       <TimelineDot color={item.color} />
@@ -217,7 +223,10 @@ export default function MUITimeline() {
               {TIMELINES.map((item) => (
                 <TimelineItem key={item.key}>
                   <TimelineOppositeContent>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: 'text.secondary' }}
+                    >
                       {item.time}
                     </Typography>
                   </TimelineOppositeContent>
@@ -233,7 +242,10 @@ export default function MUITimeline() {
                       }}
                     >
                       <Typography variant="subtitle2">{item.title}</Typography>
-                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: 'text.secondary' }}
+                      >
                         {item.des}
                       </Typography>
                     </Paper>

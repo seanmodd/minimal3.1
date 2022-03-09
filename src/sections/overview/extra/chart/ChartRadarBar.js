@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 // @mui
 import { useTheme } from '@mui/material/styles';
 // components
-import ReactApexChart, { BaseOptionChart } from '../../../../../../components/chart';
+import ReactApexChart, { BaseOptionChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 

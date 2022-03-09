@@ -15,7 +15,7 @@ import {
   FormControlLabel,
 } from '@mui/material';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 
@@ -56,7 +56,11 @@ export default function CheckoutDelivery({ deliveryOptions, onApplyShipping }) {
                 onApplyShipping(Number(value));
               }}
             >
-              <Stack spacing={2} alignItems="center" direction={{ xs: 'column', md: 'row' }}>
+              <Stack
+                spacing={2}
+                alignItems="center"
+                direction={{ xs: 'column', md: 'row' }}
+              >
                 {deliveryOptions.map((delivery) => {
                   const selected = field.value === delivery.value;
 
@@ -71,11 +75,22 @@ export default function CheckoutDelivery({ deliveryOptions, onApplyShipping }) {
                     >
                       <FormControlLabel
                         value={delivery.value}
-                        control={<Radio checkedIcon={<Iconify icon={'eva:checkmark-circle-2-fill'} />} />}
+                        control={
+                          <Radio
+                            checkedIcon={
+                              <Iconify icon="eva:checkmark-circle-2-fill" />
+                            }
+                          />
+                        }
                         label={
                           <Box sx={{ ml: 1 }}>
-                            <Typography variant="subtitle2">{delivery.title}</Typography>
-                            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                            <Typography variant="subtitle2">
+                              {delivery.title}
+                            </Typography>
+                            <Typography
+                              variant="body2"
+                              sx={{ color: 'text.secondary' }}
+                            >
                               {delivery.description}
                             </Typography>
                           </Box>

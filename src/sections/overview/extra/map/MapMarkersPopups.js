@@ -4,7 +4,7 @@ import MapGL from 'react-map-gl';
 // @mui
 import { Box, Typography } from '@mui/material';
 // components
-import Image from '../../../../../../components/Image';
+import Image from 'src/components/Image';
 import {
   MapControlPopup,
   MapControlMarker,
@@ -12,7 +12,7 @@ import {
   MapControlGeolocate,
   MapControlNavigation,
   MapControlFullscreen,
-} from '../../../../../../components/map';
+} from 'src/components/map';
 
 // ----------------------------------------------------------------------
 

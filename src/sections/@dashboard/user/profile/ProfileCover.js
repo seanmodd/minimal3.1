@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 // utils
-import cssStyles from '../../../../../../utils/cssStyles';
+import cssStyles from 'src/utils/cssStyles';
 // hooks
-import useAuth from '../../../../../../hooks/useAuth';
+import useAuth from 'src/hooks/useAuth';
 // components
-import MyAvatar from '../../../../../../components/MyAvatar';
-import Image from '../../../../../../components/Image';
+import MyAvatar from 'src/components/MyAvatar';
+import Image from 'src/components/Image';
 
 // ----------------------------------------------------------------------
 

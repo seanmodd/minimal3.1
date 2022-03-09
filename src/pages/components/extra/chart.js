@@ -1,14 +1,14 @@
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Card, Grid, Container, CardHeader, CardContent } from '@mui/material';
+import {
+  Box,
+  Card,
+  Grid,
+  Container,
+  CardHeader,
+  CardContent,
+} from '@mui/material';
 // routes
-import { PATH_PAGE } from '../../../routes/paths';
-// layouts
-import Layout from '../../../layouts';
-// components
-import Page from '../../../components/Page';
-import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
-// sections
 import {
   ChartPie,
   ChartBar,
@@ -22,7 +22,14 @@ import {
   ChartColumnStacked,
   ChartColumnNegative,
   ChartColumnMultiple,
-} from '../../../supabase/components/sections/overview/extra/chart';
+} from 'src/sections/overview/extra/chart';
+import { PATH_PAGE } from '../../../routes/paths';
+// layouts
+import Layout from '../../../layouts';
+// components
+import Page from '../../../components/Page';
+import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
+// sections
 
 // ----------------------------------------------------------------------
 
@@ -48,13 +55,17 @@ export default function DemoCharts() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Charts"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Charts' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Charts' },
+              ]}
               moreLink="https://apexcharts.com"
             />
           </Container>

@@ -2,7 +2,7 @@
 import { IconButton } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 //
 import { Block } from '../../Block';
 

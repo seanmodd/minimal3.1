@@ -19,6 +19,11 @@ import {
   TablePagination,
 } from '@mui/material';
 // redux
+import {
+  ProductMoreMenu,
+  ProductListHead,
+  ProductListToolbar,
+} from 'src/sections/@dashboard/e-commerce/product-list';
 import { useDispatch, useSelector } from '../../../redux/store';
 import { getProducts } from '../../../redux/slices/product';
 // utils
@@ -39,11 +44,6 @@ import Scrollbar from '../../../components/Scrollbar';
 import SearchNotFound from '../../../components/SearchNotFound';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import {
-  ProductMoreMenu,
-  ProductListHead,
-  ProductListToolbar,
-} from '../../../supabase/components/sections/@dashboard/e-commerce/product-list';
 
 // ----------------------------------------------------------------------
 
@@ -121,7 +121,10 @@ export default function EcommerceProductList() {
     } else if (selectedIndex === selected.length - 1) {
       newSelected = newSelected.concat(selected.slice(0, -1));
     } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(selected.slice(0, selectedIndex), selected.slice(selectedIndex + 1));
+      newSelected = newSelected.concat(
+        selected.slice(0, selectedIndex),
+        selected.slice(selectedIndex + 1)
+      );
     }
     setSelected(newSelected);
   };
@@ -136,20 +139,29 @@ export default function EcommerceProductList() {
   };
 
   const handleDeleteProduct = (productId) => {
-    const deleteProduct = productList.filter((product) => product.id !== productId);
+    const deleteProduct = productList.filter(
+      (product) => product.id !== productId
+    );
     setSelected([]);
     setProductList(deleteProduct);
   };
 
   const handleDeleteProducts = (selected) => {
-    const deleteProducts = productList.filter((product) => !selected.includes(product.name));
+    const deleteProducts = productList.filter(
+      (product) => !selected.includes(product.name)
+    );
     setSelected([]);
     setProductList(deleteProducts);
   };
 
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - productList.length) : 0;
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - productList.length) : 0;
 
-  const filteredProducts = applySortFilter(productList, getComparator(order, orderBy), filterName);
+  const filteredProducts = applySortFilter(
+    productList,
+    getComparator(order, orderBy),
+    filterName
+  );
 
   const isNotFound = !filteredProducts.length && Boolean(filterName);
 
@@ -168,7 +180,10 @@ export default function EcommerceProductList() {
           ]}
           action={
             <NextLink href={PATH_DASHBOARD.eCommerce.newProduct} passHref>
-              <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
+              <Button
+                variant="contained"
+                startIcon={<Iconify icon="eva:plus-fill" />}
+              >
                 New Product
               </Button>
             </NextLink>
@@ -197,54 +212,84 @@ export default function EcommerceProductList() {
                 />
 
                 <TableBody>
-                  {filteredProducts.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, cover, price, createdAt, inventoryType } = row;
+                  {filteredProducts
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((row) => {
+                      const {
+                        id,
+                        name,
+                        cover,
+                        price,
+                        createdAt,
+                        inventoryType,
+                      } = row;
 
-                    const isItemSelected = selected.indexOf(name) !== -1;
+                      const isItemSelected = selected.indexOf(name) !== -1;
 
-                    return (
-                      <TableRow
-                        hover
-                        key={id}
-                        tabIndex={-1}
-                        role="checkbox"
-                        selected={isItemSelected}
-                        aria-checked={isItemSelected}
-                      >
-                        <TableCell padding="checkbox">
-                          <Checkbox checked={isItemSelected} onClick={() => handleClick(name)} />
-                        </TableCell>
-                        <TableCell sx={{ display: 'flex', alignItems: 'center' }}>
-                          <Image
-                            disabledEffect
-                            alt={name}
-                            src={cover}
-                            sx={{ borderRadius: 1.5, width: 64, height: 64, mr: 2 }}
-                          />
-                          <Typography variant="subtitle2" noWrap>
-                            {name}
-                          </Typography>
-                        </TableCell>
-                        <TableCell style={{ minWidth: 160 }}>{fDate(createdAt)}</TableCell>
-                        <TableCell style={{ minWidth: 160 }}>
-                          <Label
-                            variant={theme.palette.mode === 'light' ? 'ghost' : 'filled'}
-                            color={
-                              (inventoryType === 'out_of_stock' && 'error') ||
-                              (inventoryType === 'low_stock' && 'warning') ||
-                              'success'
-                            }
+                      return (
+                        <TableRow
+                          hover
+                          key={id}
+                          tabIndex={-1}
+                          role="checkbox"
+                          selected={isItemSelected}
+                          aria-checked={isItemSelected}
+                        >
+                          <TableCell padding="checkbox">
+                            <Checkbox
+                              checked={isItemSelected}
+                              onClick={() => handleClick(name)}
+                            />
+                          </TableCell>
+                          <TableCell
+                            sx={{ display: 'flex', alignItems: 'center' }}
                           >
-                            {inventoryType ? sentenceCase(inventoryType) : ''}
-                          </Label>
-                        </TableCell>
-                        <TableCell align="right">{fCurrency(price)}</TableCell>
-                        <TableCell align="right">
-                          <ProductMoreMenu productName={name} onDelete={() => handleDeleteProduct(id)} />
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
+                            <Image
+                              disabledEffect
+                              alt={name}
+                              src={cover}
+                              sx={{
+                                borderRadius: 1.5,
+                                width: 64,
+                                height: 64,
+                                mr: 2,
+                              }}
+                            />
+                            <Typography variant="subtitle2" noWrap>
+                              {name}
+                            </Typography>
+                          </TableCell>
+                          <TableCell style={{ minWidth: 160 }}>
+                            {fDate(createdAt)}
+                          </TableCell>
+                          <TableCell style={{ minWidth: 160 }}>
+                            <Label
+                              variant={
+                                theme.palette.mode === 'light'
+                                  ? 'ghost'
+                                  : 'filled'
+                              }
+                              color={
+                                (inventoryType === 'out_of_stock' && 'error') ||
+                                (inventoryType === 'low_stock' && 'warning') ||
+                                'success'
+                              }
+                            >
+                              {inventoryType ? sentenceCase(inventoryType) : ''}
+                            </Label>
+                          </TableCell>
+                          <TableCell align="right">
+                            {fCurrency(price)}
+                          </TableCell>
+                          <TableCell align="right">
+                            <ProductMoreMenu
+                              productName={name}
+                              onDelete={() => handleDeleteProduct(id)}
+                            />
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
                   {emptyRows > 0 && (
                     <TableRow style={{ height: 53 * emptyRows }}>
                       <TableCell colSpan={6} />
@@ -309,7 +354,10 @@ function applySortFilter(array, comparator, query) {
   });
 
   if (query) {
-    return array.filter((_product) => _product.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    return array.filter(
+      (_product) =>
+        _product.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+    );
   }
 
   return stabilizedThis.map((el) => el[0]);

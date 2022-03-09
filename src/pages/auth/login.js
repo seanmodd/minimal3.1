@@ -3,20 +3,29 @@ import { capitalCase } from 'change-case';
 import NextLink from 'next/link';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Card, Stack, Link, Alert, Tooltip, Container, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  Stack,
+  Link,
+  Alert,
+  Tooltip,
+  Container,
+  Typography,
+} from '@mui/material';
 // routes
-import { PATH_AUTH } from '../../routes/paths';
+import { LoginForm } from 'src/sections/auth/login';
+import { PATH_AUTH } from 'src/routes/paths';
 // hooks
-import useAuth from '../../hooks/useAuth';
-import useResponsive from '../../hooks/useResponsive';
+import useAuth from 'src/hooks/useAuth';
+import useResponsive from 'src/hooks/useResponsive';
 // guards
-import GuestGuard from '../../guards/GuestGuard';
+import GuestGuard from 'src/guards/GuestGuard';
 // components
-import Page from '../../components/Page';
-import Logo from '../../components/Logo';
-import Image from '../../components/Image';
+import Page from 'src/components/Page';
+import Logo from 'src/components/Logo';
+import Image from 'src/components/Image';
 // sections
-import { LoginForm } from '../../supabase/components/sections/auth/login';
 
 // ----------------------------------------------------------------------
 
@@ -78,7 +87,7 @@ export default function Login() {
             <Logo />
             {smUp && (
               <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-                Don’t have an account? {''}
+                Don’t have an account?
                 <NextLink href={PATH_AUTH.register} passHref>
                   <Link variant="subtitle2">Get started</Link>
                 </NextLink>
@@ -105,7 +114,9 @@ export default function Login() {
                   <Typography variant="h4" gutterBottom>
                     Sign in to Minimal
                   </Typography>
-                  <Typography sx={{ color: 'text.secondary' }}>Enter your details below.</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>
+                    Enter your details below.
+                  </Typography>
                 </Box>
 
                 <Tooltip title={capitalCase(method)} placement="right">
@@ -121,7 +132,8 @@ export default function Login() {
               </Stack>
 
               <Alert severity="info" sx={{ mb: 3 }}>
-                Use email : <strong>demo@minimals.cc</strong> / password :<strong> demo1234</strong>
+                Use email : <strong>demo@minimals.cc</strong> / password :
+                <strong> demo1234</strong>
               </Alert>
 
               <LoginForm />

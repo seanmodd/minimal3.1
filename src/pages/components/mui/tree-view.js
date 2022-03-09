@@ -3,6 +3,7 @@ import { alpha, styled } from '@mui/material/styles';
 import { Box, Container } from '@mui/material';
 import { TreeView, TreeItem, treeItemClasses } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,7 +12,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -26,18 +26,20 @@ const TreeViewStyle = styled(TreeView)({
   maxWidth: 400,
 });
 
-const StyledTreeItem = styled((props) => <TreeItem {...props} />)(({ theme }) => ({
-  [`& .${treeItemClasses.iconContainer}`]: {
-    '& .close': {
-      opacity: 0.3,
+const StyledTreeItem = styled((props) => <TreeItem {...props} />)(
+  ({ theme }) => ({
+    [`& .${treeItemClasses.iconContainer}`]: {
+      '& .close': {
+        opacity: 0.3,
+      },
     },
-  },
-  [`& .${treeItemClasses.group}`]: {
-    marginLeft: 15,
-    paddingLeft: 18,
-    borderLeft: `1px dashed ${alpha(theme.palette.text.primary, 0.4)}`,
-  },
-}));
+    [`& .${treeItemClasses.group}`]: {
+      marginLeft: 15,
+      paddingLeft: 18,
+      borderLeft: `1px dashed ${alpha(theme.palette.text.primary, 0.4)}`,
+    },
+  })
+);
 
 // ----------------------------------------------------------------------
 
@@ -56,13 +58,17 @@ export default function MUITreesView() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Tree View"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Tree View' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Tree View' },
+              ]}
               moreLink="https://mui.com/components/tree-view"
             />
           </Container>
@@ -73,13 +79,28 @@ export default function MUITreesView() {
             sx={{
               display: 'grid',
               gap: 3,
-              gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' },
+              gridTemplateColumns: {
+                xs: 'repeat(1, 1fr)',
+                md: 'repeat(3, 1fr)',
+              },
             }}
           >
             <Block title="Basic">
               <TreeViewStyle
-                defaultCollapseIcon={<Iconify icon="eva:chevron-down-fill" width={20} height={20} />}
-                defaultExpandIcon={<Iconify icon="eva:chevron-right-fill" width={20} height={20} />}
+                defaultCollapseIcon={
+                  <Iconify
+                    icon="eva:chevron-down-fill"
+                    width={20}
+                    height={20}
+                  />
+                }
+                defaultExpandIcon={
+                  <Iconify
+                    icon="eva:chevron-right-fill"
+                    width={20}
+                    height={20}
+                  />
+                }
                 defaultEndIcon={null}
               >
                 <TreeItem nodeId="1" label="Applications">
@@ -102,8 +123,20 @@ export default function MUITreesView() {
             <Block title="Multi Select">
               <TreeViewStyle
                 multiSelect
-                defaultCollapseIcon={<Iconify icon="eva:chevron-down-fill" width={20} height={20} />}
-                defaultExpandIcon={<Iconify icon="eva:chevron-right-fill" width={20} height={20} />}
+                defaultCollapseIcon={
+                  <Iconify
+                    icon="eva:chevron-down-fill"
+                    width={20}
+                    height={20}
+                  />
+                }
+                defaultExpandIcon={
+                  <Iconify
+                    icon="eva:chevron-right-fill"
+                    width={20}
+                    height={20}
+                  />
+                }
                 defaultEndIcon={null}
               >
                 <TreeItem nodeId="1" label="Applications">
@@ -128,7 +161,10 @@ export default function MUITreesView() {
                   <StyledTreeItem nodeId="2" label="Hello" />
                   <StyledTreeItem nodeId="3" label="Subtree with children">
                     <StyledTreeItem nodeId="6" label="Hello" />
-                    <StyledTreeItem nodeId="7" label="Sub-subtree with children">
+                    <StyledTreeItem
+                      nodeId="7"
+                      label="Sub-subtree with children"
+                    >
                       <StyledTreeItem nodeId="9" label="Child 1" />
                       <StyledTreeItem nodeId="10" label="Child 2" />
                       <StyledTreeItem nodeId="11" label="Child 3" />

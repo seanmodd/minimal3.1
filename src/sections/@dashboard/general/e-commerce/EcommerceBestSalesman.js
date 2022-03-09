@@ -14,13 +14,13 @@ import {
   TableContainer,
 } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 // _mock_
-import { _ecommerceBestSalesman } from '../../../../../../_mock';
+import { _ecommerceBestSalesman } from 'src/_mock';
 // components
-import Label from '../../../../../../components/Label';
-import Image from '../../../../../../components/Image';
-import Scrollbar from '../../../../../../components/Scrollbar';
+import Label from 'src/components/Label';
+import Image from 'src/components/Image';
+import Scrollbar from 'src/components/Scrollbar';
 
 // ----------------------------------------------------------------------
 

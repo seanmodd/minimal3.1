@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Badge } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,7 +12,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -37,13 +37,17 @@ export default function MUIBadge() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Badge"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Badge' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Badge' },
+              ]}
               moreLink="https://mui.com/components/badges"
             />
           </Container>
@@ -101,18 +105,24 @@ export default function MUIBadge() {
               <Badge
                 badgeContent={99}
                 color="error"
-                children={<Iconify icon="eva:email-fill" width={24} height={24} />}
+                children={
+                  <Iconify icon="eva:email-fill" width={24} height={24} />
+                }
               />
               <Badge
                 badgeContent={100}
                 color="error"
-                children={<Iconify icon="eva:email-fill" width={24} height={24} />}
+                children={
+                  <Iconify icon="eva:email-fill" width={24} height={24} />
+                }
               />
               <Badge
                 badgeContent={1000}
                 max={999}
                 color="error"
-                children={<Iconify icon="eva:email-fill" width={24} height={24} />}
+                children={
+                  <Iconify icon="eva:email-fill" width={24} height={24} />
+                }
               />
             </Block>
 
@@ -162,7 +172,12 @@ export default function MUIBadge() {
                 />
               </Badge>
 
-              <Badge color="info" overlap="circular" badgeContent=" " variant="dot">
+              <Badge
+                color="info"
+                overlap="circular"
+                badgeContent=" "
+                variant="dot"
+              >
                 <Box
                   sx={{
                     width: 40,

@@ -2,6 +2,9 @@
 import { styled } from '@mui/material/styles';
 import { Box, Container, Stack } from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
+import SimpleTransferList from 'src/sections/overview/mui/transfer-list/SimpleTransferList';
+import EnhancedTransferList from 'src/sections/overview/mui/transfer-list/EnhancedTransferList';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -9,9 +12,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
-import SimpleTransferList from '../../../supabase/components/sections/overview/mui/transfer-list/SimpleTransferList';
-import EnhancedTransferList from '../../../supabase/components/sections/overview/mui/transfer-list/EnhancedTransferList';
 
 // ----------------------------------------------------------------------
 
@@ -44,13 +44,17 @@ export default function MUITransferList() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Transfer List"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Transfer List' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Transfer List' },
+              ]}
               moreLink="https://mui.com/components/transfer-list"
             />
           </Container>

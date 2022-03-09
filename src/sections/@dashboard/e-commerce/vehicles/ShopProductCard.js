@@ -5,13 +5,13 @@ import NextLink from 'next/link';
 // @mui
 import { Box, Card, Link, Typography, Stack } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 // components
-import Label from '../../../../../../components/Label';
-import Image from '../../../../../../components/Image';
-import { ColorPreview } from '../../../../../../components/color-utils';
+import Label from 'src/components/Label';
+import Image from 'src/components/Image';
+import { ColorPreview } from 'src/components/color-utils';
 
 // ----------------------------------------------------------------------
 

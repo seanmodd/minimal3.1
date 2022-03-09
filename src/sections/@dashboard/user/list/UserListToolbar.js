@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { useTheme, styled } from '@mui/material/styles';
 import { Toolbar, Tooltip, IconButton, Typography, InputAdornment } from '@mui/material';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import InputStyle from '../../../../../../components/InputStyle';
+import Iconify from 'src/components/Iconify';
+import InputStyle from 'src/components/InputStyle';
 
 // ----------------------------------------------------------------------
 

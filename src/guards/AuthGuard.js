@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 // next
 import { useRouter } from 'next/router';
 // hooks
-import { useUser, Auth } from '@supabase/supabase-auth-helpers/react';
-import useAuth from '../hooks/useAuth';
-import Login from '../pages/auth/login';
-import Index from '../pages/index';
+import { useUser } from 'src/supabase/hooks/useAuth';
+import LoadingScreen from 'src/components/LoadingScreen';
+import useAuth from 'src/hooks/useAuth';
+import Login from 'src/pages/auth/login';
+import Index from 'src/pages/index';
 // components
-import LoadingScreen from '../components/LoadingScreen';
 
 // ----------------------------------------------------------------------
 

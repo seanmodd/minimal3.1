@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import { Box, List, Avatar, Button, Collapse, ListItemText, ListItemAvatar, ListItemButton } from '@mui/material';
 // components
-import Iconify from '../../../../../components/Iconify';
-import Scrollbar from '../../../../../components/Scrollbar';
-import BadgeStatus from '../../../../../components/BadgeStatus';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
+import BadgeStatus from 'src/components/BadgeStatus';
 //
 import ChatRoomPopup from './ChatRoomPopup';
 

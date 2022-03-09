@@ -4,10 +4,10 @@ import { capitalCase } from 'change-case';
 import { styled } from '@mui/material/styles';
 import { Box, Link, Avatar, Typography, AvatarGroup, IconButton } from '@mui/material';
 // utils
-import { fToNow } from '../../../../../utils/formatTime';
+import { fToNow } from 'src/utils/formatTime';
 // components
-import Iconify from '../../../../../components/Iconify';
-import BadgeStatus from '../../../../../components/BadgeStatus';
+import Iconify from 'src/components/Iconify';
+import BadgeStatus from 'src/components/BadgeStatus';
 
 // ----------------------------------------------------------------------
 

@@ -4,6 +4,10 @@ import { TabPanel, TabContext, TabList } from '@mui/lab';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Tab } from '@mui/material';
 // routes
+import PickerDate from 'src/sections/overview/mui/pickers/PickerDate';
+import PickerTime from 'src/sections/overview/mui/pickers/PickerTime';
+import PickerDateTime from 'src/sections/overview/mui/pickers/PickerDateTime';
+import PickerDateRange from 'src/sections/overview/mui/pickers/PickerDateRange';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,10 +15,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import PickerDate from '../../../supabase/components/sections/overview/mui/pickers/PickerDate';
-import PickerTime from '../../../supabase/components/sections/overview/mui/pickers/PickerTime';
-import PickerDateTime from '../../../supabase/components/sections/overview/mui/pickers/PickerDateTime';
-import PickerDateRange from '../../../supabase/components/sections/overview/mui/pickers/PickerDateRange';
 
 // ----------------------------------------------------------------------
 
@@ -53,13 +53,17 @@ export default function MUIPickers() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Date / Time pickers"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Date / Time pickers' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Date / Time pickers' },
+              ]}
               moreLink="https://mui.com/components/pickers"
             />
           </Container>
@@ -69,7 +73,12 @@ export default function MUIPickers() {
           <TabContext value={value}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
               {PICKERS.map((tab, index) => (
-                <Tab disableRipple key={tab.name} label={tab.name} value={String(index + 1)} />
+                <Tab
+                  disableRipple
+                  key={tab.name}
+                  label={tab.name}
+                  value={String(index + 1)}
+                />
               ))}
             </TabList>
 

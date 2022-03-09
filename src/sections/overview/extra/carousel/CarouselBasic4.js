@@ -5,13 +5,13 @@ import { useRef } from 'react';
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, Card, Typography, IconButton } from '@mui/material';
 // utils
-import cssStyles from '../../../../../../utils/cssStyles';
+import cssStyles from 'src/utils/cssStyles';
 // _mock_
-import { _carouselsExample } from '../../../../../../_mock';
+import { _carouselsExample } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import { CarouselArrows } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import { CarouselArrows } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

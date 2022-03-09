@@ -7,8 +7,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Stack, Dialog, Button, Divider, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // _mock
-import { countries } from '../../../../../../_mock';
-import { FormProvider, RHFCheckbox, RHFSelect, RHFTextField, RHFRadioGroup } from '../../../../../../components/hook-form';
+import { countries } from 'src/_mock';
+import { FormProvider, RHFCheckbox, RHFSelect, RHFTextField, RHFRadioGroup } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

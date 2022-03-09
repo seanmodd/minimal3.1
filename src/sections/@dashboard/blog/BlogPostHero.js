@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { alpha, styled } from '@mui/material/styles';
 import { Box, Avatar, SpeedDial, Typography, SpeedDialAction } from '@mui/material';
 // hooks
-import useResponsive from '../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // utils
-import { fDate } from '../../../../../utils/formatTime';
+import { fDate } from 'src/utils/formatTime';
 // components
-import Image from '../../../../../components/Image';
-import Iconify from '../../../../../components/Iconify';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

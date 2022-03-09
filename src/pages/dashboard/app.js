@@ -2,13 +2,6 @@
 import { useTheme } from '@mui/material/styles';
 import { Container, Grid, Stack } from '@mui/material';
 // hooks
-import useAuth from '../../hooks/useAuth';
-import useSettings from '../../hooks/useSettings';
-// layouts
-import Layout from '../../layouts';
-// components
-import Page from '../../components/Page';
-// sections
 import {
   AppWidget,
   AppWelcome,
@@ -20,7 +13,14 @@ import {
   AppWidgetSummary,
   AppCurrentDownload,
   AppTopInstalledCountries,
-} from '../../supabase/components/sections/@dashboard/general/app';
+} from 'src/sections/@dashboard/general/app';
+import useAuth from '../../hooks/useAuth';
+import useSettings from '../../hooks/useSettings';
+// layouts
+import Layout from '../../layouts';
+// components
+import Page from '../../components/Page';
+// sections
 
 // ----------------------------------------------------------------------
 
@@ -103,8 +103,19 @@ export default function GeneralApp() {
 
           <Grid item xs={12} md={6} lg={4}>
             <Stack spacing={3}>
-              <AppWidget title="Conversion" total={38566} icon={'eva:person-fill'} chartData={48} />
-              <AppWidget title="Applications" total={55566} icon={'eva:email-fill'} color="warning" chartData={75} />
+              <AppWidget
+                title="Conversion"
+                total={38566}
+                icon="eva:person-fill"
+                chartData={48}
+              />
+              <AppWidget
+                title="Applications"
+                total={55566}
+                icon="eva:email-fill"
+                color="warning"
+                chartData={75}
+              />
             </Stack>
           </Grid>
         </Grid>

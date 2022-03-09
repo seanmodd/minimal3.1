@@ -1,6 +1,6 @@
 import { useEffect, useState, createContext, useContext } from 'react';
 import { useRouter } from 'next/router';
-import { supabase } from '../initSupabase';
+import { supabase } from 'src/supabase/initSupabase';
 
 //* below is from here: https://github.com/supabase/supabase/blob/master/examples/nextjs-auth-tailwind/pages/auth.js
 export const RequireAuth = () => {

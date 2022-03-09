@@ -8,13 +8,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Grid, Card, Stack, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // hooks
-import useAuth from '../../../../../../hooks/useAuth';
+import useAuth from 'src/hooks/useAuth';
 // utils
-import { fData } from '../../../../../../utils/formatNumber';
+import { fData } from 'src/utils/formatNumber';
 // _mock
-import { countries } from '../../../../../../_mock';
+import { countries } from 'src/_mock';
 // components
-import { FormProvider, RHFSwitch, RHFSelect, RHFTextField, RHFUploadAvatar } from '../../../../../../components/hook-form';
+import { FormProvider, RHFSwitch, RHFSelect, RHFTextField, RHFUploadAvatar } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

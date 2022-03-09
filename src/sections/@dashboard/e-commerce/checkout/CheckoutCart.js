@@ -4,20 +4,20 @@ import NextLink from 'next/link';
 // @mui
 import { Grid, Card, Button, CardHeader, Typography } from '@mui/material';
 // redux
-import { useDispatch, useSelector } from '../../../../../../redux/store';
+import { useDispatch, useSelector } from 'src/redux/store';
 import {
   deleteCart,
   onNextStep,
   applyDiscount,
   increaseQuantity,
   decreaseQuantity,
-} from '../../../../../../redux/slices/product';
+} from 'src/redux/slices/product';
 // routes
-import { PATH_DASHBOARD } from '../../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import Scrollbar from '../../../../../../components/Scrollbar';
-import EmptyContent from '../../../../../../components/EmptyContent';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
+import EmptyContent from 'src/components/EmptyContent';
 //
 import CheckoutSummary from './CheckoutSummary';
 import CheckoutProductList from './CheckoutProductList';

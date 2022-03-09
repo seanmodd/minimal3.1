@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 // @mui
 import { Box, Grid, Card, Link, Avatar, IconButton, Typography, InputAdornment } from '@mui/material';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import InputStyle from '../../../../../../components/InputStyle';
-import SocialsButton from '../../../../../../components/SocialsButton';
-import SearchNotFound from '../../../../../../components/SearchNotFound';
+import Iconify from 'src/components/Iconify';
+import InputStyle from 'src/components/InputStyle';
+import SocialsButton from 'src/components/SocialsButton';
+import SearchNotFound from 'src/components/SearchNotFound';
 
 // ----------------------------------------------------------------------
 

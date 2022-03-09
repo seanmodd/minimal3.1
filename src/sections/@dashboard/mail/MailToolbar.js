@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import { Box, Tooltip, Checkbox, Typography, IconButton, InputAdornment } from '@mui/material';
 // hooks
-import useResponsive from '../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // components
-import Iconify from '../../../../../components/Iconify';
-import InputStyle from '../../../../../components/InputStyle';
+import Iconify from 'src/components/Iconify';
+import InputStyle from 'src/components/InputStyle';
 
 // ----------------------------------------------------------------------
 

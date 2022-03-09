@@ -7,15 +7,16 @@ import { useRouter } from 'next/router';
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem } from '@mui/material';
 // routes
-import { PATH_DASHBOARD, PATH_AUTH } from '../../../routes/paths';
+import { PATH_DASHBOARD, PATH_AUTH } from 'src/routes/paths';
 // hooks
-import useAuth from '../../../hooks/useAuth';
-import useIsMountedRef from '../../../hooks/useIsMountedRef';
+import useAuth from 'src/hooks/useAuth';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 // components
-import MyAvatar from '../../../components/MyAvatar';
-import MenuPopover from '../../../components/MenuPopover';
-import { IconButtonAnimate } from '../../../components/animate';
-
+import MyAvatar from 'src/components/MyAvatar';
+import MenuPopover from 'src/components/MenuPopover';
+import { IconButtonAnimate } from 'src/components/animate';
+// supabse login or logout modal:
+import ModalToLoginOrLogout from 'src/supabase/components/ModalToLoginOrLogout';
 // ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
@@ -37,13 +38,9 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const router = useRouter();
-
   const { user, logout } = useAuth();
-
   const isMountedRef = useIsMountedRef();
-
   const { enqueueSnackbar } = useSnackbar();
-
   const [open, setOpen] = useState(null);
 
   const handleOpen = (event) => {
@@ -117,11 +114,14 @@ export default function AccountPopover() {
 
         <Stack sx={{ p: 1 }}>
           {MENU_OPTIONS.map((option) => (
-            <NextLink key={option.label} href={option.linkTo} passHref>
-              <MenuItem key={option.label} onClick={handleClose}>
-                {option.label}
-              </MenuItem>
-            </NextLink>
+            <>
+              <NextLink key={option.label} href={option.linkTo} passHref>
+                <MenuItem key={option.label} onClick={handleClose}>
+                  {option.label}
+                </MenuItem>
+              </NextLink>
+              <ModalToLoginOrLogout />
+            </>
           ))}
         </Stack>
 

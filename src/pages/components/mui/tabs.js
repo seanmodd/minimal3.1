@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Tab, Tabs, Container } from '@mui/material';
 import { TabContext, TabList, TabPanel, Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -12,7 +13,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -51,7 +51,11 @@ const SCROLLABLE_TAB = [
     icon: <Iconify icon="eva:phone-call-fill" width={24} height={24} />,
     label: 'Item 1',
   },
-  { value: '2', icon: <Iconify icon="eva:heart-fill" width={24} height={24} />, label: 'Item 2' },
+  {
+    value: '2',
+    icon: <Iconify icon="eva:heart-fill" width={24} height={24} />,
+    label: 'Item 2',
+  },
   {
     value: '3',
     icon: <Iconify icon="eva:headphones-fill" width={24} height={24} />,
@@ -113,13 +117,17 @@ export default function MUITabs() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Tabs"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Tabs' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Tabs' },
+              ]}
               moreLink="https://mui.com/components/tabs"
             />
           </Container>
@@ -131,7 +139,11 @@ export default function MUITabs() {
               <TabContext value={value}>
                 <TabList onChange={handleChange}>
                   {SIMPLE_TAB.map((tab, index) => (
-                    <Tab key={tab.value} label={tab.label} value={String(index + 1)} />
+                    <Tab
+                      key={tab.value}
+                      label={tab.label}
+                      value={String(index + 1)}
+                    />
                   ))}
                 </TabList>
                 <Box
@@ -165,7 +177,13 @@ export default function MUITabs() {
               <TabContext value={value}>
                 <TabList onChange={handleChange}>
                   {SIMPLE_TAB.map((tab) => (
-                    <Tab key={tab.value} icon={tab.icon} label={tab.label} value={tab.value} disabled={tab.disabled} />
+                    <Tab
+                      key={tab.value}
+                      icon={tab.icon}
+                      label={tab.label}
+                      value={tab.value}
+                      disabled={tab.disabled}
+                    />
                   ))}
                 </TabList>
               </TabContext>

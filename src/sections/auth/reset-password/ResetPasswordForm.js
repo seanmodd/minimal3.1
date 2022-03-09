@@ -7,9 +7,9 @@ import { useForm } from 'react-hook-form';
 import { Stack } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // hooks
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 // components
-import { FormProvider, RHFTextField } from '../../../../../components/hook-form';
+import { FormProvider, RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

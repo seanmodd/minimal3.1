@@ -5,9 +5,9 @@ import { useState, useRef, useEffect } from 'react';
 import { alpha, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 //
-import Image from '../../../../../../components/Image';
-import LightboxModal from '../../../../../../components/LightboxModal';
-import { CarouselArrowIndex } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import LightboxModal from 'src/components/LightboxModal';
+import { CarouselArrowIndex } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

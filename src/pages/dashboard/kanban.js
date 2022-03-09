@@ -3,8 +3,13 @@ import { useEffect } from 'react';
 import { Container, Stack } from '@mui/material';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 // redux
+import { KanbanColumn, KanbanColumnAdd } from 'src/sections/@dashboard/kanban';
 import { useDispatch, useSelector } from '../../redux/store';
-import { getBoard, persistColumn, persistCard } from '../../redux/slices/kanban';
+import {
+  getBoard,
+  persistColumn,
+  persistCard,
+} from '../../redux/slices/kanban';
 // routes
 import { PATH_DASHBOARD } from '../../routes/paths';
 // layouts
@@ -14,7 +19,6 @@ import Page from '../../components/Page';
 import HeaderBreadcrumbs from '../../components/HeaderBreadcrumbs';
 import { SkeletonKanbanColumn } from '../../components/skeleton';
 // sections
-import { KanbanColumn, KanbanColumnAdd } from '../../supabase/components/sections/@dashboard/kanban';
 
 // ----------------------------------------------------------------------
 
@@ -39,7 +43,11 @@ export default function Kanban() {
 
     if (!destination) return;
 
-    if (destination.droppableId === source.droppableId && destination.index === source.index) return;
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    )
+      return;
 
     if (type === 'column') {
       const newColumnOrder = Array.from(board.columnOrder);
@@ -109,7 +117,11 @@ export default function Kanban() {
           ]}
         />
         <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="all-columns" direction="horizontal" type="column">
+          <Droppable
+            droppableId="all-columns"
+            direction="horizontal"
+            type="column"
+          >
             {(provided) => (
               <Stack
                 {...provided.droppableProps}
@@ -123,7 +135,11 @@ export default function Kanban() {
                   <SkeletonKanbanColumn />
                 ) : (
                   board.columnOrder.map((columnId, index) => (
-                    <KanbanColumn index={index} key={columnId} column={board.columns[columnId]} />
+                    <KanbanColumn
+                      index={index}
+                      key={columnId}
+                      column={board.columns[columnId]}
+                    />
                   ))
                 )}
 

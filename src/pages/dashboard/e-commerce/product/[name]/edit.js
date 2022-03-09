@@ -5,19 +5,19 @@ import { useRouter } from 'next/router';
 // @mui
 import { Container } from '@mui/material';
 // redux
-import { useDispatch, useSelector } from '../../../../../redux/store';
-import { getProducts } from '../../../../../redux/slices/product';
+import { useDispatch, useSelector } from 'src/redux/store';
+import { getProducts } from 'src/redux/slices/product';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
-import useSettings from '../../../../../hooks/useSettings';
+import useSettings from 'src/hooks/useSettings';
 // layouts
-import Layout from '../../../../../layouts';
+import Layout from 'src/layouts';
 // components
-import Page from '../../../../../components/Page';
-import HeaderBreadcrumbs from '../../../../../components/HeaderBreadcrumbs';
+import Page from 'src/components/Page';
+import HeaderBreadcrumbs from 'src/components/HeaderBreadcrumbs';
 // sections
-import ProductNewForm from '../../../../../supabase/components/sections/@dashboard/e-commerce/ProductNewForm';
+import ProductNewForm from '../../src/sections/@dashboard/e-commerce/ProductNewForm';
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +38,9 @@ export default function EcommerceProductEdit() {
 
   const { products } = useSelector((state) => state.product);
 
-  const currentProduct = products.find((product) => paramCase(product.name) === name);
+  const currentProduct = products.find(
+    (product) => paramCase(product.name) === name
+  );
 
   useEffect(() => {
     dispatch(getProducts());
@@ -55,7 +57,7 @@ export default function EcommerceProductEdit() {
               name: 'E-Commerce',
               href: PATH_DASHBOARD.eCommerce.root,
             },
-            { name: name },
+            { name },
           ]}
         />
 

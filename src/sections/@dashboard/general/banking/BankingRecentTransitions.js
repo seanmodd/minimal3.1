@@ -22,14 +22,14 @@ import {
   TableContainer,
 } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 // _mock
-import { _bankingRecentTransitions } from '../../../../../../_mock';
+import { _bankingRecentTransitions } from 'src/_mock';
 // components
-import Label from '../../../../../../components/Label';
-import Iconify from '../../../../../../components/Iconify';
-import Scrollbar from '../../../../../../components/Scrollbar';
-import MenuPopover from '../../../../../../components/MenuPopover';
+import Label from 'src/components/Label';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
+import MenuPopover from 'src/components/MenuPopover';
 
 // ----------------------------------------------------------------------
 

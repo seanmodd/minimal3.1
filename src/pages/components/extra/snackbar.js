@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Button, Container } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,7 +12,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -54,7 +54,11 @@ export default function DemoSnackbar() {
           >
             Alert
           </Button>
-          <Button size="small" color="inherit" onClick={() => closeSnackbar(key)}>
+          <Button
+            size="small"
+            color="inherit"
+            onClick={() => closeSnackbar(key)}
+          >
             Dismiss
           </Button>
         </>
@@ -70,14 +74,21 @@ export default function DemoSnackbar() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Snackbar"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Snackbar' }]}
-              moreLink={['https://mui.com/components/snackbars', 'https://www.iamhosseindhv.com/notistack']}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Snackbar' },
+              ]}
+              moreLink={[
+                'https://mui.com/components/snackbars',
+                'https://www.iamhosseindhv.com/notistack',
+              ]}
             />
           </Container>
         </Box>
@@ -88,21 +99,33 @@ export default function DemoSnackbar() {
               <Button
                 variant="contained"
                 color="inherit"
-                onClick={() => enqueueSnackbar('This is an default', { variant: 'default', action: () => {} })}
+                onClick={() =>
+                  enqueueSnackbar('This is an default', {
+                    variant: 'default',
+                    action: () => {},
+                  })
+                }
               >
                 Default
               </Button>
               <Button
                 variant="contained"
                 color="info"
-                onClick={() => enqueueSnackbar('This is an info', { variant: 'info', action: () => {} })}
+                onClick={() =>
+                  enqueueSnackbar('This is an info', {
+                    variant: 'info',
+                    action: () => {},
+                  })
+                }
               >
                 Info
               </Button>
               <Button
                 variant="contained"
                 color="success"
-                onClick={() => enqueueSnackbar('This is an success', { action: () => {} })}
+                onClick={() =>
+                  enqueueSnackbar('This is an success', { action: () => {} })
+                }
               >
                 Success
               </Button>
@@ -121,7 +144,12 @@ export default function DemoSnackbar() {
               <Button
                 variant="contained"
                 color="error"
-                onClick={() => enqueueSnackbar('This is an error', { variant: 'error', action: () => {} })}
+                onClick={() =>
+                  enqueueSnackbar('This is an error', {
+                    variant: 'error',
+                    action: () => {},
+                  })
+                }
               >
                 Error
               </Button>
@@ -186,19 +214,39 @@ export default function DemoSnackbar() {
             </Block>
 
             <Block title="With Action" sx={style}>
-              <Button variant="contained" color="inherit" onClick={() => onSnackbarAction('default')}>
+              <Button
+                variant="contained"
+                color="inherit"
+                onClick={() => onSnackbarAction('default')}
+              >
                 Default
               </Button>
-              <Button variant="contained" color="info" onClick={() => onSnackbarAction('info')}>
+              <Button
+                variant="contained"
+                color="info"
+                onClick={() => onSnackbarAction('info')}
+              >
                 Info
               </Button>
-              <Button variant="contained" color="success" onClick={() => onSnackbarAction('success')}>
+              <Button
+                variant="contained"
+                color="success"
+                onClick={() => onSnackbarAction('success')}
+              >
                 Success
               </Button>
-              <Button variant="contained" color="warning" onClick={() => onSnackbarAction('warning')}>
+              <Button
+                variant="contained"
+                color="warning"
+                onClick={() => onSnackbarAction('warning')}
+              >
                 Warning
               </Button>
-              <Button variant="contained" color="error" onClick={() => onSnackbarAction('error')}>
+              <Button
+                variant="contained"
+                color="error"
+                onClick={() => onSnackbarAction('error')}
+              >
                 Error
               </Button>
             </Block>
@@ -228,7 +276,11 @@ export default function DemoSnackbar() {
               >
                 Top Center
               </Button>
-              <Button variant="text" color="inherit" onClick={() => onSnackbarAction('default')}>
+              <Button
+                variant="text"
+                color="inherit"
+                onClick={() => onSnackbarAction('default')}
+              >
                 Top Right
               </Button>
               <Button

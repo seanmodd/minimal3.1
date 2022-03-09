@@ -16,6 +16,7 @@ import {
   TableContainer,
 } from '@mui/material';
 // routes
+import { InvoiceToolbar } from 'src/sections/@dashboard/e-commerce/invoice';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // utils
 import { fCurrency } from '../../../utils/formatNumber';
@@ -32,7 +33,6 @@ import Image from '../../../components/Image';
 import Scrollbar from '../../../components/Scrollbar';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { InvoiceToolbar } from '../../../supabase/components/sections/@dashboard/e-commerce/invoice';
 
 // ----------------------------------------------------------------------
 
@@ -78,12 +78,21 @@ export default function EcommerceInvoice() {
         <Card sx={{ pt: 5, px: 5 }}>
           <Grid container>
             <Grid item xs={12} sm={6} sx={{ mb: 5 }}>
-              <Image disabledEffect visibleByDefault alt="logo" src="/logo/logo_full.svg" sx={{ maxWidth: 120 }} />
+              <Image
+                disabledEffect
+                visibleByDefault
+                alt="logo"
+                src="/logo/logo_full.svg"
+                sx={{ maxWidth: 120 }}
+              />
             </Grid>
 
             <Grid item xs={12} sm={6} sx={{ mb: 5 }}>
               <Box sx={{ textAlign: { sm: 'right' } }}>
-                <Label color="success" sx={{ textTransform: 'uppercase', mb: 1 }}>
+                <Label
+                  color="success"
+                  sx={{ textTransform: 'uppercase', mb: 1 }}
+                >
                   {_invoice.status}
                 </Label>
                 <Typography variant="h6">INV-{_invoice.id}</Typography>
@@ -91,21 +100,39 @@ export default function EcommerceInvoice() {
             </Grid>
 
             <Grid item xs={12} sm={6} sx={{ mb: 5 }}>
-              <Typography paragraph variant="overline" sx={{ color: 'text.disabled' }}>
+              <Typography
+                paragraph
+                variant="overline"
+                sx={{ color: 'text.disabled' }}
+              >
                 Invoice from
               </Typography>
-              <Typography variant="body2">{_invoice.invoiceFrom.name}</Typography>
-              <Typography variant="body2">{_invoice.invoiceFrom.address}</Typography>
-              <Typography variant="body2">Phone: {_invoice.invoiceFrom.phone}</Typography>
+              <Typography variant="body2">
+                {_invoice.invoiceFrom.name}
+              </Typography>
+              <Typography variant="body2">
+                {_invoice.invoiceFrom.address}
+              </Typography>
+              <Typography variant="body2">
+                Phone: {_invoice.invoiceFrom.phone}
+              </Typography>
             </Grid>
 
             <Grid item xs={12} sm={6} sx={{ mb: 5 }}>
-              <Typography paragraph variant="overline" sx={{ color: 'text.disabled' }}>
+              <Typography
+                paragraph
+                variant="overline"
+                sx={{ color: 'text.disabled' }}
+              >
                 Invoice to
               </Typography>
               <Typography variant="body2">{_invoice.invoiceTo.name}</Typography>
-              <Typography variant="body2">{_invoice.invoiceTo.address}</Typography>
-              <Typography variant="body2">Phone: {_invoice.invoiceTo.phone}</Typography>
+              <Typography variant="body2">
+                {_invoice.invoiceTo.address}
+              </Typography>
+              <Typography variant="body2">
+                Phone: {_invoice.invoiceTo.phone}
+              </Typography>
             </Grid>
           </Grid>
 
@@ -114,7 +141,8 @@ export default function EcommerceInvoice() {
               <Table>
                 <TableHead
                   sx={{
-                    borderBottom: (theme) => `solid 1px ${theme.palette.divider}`,
+                    borderBottom: (theme) =>
+                      `solid 1px ${theme.palette.divider}`,
                     '& th': { backgroundColor: 'transparent' },
                   }}
                 >
@@ -132,21 +160,32 @@ export default function EcommerceInvoice() {
                     <TableRow
                       key={index}
                       sx={{
-                        borderBottom: (theme) => `solid 1px ${theme.palette.divider}`,
+                        borderBottom: (theme) =>
+                          `solid 1px ${theme.palette.divider}`,
                       }}
                     >
                       <TableCell>{index + 1}</TableCell>
                       <TableCell align="left">
                         <Box sx={{ maxWidth: 560 }}>
-                          <Typography variant="subtitle2">{row.title}</Typography>
-                          <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
+                          <Typography variant="subtitle2">
+                            {row.title}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{ color: 'text.secondary' }}
+                            noWrap
+                          >
                             {row.description}
                           </Typography>
                         </Box>
                       </TableCell>
                       <TableCell align="left">{row.qty}</TableCell>
-                      <TableCell align="right">{fCurrency(row.price)}</TableCell>
-                      <TableCell align="right">{fCurrency(row.price * row.qty)}</TableCell>
+                      <TableCell align="right">
+                        {fCurrency(row.price)}
+                      </TableCell>
+                      <TableCell align="right">
+                        {fCurrency(row.price * row.qty)}
+                      </TableCell>
                     </TableRow>
                   ))}
 
@@ -158,7 +197,9 @@ export default function EcommerceInvoice() {
                     </TableCell>
                     <TableCell align="right" width={120}>
                       <Box sx={{ mt: 2 }} />
-                      <Typography variant="body1">{fCurrency(subTotal)}</Typography>
+                      <Typography variant="body1">
+                        {fCurrency(subTotal)}
+                      </Typography>
                     </TableCell>
                   </RowResultStyle>
                   <RowResultStyle>
@@ -167,7 +208,9 @@ export default function EcommerceInvoice() {
                       <Typography variant="body1">Discount</Typography>
                     </TableCell>
                     <TableCell align="right" width={120}>
-                      <Typography sx={{ color: 'error.main' }}>{fCurrency(-_invoice.discount)}</Typography>
+                      <Typography sx={{ color: 'error.main' }}>
+                        {fCurrency(-_invoice.discount)}
+                      </Typography>
                     </TableCell>
                   </RowResultStyle>
                   <RowResultStyle>
@@ -176,7 +219,9 @@ export default function EcommerceInvoice() {
                       <Typography variant="body1">Taxes</Typography>
                     </TableCell>
                     <TableCell align="right" width={120}>
-                      <Typography variant="body1">{fCurrency(_invoice.taxes)}</Typography>
+                      <Typography variant="body1">
+                        {fCurrency(_invoice.taxes)}
+                      </Typography>
                     </TableCell>
                   </RowResultStyle>
                   <RowResultStyle>
@@ -199,7 +244,8 @@ export default function EcommerceInvoice() {
             <Grid item xs={12} md={9} sx={{ py: 3 }}>
               <Typography variant="subtitle2">NOTES</Typography>
               <Typography variant="body2">
-                We appreciate your business. Should you need us to add VAT or extra notes let us know!
+                We appreciate your business. Should you need us to add VAT or
+                extra notes let us know!
               </Typography>
             </Grid>
             <Grid item xs={12} md={3} sx={{ py: 3, textAlign: 'right' }}>

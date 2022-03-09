@@ -2,8 +2,22 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Grid, Step, Stepper, Container, StepLabel, StepConnector } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Step,
+  Stepper,
+  Container,
+  StepLabel,
+  StepConnector,
+} from '@mui/material';
 // redux
+import {
+  CheckoutCart,
+  CheckoutPayment,
+  CheckoutOrderComplete,
+  CheckoutBillingAddress,
+} from 'src/sections/@dashboard/e-commerce/checkout';
 import { useDispatch, useSelector } from '../../../redux/store';
 import { getCart, createBilling } from '../../../redux/slices/product';
 // routes
@@ -18,12 +32,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import {
-  CheckoutCart,
-  CheckoutPayment,
-  CheckoutOrderComplete,
-  CheckoutBillingAddress,
-} from '../../../supabase/components/sections/@dashboard/e-commerce/checkout';
 
 // ----------------------------------------------------------------------
 
@@ -63,7 +71,10 @@ function QontoStepIcon({ active, completed }) {
       }}
     >
       {completed ? (
-        <Iconify icon={'eva:checkmark-fill'} sx={{ zIndex: 1, width: 20, height: 20, color: 'primary.main' }} />
+        <Iconify
+          icon="eva:checkmark-fill"
+          sx={{ zIndex: 1, width: 20, height: 20, color: 'primary.main' }}
+        />
       ) : (
         <Box
           sx={{
@@ -128,7 +139,11 @@ export default function EcommerceCheckout() {
 
         <Grid container justifyContent={isComplete ? 'center' : 'flex-start'}>
           <Grid item xs={12} md={8} sx={{ mb: 5 }}>
-            <Stepper alternativeLabel activeStep={activeStep} connector={<QontoConnector />}>
+            <Stepper
+              alternativeLabel
+              activeStep={activeStep}
+              connector={<QontoConnector />}
+            >
               {STEPS.map((label) => (
                 <Step key={label}>
                   <StepLabel

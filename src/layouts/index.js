@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 // guards
-import AuthGuard from '../guards/AuthGuard';
+import AuthGuard from 'src/guards/AuthGuard';
 // components
-import MainLayout from './main';
-import DashboardLayout from './dashboard';
-import LogoOnlyLayout from './LogoOnlyLayout';
+import MainLayout from 'src/layouts/main';
+import DashboardLayout from 'src/layouts/dashboard';
+import LogoOnlyLayout from 'src/layouts/LogoOnlyLayout';
 
 // ----------------------------------------------------------------------
 
@@ -23,8 +23,8 @@ export default function Layout({ variant = 'dashboard', children }) {
   }
 
   return (
-    <AuthGuard>
-      <DashboardLayout> {children} </DashboardLayout>
-    </AuthGuard>
+    // <AuthGuard>
+    <DashboardLayout> {children} </DashboardLayout>
+    // </AuthGuard>
   );
 }

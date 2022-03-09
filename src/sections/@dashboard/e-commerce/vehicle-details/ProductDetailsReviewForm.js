@@ -8,7 +8,7 @@ import { styled } from '@mui/material/styles';
 import { Button, Stack, Rating, Typography, FormHelperText } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // components
-import { FormProvider, RHFTextField } from '../../../../../../components/hook-form';
+import { FormProvider, RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

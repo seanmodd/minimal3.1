@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Box, Card, Stack, Paper, Button, Collapse, TextField, Typography, IconButton } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // components
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

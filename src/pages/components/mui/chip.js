@@ -2,6 +2,8 @@
 import { styled } from '@mui/material/styles';
 import { Box, Card, Container, CardHeader, CardContent } from '@mui/material';
 // routes
+import ChipFilled from 'src/sections/overview/mui/chips/ChipFilled';
+import ChipOutlined from 'src/sections/overview/mui/chips/ChipOutlined';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -9,8 +11,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import ChipFilled from '../../../supabase/components/sections/overview/mui/chips/ChipFilled';
-import ChipOutlined from '../../../supabase/components/sections/overview/mui/chips/ChipOutlined';
 
 // ----------------------------------------------------------------------
 
@@ -36,13 +36,17 @@ export default function MUIChip() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Chip"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Chip' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Chip' },
+              ]}
               moreLink="https://mui.com/components/chips"
             />
           </Container>

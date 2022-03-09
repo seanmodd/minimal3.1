@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 // @mui
 import { Stack, Link, Button, Typography } from '@mui/material';
 // utils
-import { fDate } from '../../../../../../utils/formatTime';
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fDate } from 'src/utils/formatTime';
+import { fCurrency } from 'src/utils/formatNumber';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

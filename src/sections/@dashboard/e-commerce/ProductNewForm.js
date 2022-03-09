@@ -12,7 +12,7 @@ import { styled } from '@mui/material/styles';
 import { LoadingButton } from '@mui/lab';
 import { Card, Chip, Grid, Stack, TextField, Typography, Autocomplete, InputAdornment } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
 import {
   FormProvider,
@@ -22,7 +22,7 @@ import {
   RHFTextField,
   RHFRadioGroup,
   RHFUploadMultiFile,
-} from '../../../../../components/hook-form';
+} from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

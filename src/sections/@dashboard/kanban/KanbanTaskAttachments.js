@@ -6,10 +6,10 @@ import { useState, useCallback } from 'react';
 import { alpha, styled } from '@mui/material/styles';
 import { Box, IconButton } from '@mui/material';
 // components
-import Image from '../../../../../components/Image';
-import Iconify from '../../../../../components/Iconify';
-import LightboxModal from '../../../../../components/LightboxModal';
-import { varFade } from '../../../../../components/animate';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import LightboxModal from 'src/components/LightboxModal';
+import { varFade } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 

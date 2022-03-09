@@ -5,15 +5,15 @@ import { useRouter } from 'next/router';
 // @mui
 import { Box, List, Drawer, Button, Divider } from '@mui/material';
 // redux
-import { useSelector } from '../../../../../redux/store';
+import { useSelector } from 'src/redux/store';
 // hooks
-import useResponsive from '../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // config
-import { NAVBAR } from '../../../../../config';
+import { NAVBAR } from 'src/config';
 // components
-import Iconify from '../../../../../components/Iconify';
-import Scrollbar from '../../../../../components/Scrollbar';
-import { SkeletonMailSidebarItem } from '../../../../../components/skeleton';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
+import { SkeletonMailSidebarItem } from 'src/components/skeleton';
 //
 import MailSidebarItem from './MailSidebarItem';
 

@@ -2,6 +2,7 @@
 import { styled } from '@mui/material/styles';
 import { Box, Card, Container, CardHeader, CardContent } from '@mui/material';
 // routes
+import { ReactHookForm } from 'src/sections/overview/extra/form';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -9,7 +10,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { ReactHookForm } from '../../../supabase/components/sections/overview/extra/form';
 
 // ----------------------------------------------------------------------
 
@@ -34,14 +34,21 @@ export default function DemoFormValidation() {
           sx={{
             pt: 6,
             pb: 1,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Form Validation"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Form Validation' }]}
-              moreLink={['https://react-hook-form.com/', 'https://github.com/jquense/yup']}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Form Validation' },
+              ]}
+              moreLink={[
+                'https://react-hook-form.com/',
+                'https://github.com/jquense/yup',
+              ]}
             />
           </Container>
         </Box>

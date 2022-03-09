@@ -13,9 +13,9 @@ import {
   InputAdornment,
 } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +48,11 @@ export default function CheckoutSummary({
         title="Order Summary"
         action={
           enableEdit && (
-            <Button size="small" onClick={onEdit} startIcon={<Iconify icon={'eva:edit-fill'} />}>
+            <Button
+              size="small"
+              onClick={onEdit}
+              startIcon={<Iconify icon="eva:edit-fill" />}
+            >
               Edit
             </Button>
           )
@@ -68,14 +72,18 @@ export default function CheckoutSummary({
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
               Discount
             </Typography>
-            <Typography variant="subtitle2">{discount ? fCurrency(-discount) : '-'}</Typography>
+            <Typography variant="subtitle2">
+              {discount ? fCurrency(-discount) : '-'}
+            </Typography>
           </Stack>
 
           <Stack direction="row" justifyContent="space-between">
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
               Shipping
             </Typography>
-            <Typography variant="subtitle2">{shipping ? fCurrency(shipping) : displayShipping}</Typography>
+            <Typography variant="subtitle2">
+              {shipping ? fCurrency(shipping) : displayShipping}
+            </Typography>
           </Stack>
 
           <Divider />
@@ -100,7 +108,10 @@ export default function CheckoutSummary({
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <Button onClick={() => onApplyDiscount(5)} sx={{ mr: -0.5 }}>
+                    <Button
+                      onClick={() => onApplyDiscount(5)}
+                      sx={{ mr: -0.5 }}
+                    >
                       Apply
                     </Button>
                   </InputAdornment>

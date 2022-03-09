@@ -22,12 +22,12 @@ import {
   TableContainer,
 } from '@mui/material';
 // _mock_
-import { _bookings } from '../../../../../../_mock';
+import { _bookings } from 'src/_mock';
 //
-import Label from '../../../../../../components/Label';
-import Iconify from '../../../../../../components/Iconify';
-import Scrollbar from '../../../../../../components/Scrollbar';
-import MenuPopover from '../../../../../../components/MenuPopover';
+import Label from 'src/components/Label';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
+import MenuPopover from 'src/components/MenuPopover';
 
 // ----------------------------------------------------------------------
 

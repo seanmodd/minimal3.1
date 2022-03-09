@@ -6,11 +6,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Grid, Button } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // redux
-import { useDispatch, useSelector } from '../../../../../../redux/store';
-import { onGotoStep, onBackStep, onNextStep, applyShipping } from '../../../../../../redux/slices/product';
+import { useDispatch, useSelector } from 'src/redux/store';
+import {
+  onGotoStep,
+  onBackStep,
+  onNextStep,
+  applyShipping,
+} from 'src/redux/slices/product';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import { FormProvider } from '../../../../../../components/hook-form';
+import Iconify from 'src/components/Iconify';
+import { FormProvider } from 'src/components/hook-form';
 //
 import CheckoutSummary from './CheckoutSummary';
 import CheckoutDelivery from './CheckoutDelivery';
@@ -36,7 +41,8 @@ const PAYMENT_OPTIONS = [
   {
     value: 'paypal',
     title: 'Pay with Paypal',
-    description: 'You will be redirected to PayPal website to complete your purchase securely.',
+    description:
+      'You will be redirected to PayPal website to complete your purchase securely.',
     icons: ['https://minimal-assets-api.vercel.app/assets/icons/ic_paypal.svg'],
   },
   {
@@ -116,13 +122,19 @@ export default function CheckoutPayment() {
     <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={8}>
-          <CheckoutDelivery onApplyShipping={handleApplyShipping} deliveryOptions={DELIVERY_OPTIONS} />
-          <CheckoutPaymentMethods cardOptions={CARDS_OPTIONS} paymentOptions={PAYMENT_OPTIONS} />
+          <CheckoutDelivery
+            onApplyShipping={handleApplyShipping}
+            deliveryOptions={DELIVERY_OPTIONS}
+          />
+          <CheckoutPaymentMethods
+            cardOptions={CARDS_OPTIONS}
+            paymentOptions={PAYMENT_OPTIONS}
+          />
           <Button
             size="small"
             color="inherit"
             onClick={handleBackStep}
-            startIcon={<Iconify icon={'eva:arrow-ios-back-fill'} />}
+            startIcon={<Iconify icon="eva:arrow-ios-back-fill" />}
           >
             Back
           </Button>
@@ -139,7 +151,13 @@ export default function CheckoutPayment() {
             shipping={shipping}
             onEdit={() => handleGotoStep(0)}
           />
-          <LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
+          <LoadingButton
+            fullWidth
+            size="large"
+            type="submit"
+            variant="contained"
+            loading={isSubmitting}
+          >
             Complete Order
           </LoadingButton>
         </Grid>

@@ -1,7 +1,7 @@
 // @mui
 import { Avatar, Chip, Stack, Paper } from '@mui/material';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 //
 import { Label } from '../../Block';
 

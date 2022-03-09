@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 // @mui
 import { Box, Stack, Link, Card, Button, Divider, Typography, CardHeader } from '@mui/material';
 // utils
-import { fToNow } from '../../../../../../utils/formatTime';
+import { fToNow } from 'src/utils/formatTime';
 // _mock_
-import { _analyticPost } from '../../../../../../_mock';
+import { _analyticPost } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import Scrollbar from '../../../../../../components/Scrollbar';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
 
 // ----------------------------------------------------------------------
 

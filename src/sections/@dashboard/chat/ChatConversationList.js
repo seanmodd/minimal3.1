@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 // @mui
 import { List } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import { SkeletonConversationItem } from '../../../../../components/skeleton';
+import { SkeletonConversationItem } from 'src/components/skeleton';
 //
 import ChatConversationItem from './ChatConversationItem';
 

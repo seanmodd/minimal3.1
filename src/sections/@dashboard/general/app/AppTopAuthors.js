@@ -4,11 +4,11 @@ import orderBy from 'lodash/orderBy';
 import { alpha, styled } from '@mui/material/styles';
 import { Box, Stack, Card, Avatar, CardHeader, Typography } from '@mui/material';
 // utils
-import { fShortenNumber } from '../../../../../../utils/formatNumber';
+import { fShortenNumber } from 'src/utils/formatNumber';
 // _mock_
-import { _appAuthors } from '../../../../../../_mock';
+import { _appAuthors } from 'src/_mock';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

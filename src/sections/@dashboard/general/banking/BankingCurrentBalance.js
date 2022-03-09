@@ -5,14 +5,14 @@ import Slider from 'react-slick';
 import { styled, useTheme } from '@mui/material/styles';
 import { Box, Typography, Stack, MenuItem, IconButton } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 // _mock_
-import { _bankingCreditCard } from '../../../../../../_mock';
+import { _bankingCreditCard } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import MenuPopover from '../../../../../../components/MenuPopover';
-import { CarouselDots } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import MenuPopover from 'src/components/MenuPopover';
+import { CarouselDots } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

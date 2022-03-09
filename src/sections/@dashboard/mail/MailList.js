@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 import { styled } from '@mui/material/styles';
 import { Divider, Box } from '@mui/material';
 // redux
-import { useDispatch, useSelector } from '../../../../../redux/store';
-import { getMails } from '../../../../../redux/slices/mail';
+import { useDispatch, useSelector } from 'src/redux/store';
+import { getMails } from 'src/redux/slices/mail';
 // components
-import Scrollbar from '../../../../../components/Scrollbar';
-import EmptyContent from '../../../../../components/EmptyContent';
+import Scrollbar from 'src/components/Scrollbar';
+import EmptyContent from 'src/components/EmptyContent';
 //
 import MailItem from './MailItem';
 import MailToolbar from './MailToolbar';

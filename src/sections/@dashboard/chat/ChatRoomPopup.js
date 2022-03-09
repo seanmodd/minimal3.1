@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import { Avatar, Typography, DialogContent } from '@mui/material';
 // components
-import Iconify from '../../../../../components/Iconify';
-import { DialogAnimate } from '../../../../../components/animate';
+import Iconify from 'src/components/Iconify';
+import { DialogAnimate } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 

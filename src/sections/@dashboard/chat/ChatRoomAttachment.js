@@ -5,11 +5,11 @@ import flatten from 'lodash/flatten';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Divider, Collapse, Typography } from '@mui/material';
 // utils
-import { fDateTime } from '../../../../../utils/formatTime';
-import { getFileFullName, getFileThumb } from '../../../../../utils/getFileFormat';
+import { fDateTime } from 'src/utils/formatTime';
+import { getFileFullName, getFileThumb } from 'src/utils/getFileFormat';
 // components
-import Iconify from '../../../../../components/Iconify';
-import Scrollbar from '../../../../../components/Scrollbar';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
 
 // ----------------------------------------------------------------------
 

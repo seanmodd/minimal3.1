@@ -5,14 +5,14 @@ import { useRef } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Stack, Avatar, Typography, Paper, CardHeader } from '@mui/material';
 // utils
-import { fDateTime } from '../../../../../../utils/formatTime';
+import { fDateTime } from 'src/utils/formatTime';
 // _mock_
-import { _bookingNew } from '../../../../../../_mock';
+import { _bookingNew } from 'src/_mock';
 // components
-import Label from '../../../../../../components/Label';
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import { CarouselArrows } from '../../../../../../components/carousel';
+import Label from 'src/components/Label';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import { CarouselArrows } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

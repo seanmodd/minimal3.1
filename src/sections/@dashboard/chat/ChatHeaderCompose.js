@@ -6,8 +6,8 @@ import match from 'autosuggest-highlight/match';
 import { alpha, styled } from '@mui/material/styles';
 import { Box, Avatar, TextField, Typography, Autocomplete, Chip } from '@mui/material';
 // components
-import Iconify from '../../../../../components/Iconify';
-import SearchNotFound from '../../../../../components/SearchNotFound';
+import Iconify from 'src/components/Iconify';
+import SearchNotFound from 'src/components/SearchNotFound';
 
 // ----------------------------------------------------------------------
 

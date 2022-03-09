@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Card, IconButton, Typography, CardContent } from '@mui/material';
 // utils
-import { fDate } from '../../../../../../utils/formatTime';
-import cssStyles from '../../../../../../utils/cssStyles';
+import { fDate } from 'src/utils/formatTime';
+import cssStyles from 'src/utils/cssStyles';
 // components
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import LightboxModal from '../../../../../../components/LightboxModal';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import LightboxModal from 'src/components/LightboxModal';
 
 // ----------------------------------------------------------------------
 

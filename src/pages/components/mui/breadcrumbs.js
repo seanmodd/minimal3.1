@@ -1,7 +1,15 @@
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Link, Stack, Container, Typography, Breadcrumbs as MBreadcrumbs } from '@mui/material';
+import {
+  Box,
+  Link,
+  Stack,
+  Container,
+  Typography,
+  Breadcrumbs as MBreadcrumbs,
+} from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,7 +19,6 @@ import Iconify from '../../../components/Iconify';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -37,13 +44,17 @@ export default function MUIBreadcrumbs() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Breadcrumbs"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Breadcrumbs' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Breadcrumbs' },
+              ]}
               moreLink="https://mui.com/components/breadcrumbs"
             />
           </Container>
@@ -51,7 +62,14 @@ export default function MUIBreadcrumbs() {
 
         <Container>
           <Stack spacing={3}>
-            <Block title="Text" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Block
+              title="Text"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <MBreadcrumbs>
                 <Link color="inherit" href="#">
                   Material-UI
@@ -59,18 +77,41 @@ export default function MUIBreadcrumbs() {
                 <Link color="inherit" href="#">
                   Core
                 </Link>
-                <Typography sx={{ color: 'text.primary' }}>Breadcrumb</Typography>
+                <Typography sx={{ color: 'text.primary' }}>
+                  Breadcrumb
+                </Typography>
               </MBreadcrumbs>
             </Block>
 
-            <Block title="With Icon" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Block
+              title="With Icon"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <MBreadcrumbs>
-                <Link color="inherit" href="#" sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Iconify icon="eva:home-fill" sx={{ mr: 0.5, width: 20, height: 20 }} />
+                <Link
+                  color="inherit"
+                  href="#"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <Iconify
+                    icon="eva:home-fill"
+                    sx={{ mr: 0.5, width: 20, height: 20 }}
+                  />
                   Material-UI
                 </Link>
-                <Link color="inherit" href="#" sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Iconify icon="eva:camera-fill" sx={{ mr: 0.5, width: 20, height: 20 }} />
+                <Link
+                  color="inherit"
+                  href="#"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                >
+                  <Iconify
+                    icon="eva:camera-fill"
+                    sx={{ mr: 0.5, width: 20, height: 20 }}
+                  />
                   Core
                 </Link>
                 <Typography
@@ -80,13 +121,23 @@ export default function MUIBreadcrumbs() {
                     color: 'text.primary',
                   }}
                 >
-                  <Iconify icon="eva:bell-fill" sx={{ mr: 0.5, width: 20, height: 20 }} />
+                  <Iconify
+                    icon="eva:bell-fill"
+                    sx={{ mr: 0.5, width: 20, height: 20 }}
+                  />
                   Breadcrumb
                 </Typography>
               </MBreadcrumbs>
             </Block>
 
-            <Block title="Customized" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Block
+              title="Customized"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <Breadcrumbs
                 links={[
                   {
@@ -94,11 +145,31 @@ export default function MUIBreadcrumbs() {
                     href: '#',
                     icon: <Iconify icon="eva:home-fill" />,
                   },
-                  { name: 'Link1', href: '#', icon: <Iconify icon="eva:cube-outline" /> },
-                  { name: 'Link2', href: '#', icon: <Iconify icon="eva:cube-outline" /> },
-                  { name: 'Link3', href: '#', icon: <Iconify icon="eva:cube-outline" /> },
-                  { name: 'Link4', href: '#', icon: <Iconify icon="eva:cube-outline" /> },
-                  { name: 'Link5', href: '#', icon: <Iconify icon="eva:cube-outline" /> },
+                  {
+                    name: 'Link1',
+                    href: '#',
+                    icon: <Iconify icon="eva:cube-outline" />,
+                  },
+                  {
+                    name: 'Link2',
+                    href: '#',
+                    icon: <Iconify icon="eva:cube-outline" />,
+                  },
+                  {
+                    name: 'Link3',
+                    href: '#',
+                    icon: <Iconify icon="eva:cube-outline" />,
+                  },
+                  {
+                    name: 'Link4',
+                    href: '#',
+                    icon: <Iconify icon="eva:cube-outline" />,
+                  },
+                  {
+                    name: 'Link5',
+                    href: '#',
+                    icon: <Iconify icon="eva:cube-outline" />,
+                  },
                 ]}
               />
             </Block>

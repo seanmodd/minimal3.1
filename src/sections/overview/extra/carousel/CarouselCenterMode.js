@@ -5,12 +5,12 @@ import { useRef } from 'react';
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, Paper, Link, CardContent } from '@mui/material';
 // _mock_
-import { _carouselsExample } from '../../../../../../_mock';
+import { _carouselsExample } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import TextMaxLine from '../../../../../../components/TextMaxLine';
-import { CarouselArrows } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import TextMaxLine from 'src/components/TextMaxLine';
+import { CarouselArrows } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

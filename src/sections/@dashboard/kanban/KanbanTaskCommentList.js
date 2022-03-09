@@ -3,10 +3,10 @@ import { useState } from 'react';
 // @mui
 import { Stack, Avatar, Typography } from '@mui/material';
 // utils
-import { fToNow } from '../../../../../utils/formatTime';
+import { fToNow } from 'src/utils/formatTime';
 // components
-import Image from '../../../../../components/Image';
-import LightboxModal from '../../../../../components/LightboxModal';
+import Image from 'src/components/Image';
+import LightboxModal from 'src/components/LightboxModal';
 
 // ----------------------------------------------------------------------
 

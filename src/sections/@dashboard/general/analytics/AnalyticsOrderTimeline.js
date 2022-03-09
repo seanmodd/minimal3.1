@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Card, Typography, CardHeader, CardContent } from '@mui/material';
 import { Timeline, TimelineDot, TimelineItem, TimelineContent, TimelineSeparator, TimelineConnector } from '@mui/lab';
 // utils
-import { fDateTime } from '../../../../../../utils/formatTime';
+import { fDateTime } from 'src/utils/formatTime';
 // _mock_
-import { _analyticOrderTimeline } from '../../../../../../_mock';
+import { _analyticOrderTimeline } from 'src/_mock';
 
 // ----------------------------------------------------------------------
 

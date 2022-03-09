@@ -4,6 +4,13 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Tab } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 // routes
+import {
+  Inview,
+  OtherView,
+  ScrollView,
+  DialogView,
+  BackgroundView,
+} from 'src/sections/overview/extra/animate';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,7 +18,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Inview, OtherView, ScrollView, DialogView, BackgroundView } from '../../../supabase/components/sections/overview/extra/animate';
 
 // ----------------------------------------------------------------------
 
@@ -51,13 +57,17 @@ export default function DemoAnimate() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Animate"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Animate' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Animate' },
+              ]}
               moreLink="https://www.framer.com/api/motion"
             />
           </Container>
@@ -68,7 +78,12 @@ export default function DemoAnimate() {
             <Box sx={{ mb: 5 }}>
               <TabList onChange={handleChangeTab}>
                 {TAB_LIST.map((tab) => (
-                  <Tab key={tab.label} label={tab.label} value={tab.label} disableRipple />
+                  <Tab
+                    key={tab.label}
+                    label={tab.label}
+                    value={tab.label}
+                    disableRipple
+                  />
                 ))}
               </TabList>
             </Box>

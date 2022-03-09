@@ -1,8 +1,18 @@
 // @mui
 import { Masonry } from '@mui/lab';
 import { styled } from '@mui/material/styles';
-import { Box, Fab, Zoom, Fade, Button, Tooltip, Container, IconButton } from '@mui/material';
+import {
+  Box,
+  Fab,
+  Zoom,
+  Fade,
+  Button,
+  Tooltip,
+  Container,
+  IconButton,
+} from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -12,7 +22,6 @@ import Iconify from '../../../components/Iconify';
 import { FabButtonAnimate } from '../../../components/animate';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -52,13 +61,17 @@ export default function MUITooltip() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Tooltip"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Tooltip' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Tooltip' },
+              ]}
               moreLink="https://mui.com/components/tooltips"
             />
           </Container>
@@ -125,7 +138,11 @@ export default function MUITooltip() {
                 <Button color="inherit">Grow</Button>
               </Tooltip>
 
-              <Tooltip TransitionComponent={Fade} TransitionProps={{ timeout: 600 }} title="Add">
+              <Tooltip
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 600 }}
+                title="Add"
+              >
                 <Button color="inherit">Fade</Button>
               </Tooltip>
 

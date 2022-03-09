@@ -1,8 +1,16 @@
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Switch, Container, FormGroup, FormControl, FormControlLabel } from '@mui/material';
+import {
+  Box,
+  Switch,
+  Container,
+  FormGroup,
+  FormControl,
+  FormControlLabel,
+} from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -10,7 +18,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -44,13 +51,17 @@ export default function MUISwitch() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Switch"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Switch' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Switch' },
+              ]}
               moreLink="https://mui.com/components/switches"
             />
           </Container>
@@ -67,17 +78,40 @@ export default function MUISwitch() {
             </Block>
 
             <Block title="Sizes" sx={style}>
-              <FormControlLabel control={<Switch size="small" />} label="Small" />
+              <FormControlLabel
+                control={<Switch size="small" />}
+                label="Small"
+              />
               <FormControlLabel control={<Switch />} label="Normal" />
             </Block>
 
             <Block title="Placement" sx={style}>
               <FormControl component="fieldset">
                 <FormGroup row>
-                  <FormControlLabel value="top" label="Top" labelPlacement="top" control={<Switch />} />
-                  <FormControlLabel value="start" label="Start" labelPlacement="start" control={<Switch />} />
-                  <FormControlLabel value="bottom" label="Bottom" labelPlacement="bottom" control={<Switch />} />
-                  <FormControlLabel value="end" label="End" labelPlacement="end" control={<Switch />} />
+                  <FormControlLabel
+                    value="top"
+                    label="Top"
+                    labelPlacement="top"
+                    control={<Switch />}
+                  />
+                  <FormControlLabel
+                    value="start"
+                    label="Start"
+                    labelPlacement="start"
+                    control={<Switch />}
+                  />
+                  <FormControlLabel
+                    value="bottom"
+                    label="Bottom"
+                    labelPlacement="bottom"
+                    control={<Switch />}
+                  />
+                  <FormControlLabel
+                    value="end"
+                    label="End"
+                    labelPlacement="end"
+                    control={<Switch />}
+                  />
                 </FormGroup>
               </FormControl>
             </Block>
@@ -85,14 +119,40 @@ export default function MUISwitch() {
             <Block title="Adding Colors">
               <FormControl component="fieldset">
                 <FormGroup>
-                  <FormControlLabel control={<Switch defaultChecked color="default" />} label="Default" />
-                  <FormControlLabel control={<Switch defaultChecked />} label="Primary" />
-                  <FormControlLabel control={<Switch defaultChecked color="info" />} label="Info" />
-                  <FormControlLabel control={<Switch defaultChecked color="success" />} label="Success" />
-                  <FormControlLabel control={<Switch defaultChecked color="warning" />} label="Warning" />
-                  <FormControlLabel control={<Switch defaultChecked color="error" />} label="Error" />
-                  <FormControlLabel disabled control={<Switch defaultChecked color="error" />} label="Disabled" />
-                  <FormControlLabel disabled control={<Switch color="error" />} label="Disabled" />
+                  <FormControlLabel
+                    control={<Switch defaultChecked color="default" />}
+                    label="Default"
+                  />
+                  <FormControlLabel
+                    control={<Switch defaultChecked />}
+                    label="Primary"
+                  />
+                  <FormControlLabel
+                    control={<Switch defaultChecked color="info" />}
+                    label="Info"
+                  />
+                  <FormControlLabel
+                    control={<Switch defaultChecked color="success" />}
+                    label="Success"
+                  />
+                  <FormControlLabel
+                    control={<Switch defaultChecked color="warning" />}
+                    label="Warning"
+                  />
+                  <FormControlLabel
+                    control={<Switch defaultChecked color="error" />}
+                    label="Error"
+                  />
+                  <FormControlLabel
+                    disabled
+                    control={<Switch defaultChecked color="error" />}
+                    label="Disabled"
+                  />
+                  <FormControlLabel
+                    disabled
+                    control={<Switch color="error" />}
+                    label="Disabled"
+                  />
                 </FormGroup>
               </FormControl>
             </Block>

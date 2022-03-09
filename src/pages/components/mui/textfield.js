@@ -4,6 +4,9 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Tab } from '@mui/material';
 import { TabPanel, TabContext, TabList } from '@mui/lab';
 // routes
+import Filled from 'src/sections/overview/mui/textfield/Filled';
+import Standard from 'src/sections/overview/mui/textfield/Standard';
+import Outlined from 'src/sections/overview/mui/textfield/Outlined';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,9 +14,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import Filled from '../../../supabase/components/sections/overview/mui/textfield/Filled';
-import Standard from '../../../supabase/components/sections/overview/mui/textfield/Standard';
-import Outlined from '../../../supabase/components/sections/overview/mui/textfield/Outlined';
 
 // ----------------------------------------------------------------------
 
@@ -53,13 +53,17 @@ export default function MUITextField() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="TextField"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'TextField' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'TextField' },
+              ]}
               moreLink="https://mui.com/components/text-fields"
             />
           </Container>
@@ -70,12 +74,21 @@ export default function MUITextField() {
             <TabContext value={value}>
               <TabList onChange={handleChange}>
                 {TEXTFIELDS.map((tab, index) => (
-                  <Tab disableRipple key={tab.name} label={tab.name} value={String(index + 1)} />
+                  <Tab
+                    disableRipple
+                    key={tab.name}
+                    label={tab.name}
+                    value={String(index + 1)}
+                  />
                 ))}
               </TabList>
 
               {TEXTFIELDS.map((tab, index) => (
-                <TabPanel key={tab.name} value={String(index + 1)} sx={{ mt: 5 }}>
+                <TabPanel
+                  key={tab.name}
+                  value={String(index + 1)}
+                  sx={{ mt: 5 }}
+                >
                   {tab.component}
                 </TabPanel>
               ))}

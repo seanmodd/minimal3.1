@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, Card, Typography, Stack } from '@mui/material';
 // utils
-import { fNumber, fPercent } from '../../../../../../utils/formatNumber';
+import { fNumber, fPercent } from 'src/utils/formatNumber';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import ReactApexChart from '../../../../../../components/chart';
+import Iconify from 'src/components/Iconify';
+import ReactApexChart from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 

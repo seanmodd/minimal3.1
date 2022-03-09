@@ -13,7 +13,7 @@ import {
   FormControlLabel,
 } from '@mui/material';
 // components
-import Scrollbar from '../../../../../../../components/Scrollbar';
+import Scrollbar from 'src/components/Scrollbar';
 //
 import SortingSelectingHead from './SortingSelectingHead';
 import SortingSelectingToolbar from './SortingSelectingToolbar';

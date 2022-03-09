@@ -4,10 +4,10 @@ import Slider from 'react-slick';
 import { alpha, useTheme, styled } from '@mui/material/styles';
 import { Box, Card, Button, CardContent, Typography } from '@mui/material';
 // _mock_
-import { _ecommerceNewProducts } from '../../../../../../_mock';
+import { _ecommerceNewProducts } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import { CarouselDots } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import { CarouselDots } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

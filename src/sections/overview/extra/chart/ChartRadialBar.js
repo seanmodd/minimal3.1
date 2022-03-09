@@ -2,9 +2,9 @@ import merge from 'lodash/merge';
 // @mui
 import { useTheme } from '@mui/material/styles';
 // utils
-import { fNumber } from '../../../../../../utils/formatNumber';
+import { fNumber } from 'src/utils/formatNumber';
 // components
-import ReactApexChart, { BaseOptionChart } from '../../../../../../components/chart';
+import ReactApexChart, { BaseOptionChart } from 'src/components/chart';
 
 // ----------------------------------------------------------------------
 

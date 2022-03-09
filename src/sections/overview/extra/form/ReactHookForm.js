@@ -7,11 +7,11 @@ import { Stack, Grid, Button, TextField, Typography, IconButton, InputAdornment,
 import { LoadingButton } from '@mui/lab';
 import DatePicker from '@mui/lab/DatePicker';
 // utils
-import { fData } from '../../../../../../utils/formatNumber';
-import { fTimestamp } from '../../../../../../utils/formatTime';
+import { fData } from 'src/utils/formatNumber';
+import { fTimestamp } from 'src/utils/formatTime';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import { FormProvider, RHFTextField, RHFCheckbox, RHFEditor } from '../../../../../../components/hook-form';
+import Iconify from 'src/components/Iconify';
+import { FormProvider, RHFTextField, RHFCheckbox, RHFEditor } from 'src/components/hook-form';
 //
 import { FormSchema, defaultValues } from '.';
 

@@ -3,13 +3,13 @@ import { useState } from 'react';
 // @mui
 import { Box, Grid, Card, Button, Typography } from '@mui/material';
 // redux
-import { useDispatch, useSelector } from '../../../../../../redux/store';
-import { onBackStep, onNextStep, createBilling } from '../../../../../../redux/slices/product';
+import { useDispatch, useSelector } from 'src/redux/store';
+import { onBackStep, onNextStep, createBilling } from 'src/redux/slices/product';
 // _mock_
-import { _addressBooks } from '../../../../../../_mock';
+import { _addressBooks } from 'src/_mock';
 // components
-import Label from '../../../../../../components/Label';
-import Iconify from '../../../../../../components/Iconify';
+import Label from 'src/components/Label';
+import Iconify from 'src/components/Iconify';
 //
 import CheckoutSummary from './CheckoutSummary';
 import CheckoutNewAddressForm from './CheckoutNewAddressForm';

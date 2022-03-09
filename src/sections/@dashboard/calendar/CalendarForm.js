@@ -10,12 +10,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Box, Stack, Button, Tooltip, TextField, IconButton, DialogActions } from '@mui/material';
 import { LoadingButton, MobileDateTimePicker } from '@mui/lab';
 // redux
-import { useDispatch } from '../../../../../redux/store';
-import { createEvent, updateEvent, deleteEvent } from '../../../../../redux/slices/calendar';
+import { useDispatch } from 'src/redux/store';
+import { createEvent, updateEvent, deleteEvent } from 'src/redux/slices/calendar';
 // components
-import Iconify from '../../../../../components/Iconify';
-import { ColorSinglePicker } from '../../../../../components/color-utils';
-import { FormProvider, RHFTextField, RHFSwitch } from '../../../../../components/hook-form';
+import Iconify from 'src/components/Iconify';
+import { ColorSinglePicker } from 'src/components/color-utils';
+import { FormProvider, RHFTextField, RHFSwitch } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 // @mui
 import { Box, Link, Card, CardHeader, Typography, Stack } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 // _mock_
-import { _ecommerceLatestProducts } from '../../../../../../_mock';
+import { _ecommerceLatestProducts } from 'src/_mock';
 //
-import Image from '../../../../../../components/Image';
-import Scrollbar from '../../../../../../components/Scrollbar';
-import { ColorPreview } from '../../../../../../components/color-utils';
+import Image from 'src/components/Image';
+import Scrollbar from 'src/components/Scrollbar';
+import { ColorPreview } from 'src/components/color-utils';
 
 // ----------------------------------------------------------------------
 

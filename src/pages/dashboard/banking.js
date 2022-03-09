@@ -1,12 +1,6 @@
 // @mui
 import { Grid, Container, Stack } from '@mui/material';
 // hooks
-import useSettings from '../../hooks/useSettings';
-// layouts
-import Layout from '../../layouts';
-// components
-import Page from '../../components/Page';
-// sections
 import {
   BankingContacts,
   BankingWidgetSummary,
@@ -16,7 +10,13 @@ import {
   BankingBalanceStatistics,
   BankingRecentTransitions,
   BankingExpensesCategories,
-} from '../../supabase/components/sections/@dashboard/general/banking';
+} from 'src/sections/@dashboard/general/banking';
+import useSettings from '../../hooks/useSettings';
+// layouts
+import Layout from '../../layouts';
+// components
+import Page from '../../components/Page';
+// sections
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ export default function GeneralBanking() {
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
               <BankingWidgetSummary
                 title="Income"
-                icon={'eva:diagonal-arrow-left-down-fill'}
+                icon="eva:diagonal-arrow-left-down-fill"
                 percent={2.6}
                 total={18765}
                 chartData={[111, 136, 76, 108, 74, 54, 57, 84]}
@@ -45,7 +45,7 @@ export default function GeneralBanking() {
               <BankingWidgetSummary
                 title="Expenses"
                 color="warning"
-                icon={'eva:diagonal-arrow-right-up-fill'}
+                icon="eva:diagonal-arrow-right-up-fill"
                 percent={-0.5}
                 total={8938}
                 chartData={[111, 136, 76, 108, 74, 54, 57, 84]}

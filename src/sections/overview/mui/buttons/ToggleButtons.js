@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import Masonry from '@mui/lab/Masonry';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 //
 import { Block } from '../../Block';
 

@@ -4,14 +4,14 @@ import NextLink from 'next/link';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Link, Container, Typography } from '@mui/material';
 // routes
-import { PATH_AUTH } from '../../routes/paths';
+import { VerifyCodeForm } from 'src/sections/auth/verify-code';
+import { PATH_AUTH } from 'src/routes/paths';
 // layouts
-import Layout from '../../layouts';
+import Layout from 'src/layouts';
 // components
-import Page from '../../components/Page';
-import Iconify from '../../components/Iconify';
+import Page from 'src/components/Page';
+import Iconify from 'src/components/Iconify';
 // sections
-import { VerifyCodeForm } from '../../supabase/components/sections/auth/verify-code';
 
 // ----------------------------------------------------------------------
 
@@ -39,7 +39,13 @@ export default function VerifyCode() {
             <NextLink href={PATH_AUTH.login} passHref>
               <Button
                 size="small"
-                startIcon={<Iconify icon={'eva:arrow-ios-back-fill'} width={20} height={20} />}
+                startIcon={
+                  <Iconify
+                    icon="eva:arrow-ios-back-fill"
+                    width={20}
+                    height={20}
+                  />
+                }
                 sx={{ mb: 3 }}
               >
                 Back
@@ -50,8 +56,8 @@ export default function VerifyCode() {
               Please check your email!
             </Typography>
             <Typography sx={{ color: 'text.secondary' }}>
-              We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below box to verify
-              your email.
+              We have emailed a 6-digit confirmation code to acb@domain, please
+              enter the code in below box to verify your email.
             </Typography>
 
             <Box sx={{ mt: 5, mb: 3 }}>

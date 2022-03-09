@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 // @mui
 import { Card, CardHeader, Typography, Stack, LinearProgress } from '@mui/material';
 // utils
-import { fPercent, fCurrency } from '../../../../../../utils/formatNumber';
+import { fPercent, fCurrency } from 'src/utils/formatNumber';
 // _mock_
-import { _ecommerceSalesOverview } from '../../../../../../_mock';
+import { _ecommerceSalesOverview } from 'src/_mock';
 
 // ----------------------------------------------------------------------
 

@@ -3,11 +3,23 @@ import { useState } from 'react';
 // @mui
 import { Container, Tab, Box, Tabs } from '@mui/material';
 // routes
+import {
+  AccountGeneral,
+  AccountBilling,
+  AccountSocialLinks,
+  AccountNotifications,
+  AccountChangePassword,
+} from 'src/sections/@dashboard/user/account';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // hooks
 import useSettings from '../../../hooks/useSettings';
 // _mock_
-import { _userPayment, _userAddressBook, _userInvoices, _userAbout } from '../../../_mock';
+import {
+  _userPayment,
+  _userAddressBook,
+  _userInvoices,
+  _userAbout,
+} from '../../../_mock';
 // layouts
 import Layout from '../../../layouts';
 // components
@@ -15,13 +27,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import {
-  AccountGeneral,
-  AccountBilling,
-  AccountSocialLinks,
-  AccountNotifications,
-  AccountChangePassword,
-} from '../../../supabase/components/sections/@dashboard/user/account';
 
 // ----------------------------------------------------------------------
 
@@ -39,27 +44,33 @@ export default function UserAccount() {
   const ACCOUNT_TABS = [
     {
       value: 'general',
-      icon: <Iconify icon={'ic:round-account-box'} width={20} height={20} />,
+      icon: <Iconify icon="ic:round-account-box" width={20} height={20} />,
       component: <AccountGeneral />,
     },
     {
       value: 'billing',
-      icon: <Iconify icon={'ic:round-receipt'} width={20} height={20} />,
-      component: <AccountBilling cards={_userPayment} addressBook={_userAddressBook} invoices={_userInvoices} />,
+      icon: <Iconify icon="ic:round-receipt" width={20} height={20} />,
+      component: (
+        <AccountBilling
+          cards={_userPayment}
+          addressBook={_userAddressBook}
+          invoices={_userInvoices}
+        />
+      ),
     },
     {
       value: 'notifications',
-      icon: <Iconify icon={'eva:bell-fill'} width={20} height={20} />,
+      icon: <Iconify icon="eva:bell-fill" width={20} height={20} />,
       component: <AccountNotifications />,
     },
     {
       value: 'social_links',
-      icon: <Iconify icon={'eva:share-fill'} width={20} height={20} />,
+      icon: <Iconify icon="eva:share-fill" width={20} height={20} />,
       component: <AccountSocialLinks myProfile={_userAbout} />,
     },
     {
       value: 'change_password',
-      icon: <Iconify icon={'ic:round-vpn-key'} width={20} height={20} />,
+      icon: <Iconify icon="ic:round-vpn-key" width={20} height={20} />,
       component: <AccountChangePassword />,
     },
   ];
@@ -84,7 +95,13 @@ export default function UserAccount() {
           onChange={(e, value) => setCurrentTab(value)}
         >
           {ACCOUNT_TABS.map((tab) => (
-            <Tab disableRipple key={tab.value} label={capitalCase(tab.value)} icon={tab.icon} value={tab.value} />
+            <Tab
+              disableRipple
+              key={tab.value}
+              label={capitalCase(tab.value)}
+              icon={tab.icon}
+              value={tab.value}
+            />
           ))}
         </Tabs>
 

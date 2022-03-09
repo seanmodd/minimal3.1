@@ -5,18 +5,18 @@ import NextLink from 'next/link';
 import { styled } from '@mui/material/styles';
 import { Box, Card, Link, Container, Typography, Tooltip } from '@mui/material';
 // hooks
-import useAuth from '../../hooks/useAuth';
-import useResponsive from '../../hooks/useResponsive';
+import { RegisterForm } from 'src/sections/auth/register';
+import useAuth from 'src/hooks/useAuth';
+import useResponsive from 'src/hooks/useResponsive';
 // routes
-import { PATH_AUTH } from '../../routes/paths';
+import { PATH_AUTH } from 'src/routes/paths';
 // guards
-import GuestGuard from '../../guards/GuestGuard';
+import GuestGuard from 'src/guards/GuestGuard';
 // components
-import Page from '../../components/Page';
-import Logo from '../../components/Logo';
-import Image from '../../components/Image';
+import Page from 'src/components/Page';
+import Logo from 'src/components/Logo';
+import Image from 'src/components/Image';
 // sections
-import { RegisterForm } from '../../supabase/components/sections/auth/register';
 
 // ----------------------------------------------------------------------
 
@@ -77,7 +77,7 @@ export default function Register() {
             <Logo />
             {smUp && (
               <Typography variant="body2" sx={{ mt: { md: -2 } }}>
-                Already have an account? {''}
+                Already have an account?
                 <NextLink href={PATH_AUTH.login} passHref>
                   <Link variant="subtitle2">Login</Link>
                 </NextLink>
@@ -104,7 +104,9 @@ export default function Register() {
                   <Typography variant="h4" gutterBottom>
                     Get started absolutely free.
                   </Typography>
-                  <Typography sx={{ color: 'text.secondary' }}>Free forever. No credit card needed.</Typography>
+                  <Typography sx={{ color: 'text.secondary' }}>
+                    Free forever. No credit card needed.
+                  </Typography>
                 </Box>
                 <Tooltip title={capitalCase(method)}>
                   <>
@@ -120,12 +122,16 @@ export default function Register() {
 
               <RegisterForm />
 
-              <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
+              <Typography
+                variant="body2"
+                align="center"
+                sx={{ color: 'text.secondary', mt: 3 }}
+              >
                 By registering, I agree to Minimal&nbsp;
                 <Link underline="always" color="text.primary" href="#">
                   Terms of Service
                 </Link>
-                {''}and{''}
+                and
                 <Link underline="always" color="text.primary" href="#">
                   Privacy Policy
                 </Link>

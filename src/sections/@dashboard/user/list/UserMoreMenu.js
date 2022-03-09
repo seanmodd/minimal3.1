@@ -6,10 +6,10 @@ import NextLink from 'next/link';
 // @mui
 import { MenuItem, IconButton } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import MenuPopover from '../../../../../../components/MenuPopover';
+import Iconify from 'src/components/Iconify';
+import MenuPopover from 'src/components/MenuPopover';
 
 // ----------------------------------------------------------------------
 

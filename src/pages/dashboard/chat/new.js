@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 // @mui
 import { Card, Container } from '@mui/material';
 // redux
+import { ChatSidebar, ChatWindow } from 'src/sections/@dashboard/chat';
 import { useDispatch } from '../../../redux/store';
 import { getConversations, getContacts } from '../../../redux/slices/chat';
 // routes
@@ -14,7 +15,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { ChatSidebar, ChatWindow } from '../../../supabase/components/sections/@dashboard/chat';
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +38,10 @@ export default function Chat() {
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <HeaderBreadcrumbs
           heading="Chat"
-          links={[{ name: 'Dashboard', href: PATH_DASHBOARD.root }, { name: 'Chat' }]}
+          links={[
+            { name: 'Dashboard', href: PATH_DASHBOARD.root },
+            { name: 'Chat' },
+          ]}
         />
         <Card sx={{ height: '72vh', display: 'flex' }}>
           <ChatSidebar />

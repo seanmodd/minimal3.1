@@ -2,7 +2,7 @@
 import { styled, alpha } from '@mui/material/styles';
 import { Card, Stack, Typography, Button, OutlinedInput } from '@mui/material';
 // components
-import Image from '../../../../../../components/Image';
+import Image from 'src/components/Image';
 
 // ----------------------------------------------------------------------
 

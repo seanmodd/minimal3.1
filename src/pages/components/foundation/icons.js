@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import { Box, Stack, SvgIcon, Container, Link } from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -10,7 +11,6 @@ import Iconify from '../../../components/Iconify';
 import SvgIconStyle from '../../../components/SvgIconStyle';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -44,14 +44,21 @@ export default function FoundationIcons() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Icons"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Icons' }]}
-              moreLink={['https://mui.com/components/material-icons', 'https://iconify.design/icon-sets']}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Icons' },
+              ]}
+              moreLink={[
+                'https://mui.com/components/material-icons',
+                'https://iconify.design/icon-sets',
+              ]}
             />
           </Container>
         </Box>
@@ -60,7 +67,11 @@ export default function FoundationIcons() {
           <Stack spacing={3}>
             <Box sx={{ position: 'relative' }}>
               <Block title="Material Icons" sx={style}>
-                <Link href="https://mui.com/components/icons/#main-content" target="_blank" rel="noopener">
+                <Link
+                  href="https://mui.com/components/icons/#main-content"
+                  target="_blank"
+                  rel="noopener"
+                >
                   https://mui.com/components/icons/#main-content
                 </Link>
               </Block>
@@ -69,22 +80,38 @@ export default function FoundationIcons() {
             <Box sx={{ position: 'relative' }}>
               <Block title="Iconify Icons" sx={style}>
                 <SvgIcon color="action">
-                  <Iconify icon={'eva:alert-circle-fill'} width={24} height={24} />
+                  <Iconify
+                    icon="eva:alert-circle-fill"
+                    width={24}
+                    height={24}
+                  />
                 </SvgIcon>
                 <SvgIcon color="disabled">
-                  <Iconify icon={'eva:charging-fill'} width={24} height={24} />
+                  <Iconify icon="eva:charging-fill" width={24} height={24} />
                 </SvgIcon>
                 <SvgIcon color="error">
-                  <Iconify icon={'eva:arrow-circle-down-fill'} width={24} height={24} />
+                  <Iconify
+                    icon="eva:arrow-circle-down-fill"
+                    width={24}
+                    height={24}
+                  />
                 </SvgIcon>
                 <SvgIcon color="inherit">
-                  <Iconify icon={'eva:clock-fill'} width={24} height={24} />
+                  <Iconify icon="eva:clock-fill" width={24} height={24} />
                 </SvgIcon>
                 <SvgIcon color="primary">
-                  <Iconify icon={'eva:color-palette-fill'} width={24} height={24} />
+                  <Iconify
+                    icon="eva:color-palette-fill"
+                    width={24}
+                    height={24}
+                  />
                 </SvgIcon>
                 <SvgIcon color="secondary">
-                  <Iconify icon={'eva:color-palette-fill'} width={24} height={24} />
+                  <Iconify
+                    icon="eva:color-palette-fill"
+                    width={24}
+                    height={24}
+                  />
                 </SvgIcon>
               </Block>
             </Box>

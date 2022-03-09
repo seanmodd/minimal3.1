@@ -9,8 +9,20 @@ import { useState, useRef, useEffect } from 'react';
 // @mui
 import { Card, Button, Container, DialogTitle } from '@mui/material';
 // redux
+import {
+  CalendarForm,
+  CalendarStyle,
+  CalendarToolbar,
+} from 'src/sections/@dashboard/calendar';
 import { useDispatch, useSelector } from '../../redux/store';
-import { getEvents, openModal, closeModal, updateEvent, selectEvent, selectRange } from '../../redux/slices/calendar';
+import {
+  getEvents,
+  openModal,
+  closeModal,
+  updateEvent,
+  selectEvent,
+  selectRange,
+} from '../../redux/slices/calendar';
 // routes
 import { PATH_DASHBOARD } from '../../routes/paths';
 // hooks
@@ -24,7 +36,6 @@ import Iconify from '../../components/Iconify';
 import { DialogAnimate } from '../../components/animate';
 import HeaderBreadcrumbs from '../../components/HeaderBreadcrumbs';
 // sections
-import { CalendarForm, CalendarStyle, CalendarToolbar } from '../../supabase/components/sections/@dashboard/calendar';
 
 // ----------------------------------------------------------------------
 
@@ -57,7 +68,9 @@ export default function Calendar() {
 
   const selectedEvent = useSelector(selectedEventSelector);
 
-  const { events, isOpenModal, selectedRange } = useSelector((state) => state.calendar);
+  const { events, isOpenModal, selectedRange } = useSelector(
+    (state) => state.calendar
+  );
 
   useEffect(() => {
     dispatch(getEvents());
@@ -163,12 +176,17 @@ export default function Calendar() {
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <HeaderBreadcrumbs
           heading="Calendar"
-          links={[{ name: 'Dashboard', href: PATH_DASHBOARD.root }, { name: 'Calendar' }]}
+          links={[
+            { name: 'Dashboard', href: PATH_DASHBOARD.root },
+            { name: 'Calendar' },
+          ]}
           moreLink="https://fullcalendar.io/docs/react"
           action={
             <Button
               variant="contained"
-              startIcon={<Iconify icon={'eva:plus-fill'} width={20} height={20} />}
+              startIcon={
+                <Iconify icon="eva:plus-fill" width={20} height={20} />
+              }
               onClick={handleAddEvent}
             >
               New Event
@@ -206,15 +224,27 @@ export default function Calendar() {
               eventClick={handleSelectEvent}
               eventResize={handleResizeEvent}
               height={isDesktop ? 720 : 'auto'}
-              plugins={[listPlugin, dayGridPlugin, timelinePlugin, timeGridPlugin, interactionPlugin]}
+              plugins={[
+                listPlugin,
+                dayGridPlugin,
+                timelinePlugin,
+                timeGridPlugin,
+                interactionPlugin,
+              ]}
             />
           </CalendarStyle>
         </Card>
 
         <DialogAnimate open={isOpenModal} onClose={handleCloseModal}>
-          <DialogTitle>{selectedEvent ? 'Edit Event' : 'Add Event'}</DialogTitle>
+          <DialogTitle>
+            {selectedEvent ? 'Edit Event' : 'Add Event'}
+          </DialogTitle>
 
-          <CalendarForm event={selectedEvent || {}} range={selectedRange} onCancel={handleCloseModal} />
+          <CalendarForm
+            event={selectedEvent || {}}
+            range={selectedRange}
+            onCancel={handleCloseModal}
+          />
         </DialogAnimate>
       </Container>
     </Page>

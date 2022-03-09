@@ -1,8 +1,16 @@
 // @mui
 import { alpha, styled } from '@mui/material/styles';
-import { Box, Alert, Button, Container, AlertTitle, Stack } from '@mui/material';
+import {
+  Box,
+  Alert,
+  Button,
+  Container,
+  AlertTitle,
+  Stack,
+} from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -10,7 +18,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -36,13 +43,17 @@ export default function MUIAlert() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Alert"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Alert' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Alert' },
+              ]}
               moreLink="https://mui.com/components/alert"
             />
           </Container>
@@ -58,8 +69,12 @@ export default function MUIAlert() {
                 <Alert severity="warning" onClose={() => {}}>
                   This is a warning alert — check it out!
                 </Alert>
-                <Alert severity="info">This is an info alert — check it out!</Alert>
-                <Alert severity="success">This is a success alert — check it out!</Alert>
+                <Alert severity="info">
+                  This is an info alert — check it out!
+                </Alert>
+                <Alert severity="success">
+                  This is a success alert — check it out!
+                </Alert>
               </Stack>
             </Block>
 
@@ -139,7 +154,11 @@ export default function MUIAlert() {
                       size="small"
                       variant="outlined"
                       sx={{
-                        border: (theme) => `1px solid ${alpha(theme.palette.common.white, 0.48)}`,
+                        border: (theme) =>
+                          `1px solid ${alpha(
+                            theme.palette.common.white,
+                            0.48
+                          )}`,
                       }}
                     >
                       Undo

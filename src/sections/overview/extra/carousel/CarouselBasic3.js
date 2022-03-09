@@ -5,10 +5,10 @@ import { useRef } from 'react';
 import { useTheme, styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 // _mock_
-import { _carouselsExample } from '../../../../../../_mock';
+import { _carouselsExample } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import { CarouselDots, CarouselArrows } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import { CarouselDots, CarouselArrows } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

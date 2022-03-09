@@ -11,9 +11,9 @@ import { LoadingButton } from '@mui/lab';
 import { styled } from '@mui/material/styles';
 import { Grid, Card, Chip, Stack, Button, TextField, Typography, Autocomplete } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 //components
-import { RHFSwitch, RHFEditor, FormProvider, RHFTextField, RHFUploadSingleFile } from '../../../../../components/hook-form';
+import { RHFSwitch, RHFEditor, FormProvider, RHFTextField, RHFUploadSingleFile } from 'src/components/hook-form';
 //
 import BlogNewPostPreview from './BlogNewPostPreview';
 

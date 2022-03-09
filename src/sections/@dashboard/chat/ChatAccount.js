@@ -3,12 +3,12 @@ import { capitalCase } from 'change-case';
 // @mui
 import { Box, List, Stack, Select, Divider, Tooltip, MenuItem, Typography, IconButton } from '@mui/material';
 // hooks
-import useAuth from '../../../../../hooks/useAuth';
+import useAuth from 'src/hooks/useAuth';
 // components
-import Iconify from '../../../../../components/Iconify';
-import MyAvatar from '../../../../../components/MyAvatar';
-import MenuPopover from '../../../../../components/MenuPopover';
-import BadgeStatus from '../../../../../components/BadgeStatus';
+import Iconify from 'src/components/Iconify';
+import MyAvatar from 'src/components/MyAvatar';
+import MenuPopover from 'src/components/MenuPopover';
+import BadgeStatus from 'src/components/BadgeStatus';
 
 // ----------------------------------------------------------------------
 

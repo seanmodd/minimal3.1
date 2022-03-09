@@ -6,8 +6,8 @@ import { styled } from '@mui/material/styles';
 import { Box, Tooltip, IconButton, DialogActions, Button } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import { DialogAnimate } from '../../../../../../components/animate';
+import Iconify from 'src/components/Iconify';
+import { DialogAnimate } from 'src/components/animate';
 //
 import InvoicePDF from './InvoicePDF';
 
@@ -39,7 +39,12 @@ export default function InvoiceToolbar({ invoice, ...other }) {
 
   return (
     <RootStyle {...other}>
-      <Button color="error" size="small" variant="contained" endIcon={<Iconify icon={'eva:share-fill'} />}>
+      <Button
+        color="error"
+        size="small"
+        variant="contained"
+        endIcon={<Iconify icon="eva:share-fill" />}
+      >
         Share
       </Button>
 
@@ -48,7 +53,7 @@ export default function InvoiceToolbar({ invoice, ...other }) {
         size="small"
         variant="contained"
         onClick={handleOpenPreview}
-        endIcon={<Iconify icon={'eva:eye-fill'} />}
+        endIcon={<Iconify icon="eva:eye-fill" />}
         sx={{ mx: 1 }}
       >
         Preview
@@ -65,7 +70,7 @@ export default function InvoiceToolbar({ invoice, ...other }) {
             loading={loading}
             variant="contained"
             loadingPosition="end"
-            endIcon={<Iconify icon={'eva:download-fill'} />}
+            endIcon={<Iconify icon="eva:download-fill" />}
           >
             Download
           </LoadingButton>
@@ -83,7 +88,7 @@ export default function InvoiceToolbar({ invoice, ...other }) {
           >
             <Tooltip title="Close">
               <IconButton color="inherit" onClick={handleClosePreview}>
-                <Iconify icon={'eva:close-fill'} />
+                <Iconify icon="eva:close-fill" />
               </IconButton>
             </Tooltip>
           </DialogActions>

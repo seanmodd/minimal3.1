@@ -2,6 +2,10 @@
 import { styled } from '@mui/material/styles';
 import { Box, Card, Container, CardHeader, Stack } from '@mui/material';
 // routes
+import BasicTable from 'src/sections/overview/mui/table/BasicTable';
+import CollapsibleTable from 'src/sections/overview/mui/table/collapsible-table';
+import SortingSelecting from 'src/sections/overview/mui/table/sorting-selecting';
+import GroupingFixedHeader from 'src/sections/overview/mui/table/GroupingFixedHeader';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -9,10 +13,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import BasicTable from '../../../supabase/components/sections/overview/mui/table/BasicTable';
-import CollapsibleTable from '../../../supabase/components/sections/overview/mui/table/collapsible-table';
-import SortingSelecting from '../../../supabase/components/sections/overview/mui/table/sorting-selecting';
-import GroupingFixedHeader from '../../../supabase/components/sections/overview/mui/table/GroupingFixedHeader';
 
 // ----------------------------------------------------------------------
 
@@ -38,13 +38,17 @@ export default function MUITable() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Table"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Table' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Table' },
+              ]}
               moreLink="https://mui.com/components/tables"
             />
           </Container>

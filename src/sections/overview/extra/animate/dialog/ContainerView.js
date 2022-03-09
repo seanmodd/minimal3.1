@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // @mui
 import { Paper, Button, DialogTitle, DialogActions, DialogContent, DialogContentText } from '@mui/material';
 // components
-import { DialogAnimate } from '../../../../../../../components/animate';
+import { DialogAnimate } from 'src/components/animate';
 //
 import getVariant from '../getVariant';
 

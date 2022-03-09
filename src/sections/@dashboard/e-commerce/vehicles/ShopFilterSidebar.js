@@ -16,15 +16,15 @@ import {
   FormControlLabel,
 } from '@mui/material';
 // config
-import { NAVBAR } from '../../../../../../config';
+import { NAVBAR } from 'src/config';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import Scrollbar from '../../../../../../components/Scrollbar';
-import { ColorManyPicker } from '../../../../../../components/color-utils';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
+import { ColorManyPicker } from 'src/components/color-utils';
 import {
   RHFMultiCheckbox,
   RHFRadioGroup,
-} from '../../../../../../components/hook-form';
+} from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

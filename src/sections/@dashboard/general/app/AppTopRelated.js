@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import { Box, Card, Rating, CardHeader, Typography, Stack } from '@mui/material';
 // utils
-import { fCurrency, fShortenNumber } from '../../../../../../utils/formatNumber';
+import { fCurrency, fShortenNumber } from 'src/utils/formatNumber';
 // _mock_
-import { _appRelated } from '../../../../../../_mock';
+import { _appRelated } from 'src/_mock';
 // components
-import Label from '../../../../../../components/Label';
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import Scrollbar from '../../../../../../components/Scrollbar';
+import Label from 'src/components/Label';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import Scrollbar from 'src/components/Scrollbar';
 
 // ----------------------------------------------------------------------
 

@@ -1,6 +1,7 @@
 // @mui
 import { Container, Box } from '@mui/material';
 // routes
+import { UserCard } from 'src/sections/@dashboard/user/cards';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // hooks
 import useSettings from '../../../hooks/useSettings';
@@ -12,7 +13,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { UserCard } from '../../../supabase/components/sections/@dashboard/user/cards';
 
 // ----------------------------------------------------------------------
 

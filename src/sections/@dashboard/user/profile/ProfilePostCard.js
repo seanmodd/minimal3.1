@@ -18,15 +18,15 @@ import {
   FormControlLabel,
 } from '@mui/material';
 // hooks
-import useAuth from '../../../../../../hooks/useAuth';
+import useAuth from 'src/hooks/useAuth';
 // utils
-import { fDate } from '../../../../../../utils/formatTime';
-import { fShortenNumber } from '../../../../../../utils/formatNumber';
+import { fDate } from 'src/utils/formatTime';
+import { fShortenNumber } from 'src/utils/formatNumber';
 // components
-import Image from '../../../../../../components/Image';
-import Iconify from '../../../../../../components/Iconify';
-import MyAvatar from '../../../../../../components/MyAvatar';
-import EmojiPicker from '../../../../../../components/EmojiPicker';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import MyAvatar from 'src/components/MyAvatar';
+import EmojiPicker from 'src/components/EmojiPicker';
 
 // ----------------------------------------------------------------------
 

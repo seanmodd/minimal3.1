@@ -5,15 +5,15 @@ import NextLink from 'next/link';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Container, Typography } from '@mui/material';
 // routes
-import { PATH_AUTH } from '../../routes/paths';
+import { ResetPasswordForm } from 'src/sections/auth/reset-password';
+import { PATH_AUTH } from 'src/routes/paths';
 // layouts
-import Layout from '../../layouts';
+import Layout from 'src/layouts';
 // components
-import Page from '../../components/Page';
+import Page from 'src/components/Page';
 // sections
-import { ResetPasswordForm } from '../../supabase/components/sections/auth/reset-password';
 // assets
-import { SentIcon } from '../../assets';
+import { SentIcon } from 'src/assets';
 
 // ----------------------------------------------------------------------
 
@@ -48,11 +48,14 @@ export default function ResetPassword() {
                   Forgot your password?
                 </Typography>
                 <Typography sx={{ color: 'text.secondary', mb: 5 }}>
-                  Please enter the email address associated with your account and We will email you a link to reset your
-                  password.
+                  Please enter the email address associated with your account
+                  and We will email you a link to reset your password.
                 </Typography>
 
-                <ResetPasswordForm onSent={() => setSent(true)} onGetEmail={(value) => setEmail(value)} />
+                <ResetPasswordForm
+                  onSent={() => setSent(true)}
+                  onGetEmail={(value) => setEmail(value)}
+                />
 
                 <NextLink href={PATH_AUTH.login} passHref>
                   <Button fullWidth size="large" sx={{ mt: 1 }}>

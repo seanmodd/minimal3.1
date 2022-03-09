@@ -1,12 +1,6 @@
 // @mui
 import { Grid, Container } from '@mui/material';
 // hooks
-import useSettings from '../../hooks/useSettings';
-// layouts
-import Layout from '../../layouts';
-// components
-import Page from '../../components/Page';
-// sections
 import {
   BookingDetails,
   BookingBookedRoom,
@@ -17,9 +11,19 @@ import {
   BookingCheckInWidgets,
   BookingCustomerReviews,
   BookingReservationStats,
-} from '../../supabase/components/sections/@dashboard/general/booking';
+} from 'src/sections/@dashboard/general/booking';
+import useSettings from '../../hooks/useSettings';
+// layouts
+import Layout from '../../layouts';
+// components
+import Page from '../../components/Page';
+// sections
 // assets
-import { BookingIllustration, CheckInIllustration, CheckOutIllustration } from '../../assets';
+import {
+  BookingIllustration,
+  CheckInIllustration,
+  CheckOutIllustration,
+} from '../../assets';
 
 // ----------------------------------------------------------------------
 
@@ -37,15 +41,27 @@ export default function GeneralBooking() {
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
-            <BookingWidgetSummary title="Total Booking" total={714000} icon={<BookingIllustration />} />
+            <BookingWidgetSummary
+              title="Total Booking"
+              total={714000}
+              icon={<BookingIllustration />}
+            />
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <BookingWidgetSummary title="Check In" total={311000} icon={<CheckInIllustration />} />
+            <BookingWidgetSummary
+              title="Check In"
+              total={311000}
+              icon={<CheckInIllustration />}
+            />
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <BookingWidgetSummary title="Check Out" total={124000} icon={<CheckOutIllustration />} />
+            <BookingWidgetSummary
+              title="Check Out"
+              total={124000}
+              icon={<CheckOutIllustration />}
+            />
           </Grid>
 
           <Grid item xs={12} md={8}>

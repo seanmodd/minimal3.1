@@ -13,7 +13,7 @@ import {
   ListItemAvatar,
 } from '@mui/material';
 // utils
-import { fDate } from '../../../../../utils/formatTime';
+import { fDate } from 'src/utils/formatTime';
 
 // ----------------------------------------------------------------------
 

@@ -4,7 +4,7 @@ import { formatDistanceToNowStrict } from 'date-fns';
 import { styled } from '@mui/material/styles';
 import { Box, Avatar, ListItemButton, ListItemText, ListItemAvatar } from '@mui/material';
 //
-import BadgeStatus from '../../../../../components/BadgeStatus';
+import BadgeStatus from 'src/components/BadgeStatus';
 
 // ----------------------------------------------------------------------
 

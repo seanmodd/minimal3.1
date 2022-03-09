@@ -21,6 +21,7 @@ import {
 } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -29,7 +30,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -104,13 +104,17 @@ export default function MUIList() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="List"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Lists' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Lists' },
+              ]}
               moreLink="https://mui.com/components/lists"
             />
           </Container>
@@ -123,7 +127,11 @@ export default function MUIList() {
                 <List component="nav" aria-label="main mailbox folders">
                   <ListItemButton>
                     <ListItemIcon>
-                      <Iconify icon="ic:baseline-inbox" width={24} height={24} />
+                      <Iconify
+                        icon="ic:baseline-inbox"
+                        width={24}
+                        height={24}
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Inbox" />
                   </ListItemButton>
@@ -173,20 +181,36 @@ export default function MUIList() {
                   </ListItemButton>
                   <ListItemButton onClick={handleClick}>
                     <ListItemIcon>
-                      <Iconify icon="ic:baseline-inbox" width={24} height={24} />
+                      <Iconify
+                        icon="ic:baseline-inbox"
+                        width={24}
+                        height={24}
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Inbox" />
                     {open ? (
-                      <Iconify icon="ic:round-expand-less" width={24} height={24} />
+                      <Iconify
+                        icon="ic:round-expand-less"
+                        width={24}
+                        height={24}
+                      />
                     ) : (
-                      <Iconify icon="ic:round-expand-more" width={24} height={24} />
+                      <Iconify
+                        icon="ic:round-expand-more"
+                        width={24}
+                        height={24}
+                      />
                     )}
                   </ListItemButton>
                   <Collapse in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       <ListItemButton>
                         <ListItemIcon>
-                          <Iconify icon="ic:round-star-border" width={24} height={24} />
+                          <Iconify
+                            icon="ic:round-star-border"
+                            width={24}
+                            height={24}
+                          />
                         </ListItemIcon>
                         <ListItemText primary="Starred" />
                       </ListItemButton>
@@ -202,7 +226,11 @@ export default function MUIList() {
                   <ListItemButton>
                     <ListItemAvatar>
                       <Avatar>
-                        <Iconify icon="ic:baseline-image" width={24} height={24} />
+                        <Iconify
+                          icon="ic:baseline-image"
+                          width={24}
+                          height={24}
+                        />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Photos" secondary="Jan 9, 2014" />
@@ -210,7 +238,11 @@ export default function MUIList() {
                   <ListItemButton>
                     <ListItemAvatar>
                       <Avatar>
-                        <Iconify icon="ic:baseline-work" width={24} height={24} />
+                        <Iconify
+                          icon="ic:baseline-work"
+                          width={24}
+                          height={24}
+                        />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Work" secondary="Jan 7, 2014" />
@@ -218,10 +250,17 @@ export default function MUIList() {
                   <ListItemButton>
                     <ListItemAvatar>
                       <Avatar>
-                        <Iconify icon="ic:round-beach-access" width={24} height={24} />
+                        <Iconify
+                          icon="ic:round-beach-access"
+                          width={24}
+                          height={24}
+                        />
                       </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Vacation" secondary="July 20, 2014" />
+                    <ListItemText
+                      primary="Vacation"
+                      secondary="July 20, 2014"
+                    />
                   </ListItemButton>
                 </List>
               </ListWrapperStyle>
@@ -230,13 +269,23 @@ export default function MUIList() {
             <Block title="Selected">
               <ListWrapperStyle>
                 <List component="nav" aria-label="main mailbox folders">
-                  <ListItemButton selected={selectedIndex === 0} onClick={(event) => handleListItemClick(event, 0)}>
+                  <ListItemButton
+                    selected={selectedIndex === 0}
+                    onClick={(event) => handleListItemClick(event, 0)}
+                  >
                     <ListItemIcon>
-                      <Iconify icon="ic:baseline-inbox" width={24} height={24} />
+                      <Iconify
+                        icon="ic:baseline-inbox"
+                        width={24}
+                        height={24}
+                      />
                     </ListItemIcon>
                     <ListItemText primary="Inbox" />
                   </ListItemButton>
-                  <ListItemButton selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1)}>
+                  <ListItemButton
+                    selected={selectedIndex === 1}
+                    onClick={(event) => handleListItemClick(event, 1)}
+                  >
                     <ListItemIcon>
                       <Iconify icon="ic:round-drafts" width={24} height={24} />
                     </ListItemIcon>
@@ -247,10 +296,16 @@ export default function MUIList() {
                 <Divider />
 
                 <List component="nav" aria-label="secondary mailbox folder">
-                  <ListItemButton selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
+                  <ListItemButton
+                    selected={selectedIndex === 2}
+                    onClick={(event) => handleListItemClick(event, 2)}
+                  >
                     <ListItemText primary="Trash" />
                   </ListItemButton>
-                  <ListItemButton selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
+                  <ListItemButton
+                    selected={selectedIndex === 3}
+                    onClick={(event) => handleListItemClick(event, 3)}
+                  >
                     <ListItemText primary="Spam" />
                   </ListItemButton>
                 </List>
@@ -263,7 +318,12 @@ export default function MUIList() {
                   {[0, 1, 2, 3].map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
                     return (
-                      <ListItemButton key={value} role={undefined} dense onClick={handleCheck(value)}>
+                      <ListItemButton
+                        key={value}
+                        role={undefined}
+                        dense
+                        onClick={handleCheck(value)}
+                      >
                         <ListItemIcon>
                           <Checkbox
                             edge="start"
@@ -273,10 +333,17 @@ export default function MUIList() {
                             inputProps={{ 'aria-labelledby': labelId }}
                           />
                         </ListItemIcon>
-                        <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+                        <ListItemText
+                          id={labelId}
+                          primary={`Line item ${value + 1}`}
+                        />
                         <ListItemSecondaryAction>
                           <IconButton edge="end">
-                            <Iconify icon="ic:round-mode-comment" width={24} height={24} />
+                            <Iconify
+                              icon="ic:round-mode-comment"
+                              width={24}
+                              height={24}
+                            />
                           </IconButton>
                         </ListItemSecondaryAction>
                       </ListItemButton>
@@ -307,9 +374,16 @@ export default function MUIList() {
                   </ListItemButton>
                   <ListItemButton>
                     <ListItemIcon>
-                      <Iconify icon="ic:baseline-bluetooth" width={24} height={24} />
+                      <Iconify
+                        icon="ic:baseline-bluetooth"
+                        width={24}
+                        height={24}
+                      />
                     </ListItemIcon>
-                    <ListItemText id="switch-list-label-bluetooth" primary="Bluetooth" />
+                    <ListItemText
+                      id="switch-list-label-bluetooth"
+                      primary="Bluetooth"
+                    />
                     <ListItemSecondaryAction>
                       <Switch
                         edge="end"

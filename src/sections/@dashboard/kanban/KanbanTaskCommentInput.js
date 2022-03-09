@@ -1,8 +1,8 @@
 // @mui
 import { Stack, Paper, Button, Tooltip, OutlinedInput, IconButton } from '@mui/material';
 // components
-import Iconify from '../../../../../components/Iconify';
-import MyAvatar from '../../../../../components/MyAvatar';
+import Iconify from 'src/components/Iconify';
+import MyAvatar from 'src/components/MyAvatar';
 
 // ----------------------------------------------------------------------
 

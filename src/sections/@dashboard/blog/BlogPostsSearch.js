@@ -8,16 +8,16 @@ import { useRouter } from 'next/router';
 import { styled } from '@mui/material/styles';
 import { Link, Typography, Autocomplete, InputAdornment, Popper } from '@mui/material';
 // hooks
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 // utils
-import axios from '../../../../../utils/axios';
+import axios from 'src/utils/axios';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import Image from '../../../../../components/Image';
-import Iconify from '../../../../../components/Iconify';
-import InputStyle from '../../../../../components/InputStyle';
-import SearchNotFound from '../../../../../components/SearchNotFound';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import InputStyle from 'src/components/InputStyle';
+import SearchNotFound from 'src/components/SearchNotFound';
 
 // ----------------------------------------------------------------------
 

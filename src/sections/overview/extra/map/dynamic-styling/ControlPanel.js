@@ -5,9 +5,9 @@ import { fromJS } from 'immutable';
 import { useTheme, styled } from '@mui/material/styles';
 import { Box, Switch, Typography } from '@mui/material';
 // _mock_
-import MAP_STYLE from '../../../../../_mock/map/map-style-basic-v8.json';
+import MAP_STYLE from 'src/_mock/map/map-style-basic-v8.json';
 // utils
-import cssStyles from '../../../../../../../utils/cssStyles';
+import cssStyles from 'src/utils/cssStyles';
 
 // ----------------------------------------------------------------------
 

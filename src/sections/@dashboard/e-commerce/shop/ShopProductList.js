@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // @mui
 import { Box } from '@mui/material';
 // components
-import { SkeletonProductItem } from '../../../../../../components/skeleton';
+import { SkeletonProductItem } from 'src/components/skeleton';
 //
 import ShopProductCard from './ShopProductCard';
 

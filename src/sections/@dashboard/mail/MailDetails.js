@@ -6,11 +6,11 @@ import { useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Divider, Typography } from '@mui/material';
 // redux
-import { useDispatch, useSelector } from '../../../../../redux/store';
-import { getMail } from '../../../../../redux/slices/mail';
+import { useDispatch, useSelector } from 'src/redux/store';
+import { getMail } from 'src/redux/slices/mail';
 //
-import Markdown from '../../../../../components/Markdown';
-import Scrollbar from '../../../../../components/Scrollbar';
+import Markdown from 'src/components/Markdown';
+import Scrollbar from 'src/components/Scrollbar';
 //
 import MailDetailsToolbar from './MailDetailsToolbar';
 import MailDetailsReplyInput from './MailDetailsReplyInput';

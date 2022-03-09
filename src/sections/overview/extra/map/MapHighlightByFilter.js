@@ -10,7 +10,7 @@ import {
   MapControlGeolocate,
   MapControlNavigation,
   MapControlFullscreen,
-} from '../../../../../../components/map';
+} from 'src/components/map';
 
 // ----------------------------------------------------------------------
 

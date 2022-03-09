@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // @mui
 import { Box, Radio, Paper, Typography, RadioGroup, FormControlLabel } from '@mui/material';
 // components
-import Scrollbar from '../../../../../../components/Scrollbar';
+import Scrollbar from 'src/components/Scrollbar';
 
 // ----------------------------------------------------------------------
 

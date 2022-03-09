@@ -1,10 +1,16 @@
 import PropTypes from 'prop-types';
 // @mui
-import { Card, Button, Typography, CardHeader, CardContent } from '@mui/material';
+import {
+  Card,
+  Button,
+  Typography,
+  CardHeader,
+  CardContent,
+} from '@mui/material';
 // redux
-import { useSelector } from '../../../../../../redux/store';
+import { useSelector } from 'src/redux/store';
 // components
-import Iconify from '../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +28,11 @@ export default function CheckoutBillingInfo({ onBackStep }) {
       <CardHeader
         title="Billing Address"
         action={
-          <Button size="small" startIcon={<Iconify icon={'eva:edit-fill'} />} onClick={onBackStep}>
+          <Button
+            size="small"
+            startIcon={<Iconify icon="eva:edit-fill" />}
+            onClick={onBackStep}
+          >
             Edit
           </Button>
         }
@@ -30,7 +40,11 @@ export default function CheckoutBillingInfo({ onBackStep }) {
       <CardContent>
         <Typography variant="subtitle2" gutterBottom>
           {billing?.receiver}&nbsp;
-          <Typography component="span" variant="body2" sx={{ color: 'text.secondary' }}>
+          <Typography
+            component="span"
+            variant="body2"
+            sx={{ color: 'text.secondary' }}
+          >
             ({billing?.addressType})
           </Typography>
         </Typography>

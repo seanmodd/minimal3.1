@@ -1,46 +1,23 @@
 import EmailIcon from '@mui/icons-material/Email';
-import LockIcon from '@mui/icons-material/Lock';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { useSpring, animated } from 'react-spring';
-import Divider from '@mui/material/Divider';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
 import {
   IconButton,
-  InputAdornment,
-  TextField,
   Typography,
-  Input,
   Stack,
   Modal,
   Backdrop,
-  Card,
   Button,
   Box,
 } from '@mui/material';
-import greenApple from '@iconify/icons-noto/green-apple';
-import { Icon, InlineIcon } from '@iconify/react';
-import React, { useState, useEffect } from 'react';
-import {
-  Space,
-  Card as SupabaseCard,
-  Typography as SupabaseTypography,
-} from '@supabase/ui';
-import MyLayout from 'src/supabase/components/MyLayout';
-
-import {
-  // useUser,
-  // useMyAuth,
-  // UserContext,
-  useAuth,
-} from 'src/supabase/hooks/useAuth';
-import Header from './Header';
+import React, { useState } from 'react';
+import { Space, Typography as SupabaseTypography } from '@supabase/ui';
+import { useAuth } from 'src/supabase/hooks/useAuth';
 
 function ModalToLoginOrLogout() {
   const router = useRouter();
@@ -70,7 +47,7 @@ function ModalToLoginOrLogout() {
 
     const signOut = await auth.logout();
     router.push('/');
-    setMessage('Thank you for successfully signing out!');
+    setMessage('Logout succesful');
 
     setEmail('');
   };
@@ -122,10 +99,10 @@ function ModalToLoginOrLogout() {
                     </div>
                   </SupabaseTypography.Title>
                   <Stack sx={{ pt: 5, pb: 2 }}>
-                    <Typography variant="subtitle3">Email address</Typography>
                     <Typography variant="subtitle4">
                       {message && message}
                     </Typography>
+                    <Typography variant="subtitle3">Email address</Typography>
                   </Stack>
                   <Paper
                     component="form"
@@ -193,7 +170,7 @@ function ModalToLoginOrLogout() {
                       Don't have an account?
                     </Typography>
                     <Typography sx={{ color: '#8b5cf6' }} variant="subtitle3">
-                      Just enter your email, no password needed!
+                      Just enter your email! No password needed 😅
                     </Typography>
                   </Stack>
                 </Stack>
@@ -206,22 +183,23 @@ function ModalToLoginOrLogout() {
   );
   const MyModalToLogOut = (
     <>
-      <button
+      <Typography
+        variant="subtitle3"
         style={{
           width: '100%',
           maxWidth: '150px',
           margin: '5px auto',
-          padding: '5px',
-          border: '1px solid #ccc',
-          borderRadius: '5px',
-          backgroundColor: '#e8f0fe',
-          color: '#8c46b9',
+          // padding: '5px',
+          // border: '1px solid #ccc',
+          // borderRadius: '5px',
+          // backgroundColor: '#e8f0fe',
+          // color: '#8c46b9',
           transition: 'all 0.5s ease-in-out',
         }}
         onClick={handleOpen}
       >
         Logout
-      </button>
+      </Typography>
       <Modal
         aria-labelledby="spring-modal-title"
         aria-describedby="spring-modal-description"

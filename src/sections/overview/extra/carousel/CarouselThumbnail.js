@@ -4,10 +4,10 @@ import { useState, useRef, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 // _mock_
-import { _carouselsExample } from '../../../../../../_mock';
+import { _carouselsExample } from 'src/_mock';
 // components
-import Image from '../../../../../../components/Image';
-import { CarouselArrowIndex } from '../../../../../../components/carousel';
+import Image from 'src/components/Image';
+import { CarouselArrowIndex } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

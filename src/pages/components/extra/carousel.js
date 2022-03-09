@@ -1,15 +1,15 @@
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Stack, Card, Container, CardHeader, CardContent } from '@mui/material';
+import {
+  Box,
+  Stack,
+  Card,
+  Container,
+  CardHeader,
+  CardContent,
+} from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
-import { PATH_PAGE } from '../../../routes/paths';
-// layouts
-import Layout from '../../../layouts';
-// components
-import Page from '../../../components/Page';
-import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
-// sections
 import {
   CarouselBasic1,
   CarouselBasic2,
@@ -18,7 +18,14 @@ import {
   CarouselAnimation,
   CarouselThumbnail,
   CarouselCenterMode,
-} from '../../../supabase/components/sections/overview/extra/carousel';
+} from 'src/sections/overview/extra/carousel';
+import { PATH_PAGE } from '../../../routes/paths';
+// layouts
+import Layout from '../../../layouts';
+// components
+import Page from '../../../components/Page';
+import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
+// sections
 
 // ----------------------------------------------------------------------
 
@@ -44,13 +51,17 @@ export default function DemoCarousels() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Carousel"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Carousel' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Carousel' },
+              ]}
               moreLink="https://react-slick.neostack.com"
             />
           </Container>

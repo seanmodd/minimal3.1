@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 // @mui
 import { styled } from '@mui/material/styles';
 import { Typography, Button, Card, CardContent } from '@mui/material';
-import { SeoIllustration } from '../../../../../../assets';
+import { SeoIllustration } from 'src/assets';
 
 // ----------------------------------------------------------------------
 

@@ -2,11 +2,11 @@ import { useState } from 'react';
 // @mui
 import { Button, MenuItem, Typography } from '@mui/material';
 // redux
-import { useDispatch, useSelector } from '../../../../../../redux/store';
-import { sortByProducts } from '../../../../../../redux/slices/product';
+import { useDispatch, useSelector } from 'src/redux/store';
+import { sortByProducts } from 'src/redux/slices/product';
 // components
-import Iconify from '../../../../../../components/Iconify';
-import MenuPopover from '../../../../../../components/MenuPopover';
+import Iconify from 'src/components/Iconify';
+import MenuPopover from 'src/components/MenuPopover';
 
 // ----------------------------------------------------------------------
 

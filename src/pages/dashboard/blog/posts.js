@@ -5,6 +5,11 @@ import NextLink from 'next/link';
 // @mui
 import { Grid, Button, Container, Stack } from '@mui/material';
 // hooks
+import {
+  BlogPostCard,
+  BlogPostsSort,
+  BlogPostsSearch,
+} from 'src/sections/@dashboard/blog';
 import useSettings from '../../../hooks/useSettings';
 import useIsMountedRef from '../../../hooks/useIsMountedRef';
 // utils
@@ -19,7 +24,6 @@ import Iconify from '../../../components/Iconify';
 import { SkeletonPostItem } from '../../../components/skeleton';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../../../supabase/components/sections/@dashboard/blog';
 
 // ----------------------------------------------------------------------
 
@@ -95,22 +99,40 @@ export default function BlogPosts() {
           ]}
           action={
             <NextLink href={PATH_DASHBOARD.blog.newPost} passHref>
-              <Button variant="contained" startIcon={<Iconify icon={'eva:plus-fill'} />}>
+              <Button
+                variant="contained"
+                startIcon={<Iconify icon="eva:plus-fill" />}
+              >
                 New Post
               </Button>
             </NextLink>
           }
         />
 
-        <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
+        <Stack
+          mb={5}
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+        >
           <BlogPostsSearch />
-          <BlogPostsSort query={filters} options={SORT_OPTIONS} onSort={handleChangeSort} />
+          <BlogPostsSort
+            query={filters}
+            options={SORT_OPTIONS}
+            onSort={handleChangeSort}
+          />
         </Stack>
 
         <Grid container spacing={3}>
           {(!posts.length ? [...Array(12)] : sortedPosts).map((post, index) =>
             post ? (
-              <Grid key={post.id} item xs={12} sm={6} md={(index === 0 && 6) || 3}>
+              <Grid
+                key={post.id}
+                item
+                xs={12}
+                sm={6}
+                md={(index === 0 && 6) || 3}
+              >
                 <BlogPostCard post={post} index={index} />
               </Grid>
             ) : (

@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 // @mui
 import { Typography, ListItemText, ListItemButton } from '@mui/material';
 // @types
-import { ICON } from '../../../../../config';
+import { ICON } from 'src/config';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // components
-import Iconify from '../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import sum from 'lodash/sum';
 import { Page, View, Text, Image, Document } from '@react-pdf/renderer';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 //
 import styles from './InvoiceStyle';
 

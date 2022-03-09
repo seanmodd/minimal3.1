@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { styled } from '@mui/material/styles';
 import { Radio, Typography, RadioGroup, FormControlLabel } from '@mui/material';
 // utils
-import cssStyles from '../../../../../../../utils/cssStyles';
+import cssStyles from 'src/utils/cssStyles';
 
 // ----------------------------------------------------------------------
 

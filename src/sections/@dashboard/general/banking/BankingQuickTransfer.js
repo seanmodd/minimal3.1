@@ -21,11 +21,11 @@ import {
   Slider as MuiSlider,
 } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../../../utils/formatNumber';
+import { fCurrency } from 'src/utils/formatNumber';
 // _mock_
-import { _bankingQuickTransfer } from '../../../../../../_mock';
+import { _bankingQuickTransfer } from 'src/_mock';
 // components
-import { CarouselArrows } from '../../../../../../components/carousel';
+import { CarouselArrows } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

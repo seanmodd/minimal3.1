@@ -3,7 +3,7 @@ import { useState } from 'react';
 // @mui
 import { Box, Table, Collapse, TableRow, TableHead, TableBody, TableCell, Typography, IconButton } from '@mui/material';
 // components
-import Iconify from '../../../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { Box, Paper, Stack, Tooltip, Checkbox, IconButton, OutlinedInput, ClickAwayListener } from '@mui/material';
 import { MobileDateRangePicker } from '@mui/lab';
 // utils
-import uuidv4 from '../../../../../utils/uuidv4';
+import uuidv4 from 'src/utils/uuidv4';
 // components
-import Iconify from '../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

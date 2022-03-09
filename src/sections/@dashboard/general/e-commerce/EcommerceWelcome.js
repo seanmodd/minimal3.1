@@ -2,7 +2,7 @@
 import { styled } from '@mui/material/styles';
 import { Typography, Button, Card, CardContent } from '@mui/material';
 //
-import { MotivationIllustration } from '../../../../../../assets';
+import { MotivationIllustration } from 'src/assets';
 
 // ----------------------------------------------------------------------
 

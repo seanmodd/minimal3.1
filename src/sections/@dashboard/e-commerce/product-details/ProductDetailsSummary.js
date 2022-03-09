@@ -6,17 +6,26 @@ import { useRouter } from 'next/router';
 import { Controller, useForm } from 'react-hook-form';
 // @mui
 import { useTheme, styled } from '@mui/material/styles';
-import { Box, Link, Stack, Button, Rating, Divider, IconButton, Typography } from '@mui/material';
+import {
+  Box,
+  Link,
+  Stack,
+  Button,
+  Rating,
+  Divider,
+  IconButton,
+  Typography,
+} from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // utils
-import { fShortenNumber, fCurrency } from '../../../../../../utils/formatNumber';
+import { fShortenNumber, fCurrency } from 'src/utils/formatNumber';
 // components
-import Label from '../../../../../../components/Label';
-import Iconify from '../../../../../../components/Iconify';
-import SocialsButton from '../../../../../../components/SocialsButton';
-import { ColorSinglePicker } from '../../../../../../components/color-utils';
-import { FormProvider, RHFSelect } from '../../../../../../components/hook-form';
+import Label from 'src/components/Label';
+import Iconify from 'src/components/Iconify';
+import SocialsButton from 'src/components/SocialsButton';
+import { ColorSinglePicker } from 'src/components/color-utils';
+import { FormProvider, RHFSelect } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 
@@ -49,7 +58,13 @@ ProductDetailsSummary.propTypes = {
   }),
 };
 
-export default function ProductDetailsSummary({ cart, product, onAddCart, onGotoStep, ...other }) {
+export default function ProductDetailsSummary({
+  cart,
+  product,
+  onAddCart,
+  onGotoStep,
+  ...other
+}) {
   const theme = useTheme();
 
   const { push } = useRouter();
@@ -71,7 +86,9 @@ export default function ProductDetailsSummary({ cart, product, onAddCart, onGoto
 
   const alreadyProduct = cart.map((item) => item.id).includes(id);
 
-  const isMaxQuantity = cart.filter((item) => item.id === id).map((item) => item.quantity)[0] >= available;
+  const isMaxQuantity =
+    cart.filter((item) => item.id === id).map((item) => item.quantity)[0] >=
+    available;
 
   const defaultValues = {
     id,
@@ -154,7 +171,10 @@ export default function ProductDetailsSummary({ cart, product, onAddCart, onGoto
         </Stack>
 
         <Typography variant="h4" sx={{ mb: 3 }}>
-          <Box component="span" sx={{ color: 'text.disabled', textDecoration: 'line-through' }}>
+          <Box
+            component="span"
+            sx={{ color: 'text.disabled', textDecoration: 'line-through' }}
+          >
             {priceSale && fCurrency(priceSale)}
           </Box>
           &nbsp;{fCurrency(price)}
@@ -162,7 +182,12 @@ export default function ProductDetailsSummary({ cart, product, onAddCart, onGoto
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 3 }}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ my: 3 }}
+        >
           <Typography variant="subtitle1" sx={{ mt: 0.5 }}>
             Color
           </Typography>
@@ -222,10 +247,18 @@ export default function ProductDetailsSummary({ cart, product, onAddCart, onGoto
               name="quantity"
               quantity={values.quantity}
               available={available}
-              onIncrementQuantity={() => setValue('quantity', values.quantity + 1)}
-              onDecrementQuantity={() => setValue('quantity', values.quantity - 1)}
+              onIncrementQuantity={() =>
+                setValue('quantity', values.quantity + 1)
+              }
+              onDecrementQuantity={() =>
+                setValue('quantity', values.quantity - 1)
+              }
             />
-            <Typography variant="caption" component="div" sx={{ mt: 1, textAlign: 'right', color: 'text.secondary' }}>
+            <Typography
+              variant="caption"
+              component="div"
+              sx={{ mt: 1, textAlign: 'right', color: 'text.secondary' }}
+            >
               Available: {available}
             </Typography>
           </div>
@@ -240,7 +273,7 @@ export default function ProductDetailsSummary({ cart, product, onAddCart, onGoto
             size="large"
             color="warning"
             variant="contained"
-            startIcon={<Iconify icon={'ic:round-add-shopping-cart'} />}
+            startIcon={<Iconify icon="ic:round-add-shopping-cart" />}
             onClick={handleAddCart}
             sx={{ whiteSpace: 'nowrap' }}
           >
@@ -269,7 +302,12 @@ Incrementer.propTypes = {
   onDecrementQuantity: PropTypes.func,
 };
 
-function Incrementer({ available, quantity, onIncrementQuantity, onDecrementQuantity }) {
+function Incrementer({
+  available,
+  quantity,
+  onIncrementQuantity,
+  onDecrementQuantity,
+}) {
   return (
     <Box
       sx={{
@@ -283,16 +321,30 @@ function Incrementer({ available, quantity, onIncrementQuantity, onDecrementQuan
         borderColor: 'grey.50032',
       }}
     >
-      <IconButton size="small" color="inherit" disabled={quantity <= 1} onClick={onDecrementQuantity}>
-        <Iconify icon={'eva:minus-fill'} width={14} height={14} />
+      <IconButton
+        size="small"
+        color="inherit"
+        disabled={quantity <= 1}
+        onClick={onDecrementQuantity}
+      >
+        <Iconify icon="eva:minus-fill" width={14} height={14} />
       </IconButton>
 
-      <Typography variant="body2" component="span" sx={{ width: 40, textAlign: 'center' }}>
+      <Typography
+        variant="body2"
+        component="span"
+        sx={{ width: 40, textAlign: 'center' }}
+      >
         {quantity}
       </Typography>
 
-      <IconButton size="small" color="inherit" disabled={quantity >= available} onClick={onIncrementQuantity}>
-        <Iconify icon={'eva:plus-fill'} width={14} height={14} />
+      <IconButton
+        size="small"
+        color="inherit"
+        disabled={quantity >= available}
+        onClick={onIncrementQuantity}
+      >
+        <Iconify icon="eva:plus-fill" width={14} height={14} />
       </IconButton>
     </Box>
   );

@@ -3,21 +3,21 @@ import { styled } from '@mui/material/styles';
 import { Box, Container } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
-import { PATH_PAGE } from '../../../routes/paths';
 // layouts
-import Layout from '../../../layouts';
 // components
-import Page from '../../../components/Page';
-import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import FormDialogs from '../../../supabase/components/sections/overview/mui/dialog/FormDialogs';
-import AlertDialog from '../../../supabase/components/sections/overview/mui/dialog/AlertDialog';
-import ScrollDialog from '../../../supabase/components/sections/overview/mui/dialog/ScrollDialog';
-import SimpleDialogs from '../../../supabase/components/sections/overview/mui/dialog/SimpleDialogs';
-import MaxWidthDialog from '../../../supabase/components/sections/overview/mui/dialog/MaxWidthDialog';
-import FullScreenDialogs from '../../../supabase/components/sections/overview/mui/dialog/FullScreenDialogs';
-import TransitionsDialogs from '../../../supabase/components/sections/overview/mui/dialog/TransitionsDialogs';
-import { Block } from '../../../supabase/components/sections/overview/Block';
+import FormDialogs from 'src/sections/overview/mui/dialog/FormDialogs';
+import AlertDialog from 'src/sections/overview/mui/dialog/AlertDialog';
+import ScrollDialog from 'src/sections/overview/mui/dialog/ScrollDialog';
+import SimpleDialogs from 'src/sections/overview/mui/dialog/SimpleDialogs';
+import MaxWidthDialog from 'src/sections/overview/mui/dialog/MaxWidthDialog';
+import FullScreenDialogs from 'src/sections/overview/mui/dialog/FullScreenDialogs';
+import TransitionsDialogs from 'src/sections/overview/mui/dialog/TransitionsDialogs';
+import { Block } from 'src/sections/overview/Block';
+import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
+import Page from '../../../components/Page';
+import Layout from '../../../layouts';
+import { PATH_PAGE } from '../../../routes/paths';
 
 // ----------------------------------------------------------------------
 
@@ -49,13 +49,17 @@ export default function MUIDialog() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Dialog"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Dialog' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Dialog' },
+              ]}
               moreLink="https://mui.com/components/dialogs"
             />
           </Container>

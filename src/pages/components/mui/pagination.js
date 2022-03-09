@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Pagination, TablePagination } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -11,7 +12,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -57,13 +57,17 @@ export default function MUIPagination() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Pagination"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Pagination' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Pagination' },
+              ]}
               moreLink="https://mui.com/components/pagination"
             />
           </Container>
@@ -87,7 +91,12 @@ export default function MUIPagination() {
               <Pagination count={10} shape="rounded" />
               <Pagination count={10} variant="outlined" shape="rounded" />
               <Pagination count={10} shape="rounded" color="primary" />
-              <Pagination count={10} variant="outlined" shape="rounded" color="primary" />
+              <Pagination
+                count={10}
+                variant="outlined"
+                shape="rounded"
+                color="primary"
+              />
             </Block>
 
             <Block title="Size" sx={style}>
@@ -104,7 +113,12 @@ export default function MUIPagination() {
             <Block title="Ranges" sx={style}>
               <Pagination count={11} defaultPage={6} siblingCount={0} />
               <Pagination count={11} defaultPage={6} />
-              <Pagination count={11} defaultPage={6} siblingCount={0} boundaryCount={2} />
+              <Pagination
+                count={11}
+                defaultPage={6}
+                siblingCount={0}
+                boundaryCount={2}
+              />
               <Pagination count={11} defaultPage={6} boundaryCount={2} />
             </Block>
 

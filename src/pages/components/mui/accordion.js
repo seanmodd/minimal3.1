@@ -1,8 +1,17 @@
 import { useState } from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Stack, Container, Accordion, Typography, AccordionSummary, AccordionDetails } from '@mui/material';
+import {
+  Box,
+  Stack,
+  Container,
+  Accordion,
+  Typography,
+  AccordionSummary,
+  AccordionDetails,
+} from '@mui/material';
 // _mock_
+import { Block } from 'src/sections/overview/Block';
 import { _accordions } from '../../../_mock';
 // layouts
 import Layout from '../../../layouts';
@@ -12,7 +21,6 @@ import Iconify from '../../../components/Iconify';
 import { PATH_PAGE } from '../../../routes/paths';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -44,13 +52,17 @@ export default function MUIAccordion() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Accordion"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Accordion' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Accordion' },
+              ]}
               moreLink="https://mui.com/components/accordion"
             />
           </Container>
@@ -62,9 +74,17 @@ export default function MUIAccordion() {
               {_accordions.map((accordion, index) => (
                 <Accordion key={accordion.value} disabled={index === 3}>
                   <AccordionSummary
-                    expandIcon={<Iconify icon={'eva:arrow-ios-downward-fill'} width={20} height={20} />}
+                    expandIcon={
+                      <Iconify
+                        icon="eva:arrow-ios-downward-fill"
+                        width={20}
+                        height={20}
+                      />
+                    }
                   >
-                    <Typography variant="subtitle1">{accordion.heading}</Typography>
+                    <Typography variant="subtitle1">
+                      {accordion.heading}
+                    </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>{accordion.detail}</Typography>
@@ -82,12 +102,23 @@ export default function MUIAccordion() {
                   onChange={handleChangeControlled(item.value)}
                 >
                   <AccordionSummary
-                    expandIcon={<Iconify icon={'eva:arrow-ios-downward-fill'} width={20} height={20} />}
+                    expandIcon={
+                      <Iconify
+                        icon="eva:arrow-ios-downward-fill"
+                        width={20}
+                        height={20}
+                      />
+                    }
                   >
-                    <Typography variant="subtitle1" sx={{ width: '33%', flexShrink: 0 }}>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ width: '33%', flexShrink: 0 }}
+                    >
                       {item.heading}
                     </Typography>
-                    <Typography sx={{ color: 'text.secondary' }}>{item.subHeading}</Typography>
+                    <Typography sx={{ color: 'text.secondary' }}>
+                      {item.subHeading}
+                    </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>{item.detail}</Typography>

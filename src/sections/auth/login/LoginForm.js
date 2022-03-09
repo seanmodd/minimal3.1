@@ -9,17 +9,17 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Link, Stack, Alert, IconButton, InputAdornment } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // routes
-import { PATH_AUTH } from '../../../../../routes/paths';
+import { PATH_AUTH } from 'src/routes/paths';
 // hooks
-import useAuth from '../../../../../hooks/useAuth';
-import useIsMountedRef from '../../../../../hooks/useIsMountedRef';
+import useAuth from 'src/hooks/useAuth';
+import useIsMountedRef from 'src/hooks/useIsMountedRef';
 // components
-import Iconify from '../../../../../components/Iconify';
+import Iconify from 'src/components/Iconify';
 import {
   FormProvider,
   RHFTextField,
   RHFCheckbox,
-} from '../../../../../components/hook-form';
+} from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 

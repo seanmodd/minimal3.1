@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 // @mui
 import { InputAdornment, ClickAwayListener } from '@mui/material';
 // components
-import Iconify from '../../../../../components/Iconify';
-import InputStyle from '../../../../../components/InputStyle';
+import Iconify from 'src/components/Iconify';
+import InputStyle from 'src/components/InputStyle';
 
 // ----------------------------------------------------------------------
 

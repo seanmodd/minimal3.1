@@ -6,18 +6,18 @@ import NextLink from 'next/link';
 import { alpha, styled } from '@mui/material/styles';
 import { Box, Card, Avatar, Typography, CardContent, Link, Stack } from '@mui/material';
 // routes
-import { PATH_DASHBOARD } from '../../../../../routes/paths';
+import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
-import useResponsive from '../../../../../hooks/useResponsive';
+import useResponsive from 'src/hooks/useResponsive';
 // utils
-import { fDate } from '../../../../../utils/formatTime';
-import { fShortenNumber } from '../../../../../utils/formatNumber';
+import { fDate } from 'src/utils/formatTime';
+import { fShortenNumber } from 'src/utils/formatNumber';
 // components
-import Image from '../../../../../components/Image';
-import Iconify from '../../../../../components/Iconify';
-import TextMaxLine from '../../../../../components/TextMaxLine';
-import SvgIconStyle from '../../../../../components/SvgIconStyle';
-import TextIconLabel from '../../../../../components/TextIconLabel';
+import Image from 'src/components/Image';
+import Iconify from 'src/components/Iconify';
+import TextMaxLine from 'src/components/TextMaxLine';
+import SvgIconStyle from 'src/components/SvgIconStyle';
+import TextIconLabel from 'src/components/TextIconLabel';
 
 // ----------------------------------------------------------------------
 

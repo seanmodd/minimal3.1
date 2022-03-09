@@ -5,14 +5,14 @@ import { useTheme } from '@mui/material/styles';
 import { Stack, Typography, Box, Rating, LinearProgress, IconButton } from '@mui/material';
 import { DataGrid, GridToolbar, getGridNumericColumnOperators } from '@mui/x-data-grid';
 // utils
-import createAvatar from '../../../../../../utils/createAvatar';
-import { fPercent } from '../../../../../../utils/formatNumber';
+import createAvatar from 'src/utils/createAvatar';
+import { fPercent } from 'src/utils/formatNumber';
 // _mock_
-import { _dataGrid } from '../../../../../../_mock';
+import { _dataGrid } from 'src/_mock';
 // components
-import Label from '../../../../../../components/Label';
-import Avatar from '../../../../../../components/Avatar';
-import Iconify from '../../../../../../components/Iconify';
+import Label from 'src/components/Label';
+import Avatar from 'src/components/Avatar';
+import Iconify from 'src/components/Iconify';
 
 // ----------------------------------------------------------------------
 

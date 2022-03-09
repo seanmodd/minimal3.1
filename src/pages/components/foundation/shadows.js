@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useTheme, styled } from '@mui/material/styles';
 import { Stack, Box, Paper, Container, Typography } from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -10,7 +11,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -52,7 +52,14 @@ export default function FoundationShadows() {
     ['dialog', theme.customShadows.dialog],
   ];
 
-  const colorShadows = ['primary', 'secondary', 'info', 'success', 'warning', 'error'];
+  const colorShadows = [
+    'primary',
+    'secondary',
+    'info',
+    'success',
+    'warning',
+    'error',
+  ];
 
   return (
     <Page title="Foundations: Shadows">
@@ -62,13 +69,17 @@ export default function FoundationShadows() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Shadows"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Shadows' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Shadows' },
+              ]}
             />
           </Container>
         </Box>
@@ -77,13 +88,21 @@ export default function FoundationShadows() {
           <Stack spacing={5}>
             <Block title="System" sx={style}>
               {systemShadows.map((shadow, index) => (
-                <ShadowCard key={shadow} title={`z${index + 1}`} sx={{ boxShadow: shadow }} />
+                <ShadowCard
+                  key={shadow}
+                  title={`z${index + 1}`}
+                  sx={{ boxShadow: shadow }}
+                />
               ))}
             </Block>
 
             <Block title="Customs" sx={style}>
               {customShadows.map((shadow) => (
-                <ShadowCard key={shadow[0]} title={shadow[0]} sx={{ boxShadow: shadow[1] }} />
+                <ShadowCard
+                  key={shadow[0]}
+                  title={shadow[0]}
+                  sx={{ boxShadow: shadow[1] }}
+                />
               ))}
             </Block>
 

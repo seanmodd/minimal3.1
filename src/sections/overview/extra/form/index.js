@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 // utils
-import { fData } from '../../../../../../utils/formatNumber';
+import { fData } from 'src/utils/formatNumber';
 
 // ----------------------------------------------------------------------
 

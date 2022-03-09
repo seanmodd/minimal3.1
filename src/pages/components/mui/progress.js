@@ -3,6 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Stack } from '@mui/material';
 // routes
+import ProgressLinear from 'src/sections/overview/mui/progress/ProgressLinear';
+import ProgressCircular from 'src/sections/overview/mui/progress/ProgressCircular';
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -10,9 +13,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import ProgressLinear from '../../../supabase/components/sections/overview/mui/progress/ProgressLinear';
-import ProgressCircular from '../../../supabase/components/sections/overview/mui/progress/ProgressCircular';
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -82,13 +82,17 @@ export default function MUIProgress() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Progress"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Progress' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Progress' },
+              ]}
               moreLink="https://mui.com/components/progress"
             />
           </Container>

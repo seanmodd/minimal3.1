@@ -5,16 +5,17 @@ import { useForm } from 'react-hook-form';
 // @mui
 import { Container, Typography, Stack } from '@mui/material';
 // redux
+import Layout from 'src/layouts';
 import { useDispatch, useSelector } from 'src/redux/store';
-import { getProducts, filterProducts } from 'src/redux/slices/product';
+import { getVariants, filterVehicles } from 'src/redux/slices/vehicle';
 // routes
 import { PATH_DASHBOARD } from 'src/routes/paths';
 // hooks
 import useSettings from 'src/hooks/useSettings';
 // layouts
-import Layout from 'src/layouts';
 // components
 import Page from 'src/components/Page';
+import { USER_DATA, USER_FAVORITE_DATA } from 'src/customState/callbacks';
 import HeaderBreadcrumbs from 'src/components/HeaderBreadcrumbs';
 import { FormProvider } from 'src/components/hook-form';
 // sections
@@ -24,8 +25,11 @@ import {
   ShopProductList,
   ShopFilterSidebar,
   ShopProductSearch,
-} from 'src/supabase/components/sections/@dashboard/e-commerce/shop';
-import CartWidget from 'src/supabase/components/sections/@dashboard/e-commerce/CartWidget';
+} from 'src/sections/@dashboard/e-commerce/vehicles';
+import CartWidget from 'src/sections/@dashboard/e-commerce/CartWidget';
+import useAuth from 'src/hooks/useAuth';
+import { useRouter } from 'next/router';
+import { getFavoriteList } from 'src/utils/localstorage';
 
 // ----------------------------------------------------------------------
 
@@ -37,13 +41,18 @@ EcommerceShop.getLayout = function getLayout(page) {
 
 export default function EcommerceShop() {
   const { themeStretch } = useSettings();
-
   const dispatch = useDispatch();
-
+  const { isAuthenticated } = useAuth();
   const [openFilter, setOpenFilter] = useState(false);
+  const [dataPerPage, setdataPerPage] = useState(24);
+  const [pages, setPages] = useState(0);
+  const [activePageCount, setActivePageCount] = useState(1);
+  const [filtersData, setFiltersData] = useState();
+  const [favouriteData, setFavouriteData] = USER_FAVORITE_DATA.useSharedState();
+  const [userData] = USER_DATA.useSharedState();
 
-  const { products, sortBy, filters } = useSelector((state) => state.product);
-
+  const { vehicles, sortBy, filters } = useSelector((state) => state.vehicle);
+  const products = vehicles;
   const filteredProducts = applyFilter(products, sortBy, filters);
 
   const defaultValues = {
@@ -54,6 +63,50 @@ export default function EcommerceShop() {
     rating: filters.rating,
   };
 
+  useEffect(() => {
+    dispatch(getVariants());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(filterVehicles(values));
+  }, [dispatch, values]);
+
+  // ^ pagination:
+  const onPageChange = (page) => {
+    setActivePageCount(page);
+    router.query.page = page;
+    router.push(router);
+  };
+
+  const pageCountOnPagination = Math.ceil(pages / dataPerPage);
+  const renderPagination = () => (
+    <Pagination
+      count={pageCountOnPagination}
+      color="primary"
+      page={activePageCount}
+      onChange={(event, page) => onPageChange(page)}
+    />
+  );
+
+  // ^ filter:
+
+  // ^ sort:
+
+  // ^ favorite:
+  const updateFavoritesData = (variantId, id) => {
+    const favData = [...favouriteData];
+    favData.forEach((fItem, fIndex) => {
+      if (fItem.id === variantId) {
+        fItem.isFavourite = !fItem.isFavourite;
+      }
+      return fItem;
+    });
+    setFavouriteData(favData);
+  };
+  // ^ search:
+
+  // & old filter:
+  // & react-hook-form:
   const methods = useForm({
     defaultValues,
   });
@@ -68,14 +121,6 @@ export default function EcommerceShop() {
     values.gender.length === 0 &&
     values.colors.length === 0 &&
     values.category === 'All';
-
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(filterProducts(values));
-  }, [dispatch, values]);
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -151,25 +196,25 @@ export default function EcommerceShop() {
         </Stack>
 
         <Stack sx={{ mb: 3 }}>
-          {!isDefault && (
-            <>
-              <Typography variant="body2" gutterBottom>
-                <strong>{filteredProducts.length}</strong>
-                &nbsp;Products found
-              </Typography>
+          {/* {isDefault &&  */}
+          <>
+            <Typography variant="body2" gutterBottom>
+              <strong>{filteredProducts.length}</strong>
+              &nbsp;Products found
+            </Typography>
 
-              <ShopTagFiltered
-                filters={filters}
-                isShowReset={!isDefault && !openFilter}
-                onRemoveGender={handleRemoveGender}
-                onRemoveCategory={handleRemoveCategory}
-                onRemoveColor={handleRemoveColor}
-                onRemovePrice={handleRemovePrice}
-                onRemoveRating={handleRemoveRating}
-                onResetAll={handleResetFilter}
-              />
-            </>
-          )}
+            <ShopTagFiltered
+              filters={filters}
+              isShowReset={!isDefault && !openFilter}
+              onRemoveGender={handleRemoveGender}
+              onRemoveCategory={handleRemoveCategory}
+              onRemoveColor={handleRemoveColor}
+              onRemovePrice={handleRemovePrice}
+              onRemoveRating={handleRemoveRating}
+              onResetAll={handleResetFilter}
+            />
+          </>
+          {/* } */}
         </Stack>
 
         <ShopProductList
@@ -183,11 +228,46 @@ export default function EcommerceShop() {
 }
 
 // ----------------------------------------------------------------------
-
+function applyCustomFilter(products, sortBy, filters) {
+  // SORT BY
+  if (sortBy === 'popularity') {
+    products = orderBy(products, ['int_car_views'], ['desc']);
+  }
+  if (sortBy === 'miles') {
+    products = orderBy(products, ['int_car_odometer'], ['asc']);
+  }
+  if (sortBy === 'newest') {
+    products = orderBy(products, ['year'], ['desc']);
+  }
+  if (sortBy === 'priceDesc') {
+    products = orderBy(products, ['price'], ['desc']);
+  }
+  if (sortBy === 'priceAsc') {
+    products = orderBy(products, ['price'], ['asc']);
+  }
+  const newData = products?.map((item) => ({ ...item, isFavourite: false }));
+  // getFavouritesData(newData);
+}
+// ----------------------------------------------------------------------
 function applyFilter(products, sortBy, filters) {
   // SORT BY
   if (sortBy === 'featured') {
     products = orderBy(products, ['sold'], ['desc']);
+  }
+  if (sortBy === 'popularity') {
+    products = orderBy(products, ['int_car_views'], ['desc']);
+  }
+  if (sortBy === 'miles') {
+    products = orderBy(products, ['int_car_odometer'], ['asc']);
+  }
+  if (sortBy === 'newest') {
+    products = orderBy(products, ['year'], ['desc']);
+  }
+  if (sortBy === 'priceDesc') {
+    products = orderBy(products, ['price'], ['desc']);
+  }
+  if (sortBy === 'priceAsc') {
+    products = orderBy(products, ['price'], ['asc']);
   }
   if (sortBy === 'newest') {
     products = orderBy(products, ['createdAt'], ['desc']);
@@ -217,12 +297,12 @@ function applyFilter(products, sortBy, filters) {
   if (filters.priceRange) {
     products = products.filter((product) => {
       if (filters.priceRange === 'below') {
-        return product.price < 25;
+        return product.price < 2;
       }
       if (filters.priceRange === 'between') {
-        return product.price >= 25 && product.price <= 75;
+        return product.price >= 25000000 && product.price <= 75;
       }
-      return product.price > 75;
+      return product.price > 75000;
     });
   }
   if (filters.rating) {

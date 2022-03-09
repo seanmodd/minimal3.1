@@ -1,8 +1,19 @@
 import { useState } from 'react';
 // @mui
 import { useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Paper, Radio, Container, Typography, RadioGroup, FormControlLabel, Stack } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Paper,
+  Radio,
+  Container,
+  Typography,
+  RadioGroup,
+  FormControlLabel,
+  Stack,
+} from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -10,7 +21,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +35,8 @@ const ContainerStyle = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(5),
   border: `solid 1px ${theme.palette.divider}`,
   borderRadius: Number(theme.shape.borderRadius) * 1.5,
-  backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 100 : 800],
+  backgroundColor:
+    theme.palette.grey[theme.palette.mode === 'light' ? 100 : 800],
 }));
 
 // ----------------------------------------------------------------------
@@ -57,13 +68,17 @@ export default function FoundationGrid() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Grid"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Grid' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Grid' },
+              ]}
             />
           </Container>
         </Box>
@@ -138,7 +153,12 @@ export default function FoundationGrid() {
                   sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}
                 >
                   {[12, 6, 4, 3, 2, 1].map((value, index) => (
-                    <FormControlLabel key={value} value={value.toString()} label={LABELS[index]} control={<Radio />} />
+                    <FormControlLabel
+                      key={value}
+                      value={value.toString()}
+                      label={LABELS[index]}
+                      control={<Radio />}
+                    />
                   ))}
                 </RadioGroup>
               </ContainerStyle>

@@ -1,6 +1,7 @@
 // @mui
 import { Container } from '@mui/material';
 // routes
+import UserNewForm from 'src/sections/@dashboard/user/UserNewForm';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // hooks
 import useSettings from '../../../hooks/useSettings';
@@ -10,7 +11,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import UserNewForm from '../../../supabase/components/sections/@dashboard/user/UserNewForm';
 
 // ----------------------------------------------------------------------
 

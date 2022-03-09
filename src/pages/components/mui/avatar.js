@@ -3,6 +3,7 @@ import { useTheme, styled } from '@mui/material/styles';
 import { Box, Badge, Container, AvatarGroup } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -13,7 +14,6 @@ import Iconify from '../../../components/Iconify';
 import BadgeStatus from '../../../components/BadgeStatus';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -41,13 +41,17 @@ export default function MUIAvatar() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Avatar"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Avatar' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Avatar' },
+              ]}
               moreLink="https://mui.com/components/avatars"
             />
           </Container>
@@ -67,7 +71,9 @@ export default function MUIAvatar() {
                 <Avatar
                   key={index}
                   alt="Remy Sharp"
-                  src={`https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_${index + 1}.jpg`}
+                  src={`https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_${
+                    index + 1
+                  }.jpg`}
                 />
               ))}
             </Block>
@@ -126,7 +132,14 @@ export default function MUIAvatar() {
               </Avatar>
             </Block>
 
-            <Block title="Grouped" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Block
+              title="Grouped"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
               <AvatarGroup max={4}>
                 <Avatar
                   alt="Remy Sharp"
@@ -193,9 +206,14 @@ export default function MUIAvatar() {
                 <Box key={status} sx={{ position: 'relative' }}>
                   <Avatar
                     alt="Travis Howard"
-                    src={`https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_${index + 7}.jpg`}
+                    src={`https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_${
+                      index + 7
+                    }.jpg`}
                   />
-                  <BadgeStatus status={status} sx={{ right: 2, bottom: 2, position: 'absolute' }} />
+                  <BadgeStatus
+                    status={status}
+                    sx={{ right: 2, bottom: 2, position: 'absolute' }}
+                  />
                 </Box>
               ))}
             </Block>
@@ -213,7 +231,9 @@ export default function MUIAvatar() {
                 <Avatar
                   key={size}
                   alt="Travis Howard"
-                  src={`https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_${index + 4}.jpg`}
+                  src={`https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_${
+                    index + 4
+                  }.jpg`}
                   sx={{ width: size, height: size }}
                 />
               ))}

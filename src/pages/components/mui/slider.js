@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import { Box, Stack, Slider, Container, Typography } from '@mui/material';
 import { Masonry } from '@mui/lab';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -12,7 +13,6 @@ import Page from '../../../components/Page';
 import Iconify from '../../../components/Iconify';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -91,13 +91,17 @@ export default function MUISlider() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Slider"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Slider' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Slider' },
+              ]}
               moreLink="https://mui.com/components/slider"
             />
           </Container>
@@ -108,7 +112,11 @@ export default function MUISlider() {
             <Block title="Volume" sx={style}>
               <Stack direction="row" alignItems="center" spacing={1} width={1}>
                 <Iconify icon="eva:volume-mute-fill" width={24} height={24} />
-                <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
+                <Slider
+                  value={value}
+                  onChange={handleChange}
+                  aria-labelledby="continuous-slider"
+                />
                 <Iconify icon="eva:volume-up-fill" width={24} height={24} />
               </Stack>
             </Block>
@@ -165,7 +173,13 @@ export default function MUISlider() {
             </Block>
 
             <Block title="Custom marks" sx={style}>
-              <Slider defaultValue={20} getAriaValueText={valuetext} step={10} valueLabelDisplay="auto" marks={marks} />
+              <Slider
+                defaultValue={20}
+                getAriaValueText={valuetext}
+                step={10}
+                valueLabelDisplay="auto"
+                marks={marks}
+              />
             </Block>
 
             <Block title="Restricted values" sx={style}>
@@ -203,7 +217,9 @@ export default function MUISlider() {
                 <Typography variant="subtitle2" gutterBottom>
                   Min: {valuePrice(price[0])}
                 </Typography>
-                <Typography variant="subtitle2">Max: {valuePrice(price[1])}</Typography>
+                <Typography variant="subtitle2">
+                  Max: {valuePrice(price[1])}
+                </Typography>
               </Box>
             </Block>
           </Masonry>

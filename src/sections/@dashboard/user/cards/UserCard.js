@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import { Box, Card, Avatar, Divider, Typography, Stack } from '@mui/material';
 // utils
-import cssStyles from '../../../../../../utils/cssStyles';
-import { fShortenNumber } from '../../../../../../utils/formatNumber';
+import cssStyles from 'src/utils/cssStyles';
+import { fShortenNumber } from 'src/utils/formatNumber';
 // components
-import Image from '../../../../../../components/Image';
-import SocialsButton from '../../../../../../components/SocialsButton';
-import SvgIconStyle from '../../../../../../components/SvgIconStyle';
+import Image from 'src/components/Image';
+import SocialsButton from 'src/components/SocialsButton';
+import SvgIconStyle from 'src/components/SvgIconStyle';
 
 // ----------------------------------------------------------------------
 

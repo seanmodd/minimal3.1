@@ -3,7 +3,14 @@ import { sentenceCase } from 'change-case';
 // next
 import { useRouter } from 'next/router';
 // @mui
-import { Box, Card, Divider, Container, Typography, Pagination } from '@mui/material';
+import {
+  Box,
+  Card,
+  Divider,
+  Container,
+  Typography,
+  Pagination,
+} from '@mui/material';
 // routes
 import { PATH_DASHBOARD } from '../../../../routes/paths';
 // hooks
@@ -25,7 +32,7 @@ import {
   BlogPostRecent,
   BlogPostCommentList,
   BlogPostCommentForm,
-} from '../../../../supabase/components/sections/@dashboard/blog';
+} from '../src/sections/@dashboard/blog';
 
 // ----------------------------------------------------------------------
 
@@ -122,7 +129,14 @@ export default function BlogPost() {
 
               <BlogPostCommentList post={post} />
 
-              <Box sx={{ mb: 5, mt: 3, display: 'flex', justifyContent: 'flex-end' }}>
+              <Box
+                sx={{
+                  mb: 5,
+                  mt: 3,
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                }}
+              >
                 <Pagination count={8} color="primary" />
               </Box>
 

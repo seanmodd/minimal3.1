@@ -4,20 +4,20 @@ import { styled } from '@mui/material/styles';
 import { Box, Container, Tab } from '@mui/material';
 import { TabPanel, TabContext, TabList } from '@mui/lab';
 // routes
-import { PATH_PAGE } from '../../../routes/paths';
 // layouts
-import Layout from '../../../layouts';
 // components
-import Page from '../../../components/Page';
-import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import TextButtons from '../../../supabase/components/sections/overview/mui/buttons/TextButtons';
-import IconButtons from '../../../supabase/components/sections/overview/mui/buttons/IconButtons';
-import ButtonGroups from '../../../supabase/components/sections/overview/mui/buttons/ButtonGroups';
-import ToggleButtons from '../../../supabase/components/sections/overview/mui/buttons/ToggleButtons';
-import OutlinedButtons from '../../../supabase/components/sections/overview/mui/buttons/OutlinedButtons';
-import ContainedButtons from '../../../supabase/components/sections/overview/mui/buttons/ContainedButtons';
-import FloatingActionButton from '../../../supabase/components/sections/overview/mui/buttons/FloatingActionButton';
+import TextButtons from 'src/sections/overview/mui/buttons/TextButtons';
+import IconButtons from 'src/sections/overview/mui/buttons/IconButtons';
+import ButtonGroups from 'src/sections/overview/mui/buttons/ButtonGroups';
+import ToggleButtons from 'src/sections/overview/mui/buttons/ToggleButtons';
+import OutlinedButtons from 'src/sections/overview/mui/buttons/OutlinedButtons';
+import ContainedButtons from 'src/sections/overview/mui/buttons/ContainedButtons';
+import FloatingActionButton from 'src/sections/overview/mui/buttons/FloatingActionButton';
+import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
+import Page from '../../../components/Page';
+import Layout from '../../../layouts';
+import { PATH_PAGE } from '../../../routes/paths';
 
 // ----------------------------------------------------------------------
 
@@ -59,13 +59,17 @@ export default function MUIButtons() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Buttons"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Buttons' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Buttons' },
+              ]}
               moreLink={[
                 'https://mui.com/components/buttons',
                 'https://mui.com/components/button-group',
@@ -80,7 +84,12 @@ export default function MUIButtons() {
           <TabContext value={value}>
             <TabList onChange={handleChange}>
               {BUTTONS.map((tab, index) => (
-                <Tab disableRipple key={tab.name} label={tab.name} value={String(index + 1)} />
+                <Tab
+                  disableRipple
+                  key={tab.name}
+                  label={tab.name}
+                  value={String(index + 1)}
+                />
               ))}
             </TabList>
 

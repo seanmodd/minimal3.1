@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Box, Button, Popover, Container, Typography } from '@mui/material';
 // routes
+import { Block } from 'src/sections/overview/Block';
 import { PATH_PAGE } from '../../../routes/paths';
 // layouts
 import Layout from '../../../layouts';
@@ -10,7 +11,6 @@ import Layout from '../../../layouts';
 import Page from '../../../components/Page';
 import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
 // sections
-import { Block } from '../../../supabase/components/sections/overview/Block';
 
 // ----------------------------------------------------------------------
 
@@ -61,13 +61,17 @@ export default function MUIPopover() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === 'light' ? 'grey.200' : 'grey.800',
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Popover"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Popover' }]}
+              links={[
+                { name: 'Components', href: PATH_PAGE.components },
+                { name: 'Popover' },
+              ]}
               moreLink="https://mui.com/components/popover"
             />
           </Container>
@@ -78,7 +82,10 @@ export default function MUIPopover() {
             sx={{
               display: 'grid',
               gap: 3,
-              gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
+              gridTemplateColumns: {
+                xs: 'repeat(1, 1fr)',
+                md: 'repeat(2, 1fr)',
+              },
             }}
           >
             <Block title="Click" sx={style}>
@@ -103,7 +110,8 @@ export default function MUIPopover() {
                     Etiam feugiat lorem non metus
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    Fusce vulputate eleifend sapien. Curabitur at lacus ac velit ornare lobortis.
+                    Fusce vulputate eleifend sapien. Curabitur at lacus ac velit
+                    ornare lobortis.
                   </Typography>
                 </Box>
               </Popover>
@@ -141,7 +149,8 @@ export default function MUIPopover() {
                     Etiam feugiat lorem non metus
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    Fusce vulputate eleifend sapien. Curabitur at lacus ac velit ornare lobortis.
+                    Fusce vulputate eleifend sapien. Curabitur at lacus ac velit
+                    ornare lobortis.
                   </Typography>
                 </Box>
               </Popover>
