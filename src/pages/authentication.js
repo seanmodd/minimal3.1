@@ -97,7 +97,7 @@ const Authentication = () => {
     }
   `;
   return (
-    <Grid sx={gridStyles} item m={16}>
+    <Grid sx={gridStyles} style={{ backgroundColor: '#000' }} item m={16}>
       <Stack alignItems="center" spacing={16}>
         <CommonButton sx={buttonStyles} variant="contained">
           Add user
