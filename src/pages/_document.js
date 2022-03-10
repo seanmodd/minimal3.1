@@ -85,11 +85,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
             rel="stylesheet"
           />
-          <link
+          <linkt
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
+
           <link href="https://use.typekit.net/ovo7auu.css" rel="stylesheet" />
           <meta name="theme-color" content={palette.light.primary.main} />
           <meta charSet="utf-8" />
@@ -111,7 +111,6 @@ export default class MyDocument extends Document {
             sizes="16x16"
             href="/favicon/favicon-16x16.png"
           />
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
 
           <link rel="manifest" href="/manifest.json" />
 

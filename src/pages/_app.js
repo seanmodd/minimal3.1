@@ -84,7 +84,9 @@ export default function MyApp(props) {
 
   return (
     <>
-      <Head />
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
       <AuthProvider>
         <ReduxProvider store={store}>
           <PersistGate loading={null} persistor={persistor}>
