@@ -67,6 +67,7 @@ import { ApolloProvider } from '@apollo/client';
 import { getApolloClient } from 'src/graphql/apollo';
 import { AuthProvider } from 'src/supabase/hooks/useAuth';
 import Footer from 'src/supabase/components/Footer';
+import palette from '../theme/palette';
 
 MyApp.propTypes = {
   Component: PropTypes.func,
@@ -83,9 +84,7 @@ export default function MyApp(props) {
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
+      <Head />
       <AuthProvider>
         <ReduxProvider store={store}>
           <PersistGate loading={null} persistor={persistor}>
