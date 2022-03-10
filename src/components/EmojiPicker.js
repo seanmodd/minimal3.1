@@ -74,7 +74,13 @@ EmojiPicker.propTypes = {
   alignRight: PropTypes.bool,
 };
 
-export default function EmojiPicker({ disabled, value, setValue, alignRight = false, ...other }) {
+export default function EmojiPicker({
+  disabled,
+  value,
+  setValue,
+  alignRight = false,
+  ...other
+}) {
   const theme = useTheme();
   const [emojiPickerState, SetEmojiPicker] = useState(false);
 
@@ -98,7 +104,7 @@ export default function EmojiPicker({ disabled, value, setValue, alignRight = fa
   const handleClickAway = () => {
     SetEmojiPicker(false);
   };
-
+  console.log('This is theme from EmojiPicker.js: ', theme);
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <RootStyle {...other}>
@@ -113,7 +119,7 @@ export default function EmojiPicker({ disabled, value, setValue, alignRight = fa
           {emojiPicker}
         </PickerStyle>
         <IconButton disabled={disabled} size="small" onClick={triggerPicker}>
-          <Iconify icon={'eva:smiling-face-fill'} width={20} height={20} />
+          <Iconify icon="eva:smiling-face-fill" width={20} height={20} />
         </IconButton>
       </RootStyle>
     </ClickAwayListener>
