@@ -4,7 +4,11 @@ import Button from '@mui/material/Button';
 // import the emojipicker:
 import EmojiPicker from 'src/components/emojipicker';
 import { Stack } from '@mui/material';
-import { useTheme, styled } from '@mui/material/styles';
+import {
+  useTheme,
+  // styled
+} from '@mui/material/styles';
+import styled from 'styled-components';
 
 const CommonButton = ({ children, color, disabled, size, sx, variant }) => (
   <Button
@@ -75,9 +79,23 @@ const Authentication = () => {
       </Button>
     );
   };
-
   const theme = useTheme();
+
   console.log('This is theme from authentication: ', theme);
+  const StyledButton = styled.button`
+    color: ${(props) => props.theme.palette.text.secondary};
+    border-color: ${(props) => props.theme.palette.text.secondary};
+    border-width: 1px;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: ${(props) => props.theme.palette.primary.dark};
+      color: ${(props) => props.theme.palette.common.white};
+      border-color: ${(props) => props.theme.palette.common.white};
+    }
+  `;
   return (
     <Grid sx={gridStyles} item m={16}>
       <Stack alignItems="center" spacing={16}>
@@ -88,6 +106,7 @@ const Authentication = () => {
           Add user
         </CommonButton>
         <MyButton>Add user</MyButton>
+        <StyledButton>Here</StyledButton>
         <EmojiPicker />
       </Stack>
     </Grid>

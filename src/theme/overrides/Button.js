@@ -4,14 +4,15 @@ export default function Button(theme) {
   return {
     MuiButton: {
       styleOverrides: {
-        // root: {
-        //   color: '#fff',
-        //   '&:hover': {
-        //     color: '#8c46b9',
-        //     backgroundColor: '#000',
-        //     boxShadow: '1px 1px 1px 3px rgba(0,0,0,0.2)',
-        //   },
-        // },
+        root: {
+          //   color: '#fff',
+          backgroundColor: theme.palette.text.primary,
+          '&:hover': {
+            //     color: '#8c46b9',
+            //     backgroundColor: '#000',
+            boxShadow: '1px 1px 1px 3px rgba(0,0,0,0.2)',
+          },
+        },
         sizeLarge: {
           height: 48,
         },
