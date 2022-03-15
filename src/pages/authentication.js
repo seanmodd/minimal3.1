@@ -27,7 +27,7 @@ const Authentication = () => {
     fontSize: '0.875rem',
     fontWeight: 600,
     // textTransform: 'capitalize',
-    color: '#fff',  
+    color: '#fff',
     borderRadius: 2.5,
     '&.MuiButton-text': {
       backgroundColor: '#009be5',
