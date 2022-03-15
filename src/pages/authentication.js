@@ -27,7 +27,7 @@ const Authentication = () => {
     fontSize: '0.875rem',
     fontWeight: 600,
     // textTransform: 'capitalize',
-    color: '#fff',
+    color: '#fff',  
     borderRadius: 2.5,
     '&.MuiButton-text': {
       backgroundColor: '#009be5',
@@ -99,14 +99,12 @@ const Authentication = () => {
   return (
     <Grid sx={gridStyles} style={{ backgroundColor: '#000' }} item m={16}>
       <Stack alignItems="center" spacing={16}>
-        <CommonButton sx={buttonStyles} variant="contained">
-          Add user
-        </CommonButton>
-        <CommonButton sx={buttonStyles} variant="text">
-          Add user
-        </CommonButton>
-        <MyButton>Add user</MyButton>
-        <StyledButton>Here</StyledButton>
+        <CommonButton color="primary">Primary Color</CommonButton>
+        <CommonButton color="secondary">Secondary Color</CommonButton>
+        <CommonButton sx={{ ...buttonStyles }}>sx=buttonStyles</CommonButton>
+        <CommonButton sx={buttonStyles}>sx=buttonStyles</CommonButton>
+        <MyButton>MyButton</MyButton>
+        <StyledButton>StyledButton</StyledButton>
         <EmojiPicker />
       </Stack>
     </Grid>
