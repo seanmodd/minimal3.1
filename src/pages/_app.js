@@ -83,7 +83,6 @@ export default function MyApp(props) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
