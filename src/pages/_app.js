@@ -86,6 +86,10 @@ export default function MyApp(props) {
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <script
+          src="https://kit.fontawesome.com/ad5fb3227b.js"
+          crossOrigin="anonymous"
+        />
       </Head>
       <AuthProvider>
         <ReduxProvider store={store}>

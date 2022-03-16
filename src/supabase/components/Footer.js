@@ -7,7 +7,7 @@ function Footer() {
         width: '100%',
         background: '#181818',
         textAlign: 'center',
-        pt: '1rem',
+        // pt: '1rem',
         pb: '1rem',
         mt: '1rem',
         justifyContent: 'center',
@@ -20,6 +20,7 @@ function Footer() {
         alignItems="center"
         textAlign="center"
         spacing={1}
+        // mb="4rem"
       >
         <Typography
           sx={{
@@ -39,7 +40,13 @@ function Footer() {
           }}
           variant="subtitle3"
         >
-          ♥️
+          <i
+            className="fa-solid fa-heart fa-beat"
+            color="red"
+            style={{
+              '--fa-beat-scale': 1.3,
+            }}
+          />
         </Typography>
         <Typography
           sx={{

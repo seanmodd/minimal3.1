@@ -39,7 +39,7 @@ const AuthPage = () => (
           <Auth
             className="authlogin"
             supabaseClient={supabase}
-            view="sign_in"
+            view="magic_link"
             socialLayout="horizontal"
             socialButtonSize="xlarge"
           />

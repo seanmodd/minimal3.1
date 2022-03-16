@@ -1,3 +1,5 @@
+import Head from 'src/supabase/components/Head';
+import Header from 'src/supabase/components/Header';
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -97,17 +99,21 @@ const Authentication = () => {
     }
   `;
   return (
-    <Grid sx={gridStyles} style={{ backgroundColor: '#000' }} item m={16}>
-      <Stack alignItems="center" spacing={16}>
-        <CommonButton color="primary">Primary Color</CommonButton>
-        <CommonButton color="secondary">Secondary Color</CommonButton>
-        <CommonButton sx={{ ...buttonStyles }}>sx=buttonStyles</CommonButton>
-        <CommonButton sx={buttonStyles}>sx=buttonStyles</CommonButton>
-        <MyButton>MyButton</MyButton>
-        <StyledButton>StyledButton</StyledButton>
-        <EmojiPicker />
-      </Stack>
-    </Grid>
+    <>
+      <Head />
+      <Header />
+      <Grid sx={gridStyles} style={{ backgroundColor: '#000' }} item m={16}>
+        <Stack alignItems="center" spacing={16}>
+          <CommonButton color="primary">Primary Color</CommonButton>
+          <CommonButton color="secondary">Secondary Color</CommonButton>
+          <CommonButton sx={{ ...buttonStyles }}>sx=buttonStyles</CommonButton>
+          <CommonButton sx={buttonStyles}>sx=buttonStyles</CommonButton>
+          <MyButton>MyButton</MyButton>
+          <StyledButton>StyledButton</StyledButton>
+          <EmojiPicker />
+        </Stack>
+      </Grid>
+    </>
   );
 };
 

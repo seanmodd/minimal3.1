@@ -33,7 +33,7 @@ body {
 } 
 .authbackground {
   background: #181818;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .authcontainer a {

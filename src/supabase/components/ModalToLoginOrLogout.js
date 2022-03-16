@@ -2,6 +2,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
+import Link from 'next/link';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { useSpring, animated } from 'react-spring';
 import { useRouter } from 'next/router';
