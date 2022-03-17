@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import { Box } from '@mui/system';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faSolid } from '@fortawesome/free-solid-svg-icons';
 
 function BodyComponent() {
   return (
@@ -30,25 +28,14 @@ function BodyComponent() {
               </Link>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
-              {/* <Box sx={{ textAlign: 'center', backgroundColor: 'white' }}> */}
-              <FontAwesomeIcon color="blue" icon="fa-solid fa-coffee" />
-              {/* </Box> */}
-              <i
+              <Box
                 className="fa-solid fa-mug-hot fa-beat"
                 color="red"
-                style={{ '--fa-beat-scale': 5.0 }}
+                style={{
+                  '--fa-beat-scale': 1.1,
+                  // '--fa-animation-duration': '0.2s',
+                }}
               />
-
-              <i
-                className="fa-solid fa-triangle-person-digging fa-beat-fade"
-                style={{ color: 'red' }}
-              />
-
-              <span style={{ fontSize: '3rem' }}>
-                <span style={{ color: 'Mediumslateblue' }}>
-                  <i className="fas fa-camera" />
-                </span>
-              </span>
 
               <Link href="/auth">
                 <Box
