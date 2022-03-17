@@ -27,47 +27,67 @@ function BodyComponent() {
                 </Box>
               </Link>
             </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <Box
-                className="fa-solid fa-mug-hot fa-beat"
-                color="red"
-                style={{
-                  '--fa-beat-scale': 1.1,
-                  // '--fa-animation-duration': '0.2s',
-                }}
-              />
-              <span
-                className="fa-layers fa-fw fa-10x"
-                // style={{ background: 'MistyRose' }}
-              >
-                <i className="fa-solid fa-heart" />
-                <div
+            <div className="upload-icon">
+              <div className="mt-3 sm:mt-0 sm:ml-3">
+                <i
+                  className="fa-solid fa-mug-hot fa-beat"
+                  color="red"
                   style={{
-                    margin: '150px',
-                    padding: '15px',
-                    background: 'blue',
+                    '--fa-beat-scale': 1.1,
+                    // '--fa-animation-duration': '0.2s',
                   }}
+                />
+                <i
+                  className="fa-solid fa-heart"
+                  style={{
+                    animation: 'mycolor 2s infinite',
+                    fontSize: '4.5rem',
+                    'animation-timing-function': 'ease-in',
+                    animationTimingFunction: 'ease-in',
+                  }}
+                />
+                <i
+                  className="fa-solid fa-heart"
+                  style={{
+                    animation: 'mycolor 2s infinite',
+                    fontSize: '4.5rem',
+                    // 'animation-timing-function': 'ease-in-out',
+                    // animationTimingFunction: 'ease-in-out',
+                  }}
+                />
+                <span
+                  className="fa-layers fa-fw fa-10x"
+                  // style={{ background: 'MistyRose' }}
                 >
-                  <span
-                    className="fa-layers-counter"
+                  <i className="fa-solid fa-heart" />
+                  <div
                     style={{
-                      background: 'Tomato',
-                      '--fa-right': '-70px',
+                      margin: '150px',
+                      padding: '15px',
+                      background: 'blue',
                     }}
                   >
-                    1,419
-                  </span>
-                </div>
-              </span>
+                    <span
+                      className="fa-layers-counter"
+                      style={{
+                        background: 'Tomato',
+                        '--fa-right': '-70px',
+                      }}
+                    >
+                      1,419
+                    </span>
+                  </div>
+                </span>
 
-              <Link href="/auth">
-                <Box
-                  style={{ cursor: 'pointer' }}
-                  className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-green-400 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
-                >
-                  Live demo
-                </Box>
-              </Link>
+                <Link href="/auth">
+                  <Box
+                    style={{ cursor: 'pointer' }}
+                    className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-green-400 bg-indigo-100 border border-transparent rounded-md hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+                  >
+                    Live demo
+                  </Box>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
