@@ -36,6 +36,29 @@ function BodyComponent() {
                   // '--fa-animation-duration': '0.2s',
                 }}
               />
+              <span
+                className="fa-layers fa-fw fa-10x"
+                // style={{ background: 'MistyRose' }}
+              >
+                <i className="fa-solid fa-heart" />
+                <div
+                  style={{
+                    margin: '150px',
+                    padding: '15px',
+                    background: 'blue',
+                  }}
+                >
+                  <span
+                    className="fa-layers-counter"
+                    style={{
+                      background: 'Tomato',
+                      '--fa-right': '-70px',
+                    }}
+                  >
+                    1,419
+                  </span>
+                </div>
+              </span>
 
               <Link href="/auth">
                 <Box
