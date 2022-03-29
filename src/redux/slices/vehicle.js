@@ -44,30 +44,25 @@ const slice = createSlice({
     startLoading(state) {
       state.isLoading = true;
     },
-
     // HAS ERROR
     hasError(state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
-
     // GET PRODUCTS
     getVehiclesSuccess(state, action) {
       state.isLoading = false;
       state.vehicles = action.payload;
     },
-
     // GET PRODUCT
     getProductSuccess(state, action) {
       state.isLoading = false;
       state.product = action.payload;
     },
-
     //  SORT & FILTER PRODUCTS
     sortByVehicles(state, action) {
       state.sortBy = action.payload;
     },
-
     filterVehicles(state, action) {
       state.filters.gender = action.payload.gender;
       state.filters.category = action.payload.category;
@@ -75,11 +70,9 @@ const slice = createSlice({
       state.filters.priceRange = action.payload.priceRange;
       state.filters.rating = action.payload.rating;
     },
-
     // CHECKOUT
     getCart(state, action) {
       const cart = action.payload;
-
       const subtotal = sum(
         cart.map((cartItem) => cartItem.price * cartItem.quantity)
       );
@@ -94,11 +87,9 @@ const slice = createSlice({
       state.checkout.subtotal = subtotal;
       state.checkout.total = subtotal - discount;
     },
-
     addCart(state, action) {
       const product = action.payload;
       const isEmptyCart = state.checkout.cart.length === 0;
-
       if (isEmptyCart) {
         state.checkout.cart = [...state.checkout.cart, product];
       } else {
@@ -115,15 +106,12 @@ const slice = createSlice({
       }
       state.checkout.cart = uniqBy([...state.checkout.cart, product], 'id');
     },
-
     deleteCart(state, action) {
       const updateCart = state.checkout.cart.filter(
         (item) => item.id !== action.payload
       );
-
       state.checkout.cart = updateCart;
     },
-
     resetCart(state) {
       state.checkout.activeStep = 0;
       state.checkout.cart = [];
@@ -133,20 +121,16 @@ const slice = createSlice({
       state.checkout.shipping = 0;
       state.checkout.billing = null;
     },
-
     onBackStep(state) {
       state.checkout.activeStep -= 1;
     },
-
     onNextStep(state) {
       state.checkout.activeStep += 1;
     },
-
     onGotoStep(state, action) {
       const goToStep = action.payload;
       state.checkout.activeStep = goToStep;
     },
-
     increaseQuantity(state, action) {
       const productId = action.payload;
       const updateCart = state.checkout.cart.map((product) => {
@@ -173,20 +157,16 @@ const slice = createSlice({
         }
         return product;
       });
-
       state.checkout.cart = updateCart;
     },
-
     createBilling(state, action) {
       state.checkout.billing = action.payload;
     },
-
     applyDiscount(state, action) {
       const discount = action.payload;
       state.checkout.discount = discount;
       state.checkout.total = state.checkout.subtotal - discount;
     },
-
     applyShipping(state, action) {
       const shipping = action.payload;
       state.checkout.shipping = shipping;
