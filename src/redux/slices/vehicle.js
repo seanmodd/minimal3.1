@@ -38,7 +38,7 @@ const initialState = {
 // Slices
 const slice = createSlice({
   name: 'vehicle',
-  initialState,
+  initialState, 
   reducers: {
     // START LOADING
     startLoading(state) {
@@ -335,20 +335,20 @@ export function getVariants() {
   };
 }
 // ----------------------------------------------------------------------
-export function getVehicle(name) {
-  return async () => {
-    dispatch(slice.actions.startLoading());
-    try {
-      const response = await axios.get('/api/products/product', {
-        params: { name },
-      });
-      dispatch(slice.actions.getProductSuccess(response.data.product));
-    } catch (error) {
-      console.error(error);
-      dispatch(slice.actions.hasError(error));
-    }
-  };
-}
+// export function getVehicle(name) {
+//   return async () => {
+//     dispatch(slice.actions.startLoading());
+//     try {
+//       const response = await axios.get('/api/products/product', {
+//         params: { name },
+//       });
+//       dispatch(slice.actions.getProductSuccess(response.data.product));
+//     } catch (error) {
+//       console.error(error);
+//       dispatch(slice.actions.hasError(error));
+//     }
+//   };
+// }
 
 export function getVariantGraphQl(id) {
   return async (dispatch) => {
