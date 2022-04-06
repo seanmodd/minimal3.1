@@ -21,7 +21,7 @@ function BodyComponent() {
               <Link href="/buttons">
                 <Box
                   style={{ cursor: 'pointer' }}
-                  className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-green-400 border border-transparent rounded-md hover:bg-green-600 md:py-4 md:text-lg md:px-10"
+                  className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-green-400 border border-transparent rounded-md hover:bg-red-600 md:py-4 md:text-lg md:px-10"
                 >
                   View Buttons Example
                 </Box>
@@ -55,11 +55,12 @@ function BodyComponent() {
                     // animationTimingFunction: 'ease-in-out',
                   }}
                 />
+
                 <span
-                  className="fa-layers fa-fw fa-10x"
+                  className="fa-layers fa-fw fa-10x hover:to-purple-500"
                   // style={{ background: 'MistyRose' }}
                 >
-                  <i className="fa-solid fa-heart" />
+                  <i className="fa-solid fa-heart hover:to-purple-500" />
                   <div
                     style={{
                       margin: '150px',

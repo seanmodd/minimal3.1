@@ -41,10 +41,15 @@ function Footer() {
           variant="subtitle3"
         >
           <i
-            className="fa-solid fa-heart fa-beat"
+            className="mybox fa-solid fa-heart fa-beat "
+            // change color when hovering:
+
             color="red"
             style={{
               '--fa-beat-scale': 1.3,
+              // animate color change when hovering over icon:
+
+              '--fa-beat-color': '#8b5cf6',
             }}
           />
         </Typography>

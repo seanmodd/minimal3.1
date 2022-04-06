@@ -19,11 +19,20 @@ body {
   to {color: #DA1F50;}
 }
 
+.mybox {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  padding: 5px;
+  background-color: #181818;
+}
 
+
+.fa-heart{
+  transition: width 2s, height 2s, background-color 2s, color 2s, transform 2s;
+}
 .fa-heart:hover {
-  color: #7ED50E;
-  /* create keyframes below : */
-  animation: heart-beat 1s infinite;
+  color: #8b5cf6;
 }
 
 
