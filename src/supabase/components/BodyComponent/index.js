@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Box } from '@mui/system';
+import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
 
 function BodyComponent() {
   return (
@@ -55,30 +56,9 @@ function BodyComponent() {
                     // animationTimingFunction: 'ease-in-out',
                   }}
                 />
+                <SpecialHeartIcon />
 
-                <span
-                  className="fa-layers fa-fw fa-10x hover:to-purple-500"
-                  // style={{ background: 'MistyRose' }}
-                >
-                  <i className="fa-solid fa-heart hover:to-purple-500" />
-                  <div
-                    style={{
-                      margin: '150px',
-                      padding: '15px',
-                      background: 'blue',
-                    }}
-                  >
-                    <span
-                      className="fa-layers-counter"
-                      style={{
-                        background: 'Tomato',
-                        '--fa-right': '-70px',
-                      }}
-                    >
-                      1,419
-                    </span>
-                  </div>
-                </span>
+                <OtherSpecialHeartIcon />
 
                 <Link href="/auth">
                   <Box
@@ -98,3 +78,50 @@ function BodyComponent() {
 }
 
 export default BodyComponent;
+
+const SpecialHeartIcon = () => (
+  <span className="fa-layers fa-fw fa-10x ">
+    <HeartBrokenIcon style={{ fontSize: '12rem' }} className="fa-heart" />
+    <div
+      style={{
+        margin: '150px',
+        padding: '15px',
+        background: 'blue',
+      }}
+    >
+      <span
+        className="fa-layers-counter"
+        style={{
+          background: 'Tomato',
+          '--fa-right': '0px',
+          '--fa-top': '40px',
+        }}
+      >
+        1
+      </span>
+    </div>
+  </span>
+);
+
+const OtherSpecialHeartIcon = () => (
+  <span className="fa-layers fa-fw fa-10x ">
+    <i className="fa-solid fa-heart " />
+    <div
+      style={{
+        margin: '150px',
+        padding: '15px',
+        background: 'blue',
+      }}
+    >
+      <span
+        className="fa-layers-counter"
+        style={{
+          background: 'Tomato',
+          '--fa-right': '-70px',
+        }}
+      >
+        1,419
+      </span>
+    </div>
+  </span>
+);
